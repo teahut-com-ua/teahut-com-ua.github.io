@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+
+---
+
+<MainLayout>
+    <section class="container">
+        <h3 class="first_line centered">Ви вступили в Потік,</h3>
+        <h3 class="centered">але він вже не той, що раніше.</h3>
+        <h3 class="centered">Так і цяя сторінка спливла разом з ним...</h3>
+        <button class="home-btn first_line last_line">
+            <a href="/">
+                Вертайтесь домів
+                <Icon name="hut" size={27} />
+            </a>
+        </button>
+    </section>
+</MainLayout>
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .centered {
+        text-align: center;
+    }
+
+    .home-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem 0.6rem;
+        width: fit-content;
+        border-radius: .3rem;
+    }
+    
+    a {
+        font-size: 1rem;
+        color: light-dark(var(--foreground));
+    }
+
+    .home-btn:hover {
+        color: var(--active);
+    }
+</style>

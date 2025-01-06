@@ -1,0 +1,18 @@
+---
+import MainLayout from './MainLayout.astro';
+
+const { pageTitle = "Чайна Хатинка" } = Astro.props;
+---
+<MainLayout {pageTitle} >
+    <div class="container">
+        <slot />
+    </div>
+</MainLayout>
+
+<style>
+	.container { padding: 3rem 1rem 0; }
+
+	@media(min-width: 48rem) {
+		.container { padding: 3rem 4rem 0; }
+	}
+</style>

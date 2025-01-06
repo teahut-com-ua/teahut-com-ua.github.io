@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from '../../layouts/MainLayout.astro';
+import TeaCard from '../../components/TeaCard.astro';
+
+export async function getStaticPaths() {
+  const allTeas = await getCollection("teas");
+  const uniqueTags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
+
+  return uniqueTags.map((tag) => {
+    const filteredTeas = allTeas.filter((tea) => tea.data.tags.includes(tag) && tea.data.posted !== false);
+    return {
+      params: { tag },
+      props: { teas: filteredTeas },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { teas } = Astro.props;
+---
+
+<MainLayout pageTitle={tag}>
+  <div class="container">
+    <h3 class="header">Чаї, позначені як <span>"{tag}"</span>:</h3>
+    <section>
+      {teas.map((tea) => <TeaCard image={tea.data.image} url={`/teas/${tea.id}/`} title={tea.data.title} subtitle={tea.data.subtitle} category={tea.data.category} />)}
+    </section>
+  </div>
+</MainLayout>
+
+<style>
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .container { padding: 3rem 1rem 1rem; }
+
+  section {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
+		margin-bottom: 2rem;
+	}
+  
+  @media(min-width: 48rem) {
+    .container { padding: 3rem 4rem 1rem; }
+    
+    section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+    }
+  }
+</style>

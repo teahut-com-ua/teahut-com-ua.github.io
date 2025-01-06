@@ -22,3 +22,41 @@ import MainLayout from '../layouts/MainLayout.astro';
 		</p>
 	</div>
 </MainLayout>
+
+<style>
+	.container { padding: 3rem 1rem 0; }
+
+	.container2 { padding: 2rem 1rem 2rem; }
+
+	.container3 { padding: 2rem 1rem 2rem; }
+
+	h1, h2, h3 { text-align: center; }
+
+	p::first-letter { font-size: 1.5em; }
+
+	section {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
+		place-content: start center;
+	}
+
+	.new_posts {
+		background-color: var(--button);
+	}
+
+	@media screen  and (min-width: 48rem){
+		.container { padding: 3rem 4rem 0; }
+
+		.container2 { padding: 2.5rem 2rem 1rem; }
+
+		.container3 { padding: 3rem 2rem 2rem; }
+
+		
+		.new_tea {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 1fr;
+		}
+	}
+</style>
