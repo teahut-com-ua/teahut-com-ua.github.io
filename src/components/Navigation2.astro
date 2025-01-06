@@ -1,0 +1,288 @@
+---
+import { Icon } from 'astro-icon/components';
+import Logo from './Logo.astro';
+
+---
+
+<div class="navigation" aria-label="Primary">
+  <button class="logo-btn">
+    <a class="header-logo" href="/" aria-label="To Home" data-astro-prefetch>
+      <Logo />
+    </a>
+  </button>
+    <a class="home-link link1" href="/" aria-label="To Home" data-astro-prefetch>Чайна Хатинка</a>
+    <a class="link2" href="/teas/" aria-label="To Teas" data-astro-prefetch>Чай</a>
+    <a class="link3" href="/library/" aria-label="To Articles" data-astro-prefetch>Читальня</a>
+    <a class="link4" href="/search/" aria-label="To Search" data-astro-prefetch>
+      <Icon name="search" size={32} />
+    </a>
+    <button popovertarget="nav-menu" class="menu-btn icon">
+        <span class="menu-btn-alt">Показати меню</span>
+        <Icon name="menu" size={32} />
+    </button>
+    <div id="nav-menu" popover="" class="main-nav">
+        <button popovertarget="nav-menu" popovertargetaction="hide" class="close-btn icon">
+            <span class="menu-btn-alt">Сховати меню</span>
+            <Icon name="close-rounded" size={32} />
+        </button>
+        <nav class="main-nav-menu">
+            <a class="link" href="/" aria-label="To Home" data-astro-prefetch>Чайна Хатинка</a>
+            <a class="link" href="/teas/" aria-label="To Teas" data-astro-prefetch>Чай</a>
+            <a class="link" href="/library/" aria-label="To Articles" data-astro-prefetch>Читальня</a>
+            <a class="link" href="/search/" aria-label="To Search" data-astro-prefetch>
+              <Icon name="search" size={32} />
+            </a>
+        </nav>
+    </div>
+</div>
+
+<style>
+    .navigation {
+        margin: 0 1rem;
+        height: 56px;
+        background-color: light-dark(var(--background), var(--footer));
+        border-radius: 9999px;
+        box-shadow:
+            2.8px 2.8px 17.4px rgba(0, 0, 0, 0.035),
+            6.7px 6.7px 28px rgba(0, 0, 0, 0.045),
+            12.5px 12.5px 34.9px rgba(0, 0, 0, 0.051),
+            22.3px 22.3px 40.7px rgba(0, 0, 0, 0.055),
+            41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
+        display: grid;
+        grid-template-columns: 3.5rem 1fr 3.5rem;
+        grid-auto-rows: 56px;
+        grid-template-areas: 
+        "logo link1 hamburger";
+        align-items: center;
+        justify-items: center;
+        transition: all var(--animation-timing) ease-in-out;
+    }
+
+    .header-logo {
+        grid-area: logo;
+        margin: 0;
+        aspect-ratio: 1 / 1;
+    }
+
+    .home-link {
+        font-size: 1.5rem;
+        font-weight: 600;
+        grid-area: link1;
+        color: light-dark(var(--foreground), var(--background));
+        opacity: 0.8;
+    }
+
+    .link2, .link3, .link4 {
+      display: none;
+    }
+
+    .link {
+        color: var(--background);
+    }
+
+    .logo-btn{
+      display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border-width: 0;
+        /* border-width: 2px;
+        border-color: #ffffff; */
+        background-color: var(--background);
+        width: 56px;
+        height: 56px;
+        cursor: pointer;
+    }
+
+    .menu-btn {
+        /* position: fixed;
+        top: 1rem;
+        right: 1rem; */
+        padding: 0.5rem;
+        /* color: var(--foreground); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border-width: 2px;
+        border-color: #ffffff;
+        background-color: var(--background);
+        width: 56px;
+        height: 56px;
+        cursor: pointer;
+        transition-duration: 500ms;
+    }
+
+    .menu-btn-alt {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0; 
+    }
+
+    .main-nav {
+        padding: 0; 
+        place-items: center; 
+        width: 100%; 
+        height: 100%; 
+        font-size: 2.25rem;
+        line-height: 2.5rem; 
+        color: #ffffff; 
+        background-color: transparent;
+    }
+
+    .close-btn {
+        position: absolute; 
+        top: 1rem; 
+        right: 1rem; 
+        z-index: 10; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem; 
+        border-radius: 100%; 
+        border-width: 2px; 
+        border-color: #ffffff; 
+        width: 3.5rem; 
+        height: 3.5rem; 
+        font-size: 1.875rem;
+        line-height: 2.25rem; 
+    }
+
+    .main-nav-menu {
+        display: flex; 
+        position: relative; 
+        flex-direction: column; 
+        gap: 1.5rem; 
+        font-size: 2.25rem;
+        line-height: 2.5rem; 
+    }
+
+    .menu-links {
+        display: block; 
+        position: relative; 
+        text-align: center;
+        color: #ffffff;
+    }
+
+  .main-nav,
+  .main-nav::backdrop {
+    transition:
+      500ms opacity,
+      500ms overlay allow-discrete,
+      500ms display allow-discrete;
+    opacity: 0;
+  }
+
+  .main-nav a {
+    transition: 500ms transform;
+    transform: translateY(-48px);
+  }
+
+  .main-nav::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+  }
+
+  .main-nav:popover-open {
+    opacity: 1;
+    display: grid;
+  }
+
+  .main-nav:popover-open a {
+    transform: translateY(0);
+  }
+
+  .main-nav:popover-open::backdrop {
+    opacity: 1;
+  }
+
+  .icon {
+    color: var(--foreground);
+  }
+
+  .icon:hover {
+        color: var(--active);
+    }
+
+  @starting-style {
+    .main-nav:popover-open,
+    .main-nav:popover-open::backdrop {
+      opacity: 0;
+    }
+
+    .main-nav:popover-open a {
+      transform: translateY(48px);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+        .menu-btn, .close-btn {
+            display: none;
+        }
+
+        .link2, .link3, .link4 {
+          display: block;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: light-dark(var(--foreground), var(--background));
+          opacity: 0.7;
+        }
+
+        .navigation {
+            margin: 0 1rem;
+            grid-template-columns: 56px 3% repeat(3, auto) 15% 56px;
+            grid-template-areas:
+            "logo . link1 link2 link3 . link4";
+        }
+
+        .link2 {
+          grid-area: link2;
+        }
+
+        .link3 {
+          grid-area: link3;
+        }
+
+        .link4 {
+          grid-area: link4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .link:not(.home-link) {
+            display: flex;
+            padding: 0;
+            color: var(--foreground);
+            opacity: 0.9;
+        }
+
+        .home-link {
+            opacity: 0.7;
+        }
+
+        .link:hover:not(.search-toggle-block),
+        .link:active {
+            padding: 0 .5rem;
+            background-color: var(--foreground);
+            border-radius: 9px;
+            color: var(--background);
+            opacity: 1;
+        }
+
+        :global(.dark) .link:hover:not(.search-toggle-block),
+        :global(.dark) .link:active {
+            color: var(--active);
+            border: solid 1px var(--active);
+            background-color: unset;
+            opacity: 1;
+        }
+  }
+</style>

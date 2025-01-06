@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import logo from '../../public/Baisao_cropped.jpg';
+---
+
+<Image class="logo" src={logo} alt="Logo" />
+
+<style>
+    .logo {
+        height: 100%;
+        width: auto;
+        padding: 0.3rem;
+        display: block;
+        border-left: 2px solid light-dark(var(--foreground), var(--background)); 
+        border-top: 2px solid light-dark(var(--foreground), var(--background));
+        border-bottom: 2px solid light-dark(var(--foreground), var(--background));
+        border-radius: 100%;
+    }
+</style>
