@@ -1,0 +1,333 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = image1, image1alt, image2alt = image1alt, image3alt = image1alt, image4alt = image1alt, image5alt = image1alt } = Astro.props;
+---
+
+<section class="slider">
+    <div class="wrapper">
+		<div class="list">
+			<figure id="slide1" class="slide">
+				<input type="radio" class="radio" name="images" id="image1" checked />
+				<Image 
+					src={image1}
+					alt=""
+					class="slide_image"
+				/>
+				<label for="image5" class="prev">
+					<Icon name="caret-left" size={36} />
+				</label>
+				<label for="image2" class="next">
+					<Icon name="caret-right" size={36} />
+				</label>
+                <figcaption>{image1alt}</figcaption>
+            </figure>
+			<figure id="slide2" class="slide">
+				<input type="radio" class="radio" name="images" id="image2" />
+                <Image 
+					src={image2} 
+					alt=""
+					class="slide_image"
+				/>
+				<label for="image1" class="prev">
+					<Icon name="caret-left" size={36} />
+				</label>
+				<label for="image3" class="next">
+					<Icon name="caret-right" size={36} />
+				</label>
+                <figcaption>{image2alt}</figcaption>
+            </figure>
+            <figure id="slide3" class="slide">
+				<input type="radio" class="radio" name="images" id="image3" />
+                <Image 
+					src={image3} 
+					alt=""
+					class="slide_image" 
+				/>
+				<label for="image2" class="prev">
+					<Icon name="caret-left" size={36} />
+				</label>
+				<label for="image4" class="next">
+					<Icon name="caret-right" size={36} />
+				</label>
+                <figcaption>{image3alt}</figcaption>
+            </figure>
+            <figure id="slide4" class="slide">
+				<input type="radio" class="radio" name="images" id="image4" />
+                <Image 
+					src={image4} 
+					alt=""
+					class="slide_image"
+				/>
+				<label for="image3" class="prev">
+					<Icon name="caret-left" size={36} />
+				</label>
+				<label for="image5" class="next">
+					<Icon name="caret-right" size={36} />
+				</label>
+                <figcaption>{image4alt}</figcaption>
+            </figure>
+            <figure id="slide5" class="slide">
+				<input type="radio" class="radio" name="images" id="image5" />
+                <Image
+					src={image5} 
+					alt=""
+					class="slide_image"
+				/>
+				<label for="image4" class="prev">
+					<Icon name="caret-left" size={36} />
+				</label>
+				<label for="image1" class="next">
+					<Icon name="caret-right" size={36} />
+				</label>
+                <figcaption>{image5alt}</figcaption>
+            </figure>
+        </div>
+        <nav id="nav_slides">
+            <label for="image1" class="indicator">
+                <Image
+                    src={image1} 
+                    alt={image1alt}
+                    class="dot_image"
+                />
+			</label>
+            <label for="image2" class="indicator">
+                <Image
+                    src={image2} 
+                    alt={image2alt}
+                    class="dot_image"
+                />
+			</label>
+            <label for="image3" class="indicator">
+                <Image
+                    src={image3} 
+                    alt={image3alt}
+                    class="dot_image"
+                />
+			</label>
+            <label for="image4" class="indicator">
+                <Image
+                    src={image4} 
+                    alt={image4alt}
+                    class="dot_image"
+                />
+			</label>
+            <label for="image5" class="indicator">
+                <Image
+                    src={image5} 
+                    alt={image5alt}
+                    class="dot_image"
+                />
+			</label>
+        </nav>
+    </div>
+</section>
+
+<style>
+	.radio {
+		position: absolute;
+		opacity: 0.01;
+	}
+	
+	#image1,
+	#image2,
+	#image3,
+	#image4,
+	#image5 { accent-color: grey; }
+
+    .slider {
+        padding: 0;
+        max-width: 31rem;
+		margin: 1rem auto 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+    }
+
+    .wrapper {
+        margin: 0;
+		background: var(--background);
+        display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto;
+	}
+
+    :global(.dark) .wrapper { background: #22201c; }
+
+    .list {
+		height: inherit;
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space: nowrap;
+		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
+		gap: 1rem;
+		-webkit-overflow-scrolling: touch;
+        .slides::-webkit-scrollbar { display: none; }
+		box-shadow: 0 1.5rem 3rem -0.75rem rgba(0, 0, 0, 0.25);
+	}
+
+	.list::-webkit-scrollbar { display: none; }
+
+	.list {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+	
+	.slide {
+		position: relative;
+		display: inline-grid;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+	}
+
+    figure {
+        display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr auto;
+    }
+
+    .slide_image {
+		width: 100%;
+		height: 100%;
+        display: grid;
+	}
+
+    .prev, .next { display: none; }
+
+    figcaption {
+        grid-area: 2 / 1 / 3 / 2;
+        display: flex;
+        justify-content: center;
+		font-size: 1rem;
+		color: #e2dbbe;
+		background: rgba(0, 0, 2, 0.7);
+		padding: .3rem;
+		margin: 0;
+		white-space: normal;
+	}
+
+    #nav_slides {
+        grid-area: 2 / 1 / 3 / 2;
+		display: flex;
+		padding: 1rem 5rem;
+	}
+
+    .indicator {
+		width: 100%;
+		aspect-ratio: 1/1;
+		border-radius: 50%;
+		margin: .5rem;
+		overflow: hidden;
+		opacity: 0.3;
+		filter: saturate(0.3);
+		transition: opacity ease 250ms;
+		box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
+	}
+
+    .indicator.active {
+		opacity: 1;
+		filter: saturate(1);
+	}
+
+	.indicator img{
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	#nav_slides .indicator:hover {
+		cursor: pointer;
+		opacity: 1;
+		filter: saturate(1);
+		transition: opacity 250ms ease;
+	}
+
+    @media screen and (min-width: 31rem){
+        .wrapper,
+        .list {
+            border-radius: 1rem;
+            
+        }
+
+        .slider {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+        }
+    }
+
+    @media screen and (min-width: 48rem){
+		.wrapper {
+            border-radius: 1rem;
+		}
+		
+		.list {
+            border-radius: .8rem;
+		}
+
+        figure {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+		}
+
+        .slide_image { grid-area: 1 / 1 / 2 / 2; }
+
+		figcaption { grid-area: 2 / 1 / 3 / 2; }
+
+		[data-icon] { color: rgba(224, 150, 0, 1); }
+		
+		.prev, .next {
+			display: block;
+			position: absolute;
+			top: 47%;
+			cursor: pointer;
+		}
+
+		.prev { left: 1rem; }
+
+		.next { right: 1rem; }
+
+		#nav_slides { padding: .5rem 3.6rem; }
+
+		.indicator {
+			filter: saturate(0.5);
+			transition: opacity ease 250ms;
+			box-shadow: 0 1rem 1rem -0.75rem rgba(0, 0, 0, 0.25);
+		}
+	}
+</style>
+
+<script>
+    document.addEventListener('astro:page-load', () => {
+
+		const list = document.querySelector(".list");
+		const items = Array.from(document.querySelectorAll(".slide"));
+		const indicators = Array.from(document.querySelectorAll(".indicator"));
+
+		const observer = new IntersectionObserver(onIntersectionObserved, {
+			root: list,
+			threshold: 0.6
+		});
+
+		function onIntersectionObserved(entries: any) {
+			entries.forEach((entry: any) => {
+				if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+					const intersectingIndex = items.indexOf(entry.target);
+					activateIndicator(intersectingIndex);
+				}
+			});
+		}
+
+		function activateIndicator(index: number) {
+  			indicators.forEach((indicator, i) => {
+    			indicator.classList.toggle("active", i === index);
+  			});
+		}
+
+		items.forEach(item => {
+  			observer.observe(item);
+		});
+	});
+</script>

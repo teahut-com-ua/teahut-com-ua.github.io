@@ -1,0 +1,140 @@
+---
+import ImageSlider from "./ImageSlider.astro";
+import {exchangePrice} from "../utils/utils";
+
+const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt, image4alt, image5alt, title, subtitle, region, yieldYear, variety, item = "Вартість за 10 гр", price, tags } = Astro.props;
+---
+
+<div class="container">
+    <div class="slider">
+        <ImageSlider
+            image1={image1}
+            image2={image2}
+            image3={image3}
+            image4={image4}
+            image5={image5}
+            image1alt={image1alt}
+            image2alt={image2alt}
+            image3alt={image3alt}
+            image4alt={image4alt}
+            image5alt={image5alt}
+        />
+    </div>
+        <div class="textInformation"> 
+            <div class="headerContainer">
+                <h1 class="title">{title}</h1>
+                <h4 class="subtitle">{subtitle}</h4>
+                <div class="yieldYear">
+                    <div>Врожай:</div>
+                    <div><p>{yieldYear}</p></div>
+                </div>
+                <div class="region">
+                    <div class="heading">Походження:</div>
+                    <div class="content"><p>{region}</p></div>
+                </div>
+                <div class="variety">
+                    <div class="heading">Різновид:</div>
+                    <div><p>{variety}</p></div>
+                </div>
+                <div class="priceBlock">
+                    <div>
+                        <p>{item}: </p>
+                    </div>
+                    <div>
+                        <p><span class="price">{exchangePrice(price)}</span> грн.</p>
+                    </div>
+                </div>
+                <div class="tags last-line">
+                    {tags.map((tag: unknown) => (
+                      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+                    ))}
+                </div>
+            </div>
+        </div>
+</div>
+
+<style>
+    .container {
+        margin: 2rem auto 0;
+    }
+
+    .information {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .headerContainer { padding: 1rem; }
+
+    .title, .subtitle { text-align: center; }
+    
+    .subtitle { margin: 0 0 3rem; }
+
+    .region,
+    .yieldYear,
+    .variety,
+    .priceBlock {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .content {
+        text-align: end;
+    }
+
+    .heading {
+        margin-right: 1rem;
+    }
+    
+    .priceBlock { align-items: center; }
+
+    .price {
+        padding-left: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: rgb(0, 153, 33);
+    }
+
+    a { color: var(--foreground); }
+  
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  
+    .tag {
+        margin: 0.25em;
+        border: dotted 1px #7c7c7c;
+        border-radius: .5em;
+        padding: .3rem .5rem .1rem;
+        font-size: .9rem;
+        background-color: var(--button);
+    }
+
+    .tag:hover { background-color: #a38017; }
+
+    @media screen  and (min-width: 48rem){
+        .container {
+            margin: 2rem 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+        }
+
+        .slider {
+            height: 100%;
+            width: 100%
+            margin: 0 auto;; */
+        }
+        .textInformation {
+            grid-column: 2/3;
+            grid-row: auto;
+            padding: 0;
+        }
+
+        .information { flex-direction: row; }
+
+        .headerContainer { padding: 1rem 0 0 2rem; }
+
+    }
+</style>
