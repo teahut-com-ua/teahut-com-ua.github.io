@@ -1,6 +1,20 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from "astro:content";
+import TeaCard from '../components/TeaCard.astro';
+import BlogPost from '../components/BlogPost.astro';
 
+const newPosts = (await getCollection('library'))
+	.filter((post: { data: { posted: boolean; }; }) => post.data.posted !== false)
+	.sort(
+		(a: { data: { pubDate: number; }; }, b: { data: { pubDate: number; }; }) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 2);
+
+const newTeas = (await getCollection('teas'))
+	.filter((tea: { data: { posted: boolean; }; }) => tea.data.posted !== false)
+	.sort(
+		(a: { data: { pubDate: number; }; }, b: { data: { pubDate: number; }; }) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
 <MainLayout>
@@ -20,6 +34,35 @@ import MainLayout from '../layouts/MainLayout.astro';
 		<p class="last_line">
 			Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао" чи "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття — приготуванням і вживанням однієї з найдавніше відомих лікарських рослин Світу. Мета цього — найкраща чашка чаю, сповнена Пробудження і Присутности для всіх нас. Перед Природою і перед Чаєм, Її часточкою, ми рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
 		</p>
+	</div>
+	<div class="new_posts container2">
+		<h2 class="last_line">Найновіші статті:</h2>
+		<section>
+			{newPosts.map((p: { id: any; data: { title: unknown; subtitle: unknown; description: unknown; pubDate: unknown; }; }) => 
+				<BlogPost
+					class="post"
+					url={`/library/${p.id}/`}
+					title={p.data.title}
+					subtitle={p.data.subtitle}
+					description={p.data.description}
+					pubDate={p.data.pubDate}
+				/>)
+			}
+		</section>
+	</div>
+	<div class="container3">
+		<h2 class="last_line">Наші нові чаї:</h2>
+		<section class="new_tea">
+			{newTeas.map((tea: { data: { image: unknown; title: unknown; subtitle: unknown; category: unknown; }; id: any; }) => 
+				<TeaCard 
+					image={tea.data.image} 
+					url={`/teas/${tea.id}/`} 
+					title={tea.data.title} 
+					subtitle={tea.data.subtitle} 
+					category={tea.data.category} 
+				/>)
+			}
+		</section>
 	</div>
 </MainLayout>
 
