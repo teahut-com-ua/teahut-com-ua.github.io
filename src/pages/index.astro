@@ -5,15 +5,15 @@ import TeaCard from '../components/TeaCard.astro';
 import BlogPost from '../components/BlogPost.astro';
 
 const newPosts = (await getCollection('library'))
-	.filter((post: { data: { posted: boolean; }; }) => post.data.posted !== false)
+	.filter((post) => post.data.posted !== false)
 	.sort(
-		(a: { data: { pubDate: number; }; }, b: { data: { pubDate: number; }; }) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 2);
 
 const newTeas = (await getCollection('teas'))
 	.filter((tea: { data: { posted: boolean; }; }) => tea.data.posted !== false)
 	.sort(
-		(a: { data: { pubDate: number; }; }, b: { data: { pubDate: number; }; }) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
 ---
 
@@ -38,7 +38,7 @@ const newTeas = (await getCollection('teas'))
 	<div class="new_posts container2">
 		<h2 class="last_line">Найновіші статті:</h2>
 		<section>
-			{newPosts.map((p: { id: any; data: { title: unknown; subtitle: unknown; description: unknown; pubDate: unknown; }; }) => 
+			{newPosts.map((p) => 
 				<BlogPost
 					class="post"
 					url={`/library/${p.id}/`}
