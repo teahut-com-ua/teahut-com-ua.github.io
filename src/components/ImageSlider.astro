@@ -147,13 +147,11 @@ const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = imag
 
     .wrapper {
         margin: 0;
-		background: var(--background);
+		background: light-dark(var(--background), #22201c;)
         display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr auto;
 	}
-
-    :global(.dark) .wrapper { background: #22201c; }
 
     .list {
 		height: inherit;
@@ -300,7 +298,7 @@ const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = imag
 </style>
 
 <script>
-    document.addEventListener('astro:page-load', () => {
+    document.addEventListener("astro:page-load", () => {
 
 		const list = document.querySelector(".list");
 		const items = Array.from(document.querySelectorAll(".slide"));

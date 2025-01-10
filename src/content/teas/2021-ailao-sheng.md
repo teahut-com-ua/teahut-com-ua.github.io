@@ -1,5 +1,5 @@
 ---
-posted: true
+posted: false
 title: "Поза хмарами"
 subtitle: Шен пуер з Айлао
 description: Високогоряний Шен пуер із Айлао, Юньнань; весна 2021 року.

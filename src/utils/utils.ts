@@ -15,7 +15,7 @@ export function formatDate(date: any) {
 }
       
 export function exchangePrice(price: number) {
-    const courseRate = 43;
+    const courseRate = 43.5;
     const coursePrice = courseRate * price;
     return coursePrice.toFixed();
 }

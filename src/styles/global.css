@@ -3,7 +3,7 @@
 :root {
     color-scheme: light dark;
     --background: oklch(92.82% 0.057 96.44);
-    --foreground: oklch(24.84% 0.039 95.36);
+    --foreground: oklch(24.84% 0.039 95.36); 
     --background-dark: oklch(24.43% 0.008 84.59);
     --foreground-dark: oklch(79.64% 0.04 95.94);
     --header: oklch(23.07% 0.037 96.74);
@@ -14,6 +14,7 @@
     --gray: 102, 101, 97;
     --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+    --animation-timing: 200ms;
 }
 
 *,
@@ -30,8 +31,6 @@ body {
     font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
     background: light-dark(var(--background), var(--foreground));
-    /* background-color: var(--background); */
-    /* color: rgb(var(--foreground)); */
     color: light-dark(var(--background-dark), var(--foreground-dark));
     word-wrap: break-word;
     overflow-wrap: break-word;
