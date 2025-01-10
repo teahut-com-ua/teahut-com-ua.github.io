@@ -30,16 +30,11 @@ body {
     font-family: "Just Another Hand", cursive, "Inter", sans-serif;
     font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
-    background: light-dark(var(--background), var(--foreground));
+    background: light-dark(var(--background), var(--background-dark));
     color: light-dark(var(--background-dark), var(--foreground-dark));
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
-
-/* html.dark {
-    background-color: var(--foreground);
-    color: var(--foreground-dark );
-} */
 
 body {
     width: 100%;
@@ -51,8 +46,6 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
-
-.dark body { background-color: var(--background-dark); }
 
 h1,
 h2,
@@ -146,16 +139,16 @@ img {
     color: var(--foreground-dark);
 }
 
-.first_line {
+.first-line {
     margin-top: 3rem;
 }
 
-.last_line {
+.last-line {
     margin-bottom: 1.8rem;
 }
 
-img.float-left,
-img.float-right {
+img .float-left,
+img .float-right {
     display:block;
     margin: 1rem auto 2rem;
     border: 1px solid #000000;

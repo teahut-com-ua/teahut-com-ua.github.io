@@ -6,11 +6,11 @@ const { frontmatter } = Astro.props;
 
 <MainLayout pageTitle={frontmatter.title} >
     <div class="container">
-        <img src={frontmatter.image} alt="" class="header_image">
+        <img src={frontmatter.image} alt="" class="header-image">
         <h1 class="title">{frontmatter.title}</h1>
         <h4 class="title">{frontmatter.subtitle}</h4>
         <h4 class="title last-line">{frontmatter.subsubtitle}</h4>
-        <p class="author last_line">{frontmatter.author}</p>
+        <p class="author last-line">{frontmatter.author}</p>
             <slot />
         <p class="bottom-sign">Українською перекладено спеціяльно для TeaHut.com.ua</p>
         <div style="display: flex; justify-content: end;">
@@ -22,14 +22,12 @@ const { frontmatter } = Astro.props;
 <style>
 	.container { padding: 3rem 1rem 1rem; }
 
-    .header_image {
+    .header-image {
         margin: 0 auto 2rem;
 
     }
 
     .title { text-align: center;}
-
-    .last-line { margin-bottom: 2rem;}
 
     .author { 
         font-style: italic;

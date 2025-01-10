@@ -10,7 +10,7 @@ const pageTitle = "Позначки чаїв";
 <MainLayout {pageTitle}>
   <div class="container">
     <h1>{pageTitle}:</h1>
-      <div class="tags last_line">
+      <div class="tags last-line">
           {tags.map((tag) => (
               <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
           ))}
@@ -39,13 +39,12 @@ const pageTitle = "Позначки чаїв";
       background-color: var(--button);
     }
 
-    .tag:hover {
-      background-color: #a38017;
-    }
-
+    
     .container { padding: 3rem 1rem 1rem; }
-
+    
     @media(min-width: 48rem) {
       .container { padding: 3rem 4rem 1rem; }
+
+      .tag:hover { background-color: var(--active); }
     }
 </style>

@@ -7,8 +7,8 @@ import {formatDate, exchangePrice} from "../../utils/utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allTeas = (await getCollection("teas"))
-        .filter((tea: { data: { posted: boolean; }; }) => tea.data.posted !== false)
-        .sort((a: { data: { pubDate: string | number | Date; }; }, b: { data: { pubDate: string | number | Date; }; }) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+        .filter((tea) => tea.data.posted !== false)
+        .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
     return paginate(allTeas, { pageSize: 10 });
 }) satisfies GetStaticPaths;
@@ -20,7 +20,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 
 <ArticleLayout {pageTitle}>
 	<section>
-		<h1 class="last_line">{pageTitle}:</h1>
+		<h1 class="last-line">{pageTitle}:</h1>
 		<form class="tea-picker">
 			<fieldset>
 				<legend>Відфільтрувати за категоріями:</legend>
@@ -50,7 +50,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 					</label>
 			</fieldset>
 		</form>
-		<div class="tea_block">
+		<div class="tea-block">
 			{page.data.map((tea) => (
 				<article>
 					<div class="container">
@@ -59,7 +59,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 								<Image 
 									src={tea.data.image} 
 									alt=""
-									class="tea_image" 
+									class="tea-image" 
 								/>
 								<figcaption>
 									<h2>{tea.data.title}</h2>
@@ -67,9 +67,9 @@ const pageNumber = `сторінка ${page.currentPage}`
 								</figcaption>
 							</figure>				
 						</a>
-						<div class="price_block">
-							<date class="pub_date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
-							<p class="price_row"><span class="price">{exchangePrice(tea.data.price)}</span>&#8372; / 10гр</p>
+						<div class="price-block">
+							<date class="pub-date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
+							<p class="price-row"><span class="price">{exchangePrice(tea.data.price)}</span>&#8372; / 10гр</p>
 						</div>
 						<p class="categories" data-category={tea.data.category}></p>
 					</div>
@@ -85,7 +85,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 </ArticleLayout>
 
 <style>
-	section .tea_block {
+	section .tea-block {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2em;
@@ -93,7 +93,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 		margin-bottom: 2rem;
 	}
 
-	.tea_block article { width: 100%; }
+	.tea-block article { width: 100%; }
 
 	form {
 		display: flex;
@@ -174,7 +174,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 		margin: 0;
 	}
 
-	.tea_image {
+	.tea-image {
 		aspect-ratio: 2 / 1;
 		border-radius: .9rem .9rem 0 0;
 		display: block;
@@ -202,7 +202,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 		margin: 0 .5rem;
 	}
 
-	.price_block {
+	.price-block {
 		font-size: clamp(.7rem, 9cqw, 1rem);
 		padding: 0 1rem;
 		display: flex;
@@ -210,15 +210,15 @@ const pageNumber = `сторінка ${page.currentPage}`
 		align-items: baseline;
 	}
 
-	.pub_date {
+	.pub-date {
 		font-size: .8rem;
 	}
 
-	.pub_date span {
+	.pub-date span {
 		margin-left: .3rem;
 	}
 
-	.price_row {
+	.price-row {
 		font-size: .8rem;
 		margin-bottom: unset;
 		justify-self: end;
@@ -294,20 +294,15 @@ const pageNumber = `сторінка ${page.currentPage}`
         color: light-dark(var(--foreground), var(--foreground-dark));
     }
 
-    .pagination-block > a:hover {
-        color: var(--active);
-        border: 1px solid var(--active);
-    }
-
 	@media(min-width: 48rem) {
-		section .tea_block {
+		section .tea-block {
 			gap: 2rem;
 			justify-content: space-between;
 		}
 
-		.tea_block article { width: calc(50% - 1rem); }
+		.tea-block article { width: calc(50% - 1rem); }
 
-		.tea_block article * { transition: 0.2s ease; }
+		.tea-block article * { transition: 0.2s ease; }
 
 		article {
 			transition: all var(--animation-timing) ease-in-out;
@@ -322,15 +317,20 @@ const pageNumber = `сторінка ${page.currentPage}`
 			justify-content: flex-start;
 		}
 
-		.price_block {
+		.price-block {
 			padding: 0;
 			justify-content: space-around;
 		}
 
-		.pub_date { font-size: .9rem; }
+		.pub-date { font-size: .9rem; }
 
-		.price_row { font-size: .9rem; }
+		.price-row { font-size: .9rem; }
 
         .pagination-block { margin-bottom: 2rem; }
+
+		.pagination-block > a:hover {
+			color: var(--active);
+			border: 1px solid var(--active);
+		}
     }
 </style>

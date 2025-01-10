@@ -11,8 +11,8 @@ import Logo from './Logo.astro';
     </a>
   </button>
     <a class="home-link link1" href="/" aria-label="To Home" data-astro-prefetch>Чайна Хатинка</a>
-    <a class="link2" href="/teas/" aria-label="To Teas" data-astro-prefetch>Чай</a>
-    <a class="link3" href="/library/" aria-label="To Articles" data-astro-prefetch>Читальня</a>
+    <a class="link2 link" href="/teas/" aria-label="To Teas" data-astro-prefetch>Чай</a>
+    <a class="link3 link" href="/library/" aria-label="To Articles" data-astro-prefetch>Читальня</a>
     <a class="link4" href="/search/" aria-label="To Search" data-astro-prefetch>
       <Icon name="search" size={32} />
     </a>
@@ -87,8 +87,6 @@ import Logo from './Logo.astro';
         align-items: center;
         border-radius: 100%;
         border-width: 0;
-        /* border-width: 2px;
-        border-color: #ffffff; */
         background-color: var(--background);
         width: 56px;
         height: 56px;
@@ -105,8 +103,11 @@ import Logo from './Logo.astro';
         justify-content: center;
         align-items: center;
         border-radius: 100%;
-        border-width: 2px;
-        border-color: var(--foreground);
+        border-left: 2px solid light-dark(var(--foreground), var(--background)); 
+        border-top: 2px solid light-dark(var(--foreground), var(--background));
+        border-bottom: 2px solid light-dark(var(--foreground), var(--background));
+        /* border-width: 2px; */
+        /* border-color: var(--foreground); */
         background-color: var(--background);
         width: 56px;
         height: 56px;
@@ -123,7 +124,7 @@ import Logo from './Logo.astro';
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
-        border-width: 0; 
+        border-width: 0;
     }
 
     .main-nav {
@@ -260,28 +261,21 @@ import Logo from './Logo.astro';
         .link:not(.home-link) {
             display: flex;
             padding: 0;
-            color: var(--foreground);
-            opacity: 0.9;
+            opacity: 0.7;
         }
 
         .home-link {
             opacity: 0.7;
         }
 
-        .link:hover:not(.search-toggle-block),
+        .link:hover:not(.link4),
+        .home-link:hover,
         .link:active {
             padding: 0 .5rem;
-            background-color: var(--foreground);
+            background-color: light-dark(var(--foreground), var(--footer));
             border-radius: 9px;
-            color: var(--background);
-            opacity: 1;
-        }
-
-        :global(.dark) .link:hover:not(.search-toggle-block),
-        :global(.dark) .link:active {
-            color: var(--active);
             border: solid 1px var(--active);
-            background-color: unset;
+            color: light-dark(var(--background), var(--active));
             opacity: 1;
         }
   }

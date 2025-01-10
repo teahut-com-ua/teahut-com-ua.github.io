@@ -11,7 +11,7 @@ const newPosts = (await getCollection('library'))
 	.slice(0, 2);
 
 const newTeas = (await getCollection('teas'))
-	.filter((tea: { data: { posted: boolean; }; }) => tea.data.posted !== false)
+	.filter((tea) => tea.data.posted !== false)
 	.sort(
 		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
@@ -21,7 +21,7 @@ const newTeas = (await getCollection('teas'))
 	<div class="container">
 		<h1 class="">Ласкаво просимо</h1>
 		<h3>до нашої</h3>
-		<h2 class="last_line">Чайної Хатинки!</h2>
+		<h2 class="last-line">Чайної Хатинки!</h2>
 		<p>
 			Кожен із нас шукає своєї досконалости так, як він чи вона розуміє її, залежно від загального знання і контексту, який отримали за своє життя, а також від того, що в нас закладено Матінкою Природою...
 		</p>
@@ -31,12 +31,12 @@ const newTeas = (await getCollection('teas'))
 		<p>
 			Проте, так само як і кожна чайна людина минулого й сьогодення, ми не прагнемо віднайти досконалість заради себе. Наша Традиція — це служіння людству через Чай. І не тільки через те, що Чай і Чань (Дзен) мають один смак, скільки через глибоке усвідомлення наших зв'язків одне з одним. Кожна чаша сприяє пробудженню і присутности, розкриттю Гармонії і Спокою Всесвіту в людській свідомості.
 		</p>
-		<p class="last_line">
+		<p class="last-line">
 			Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао" чи "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття — приготуванням і вживанням однієї з найдавніше відомих лікарських рослин Світу. Мета цього — найкраща чашка чаю, сповнена Пробудження і Присутности для всіх нас. Перед Природою і перед Чаєм, Її часточкою, ми рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
 		</p>
 	</div>
-	<div class="new_posts container2">
-		<h2 class="last_line">Найновіші статті:</h2>
+	<div class="new-posts container2">
+		<h2 class="last-line">Найновіші статті:</h2>
 		<section>
 			{newPosts.map((p) => 
 				<BlogPost
@@ -51,9 +51,9 @@ const newTeas = (await getCollection('teas'))
 		</section>
 	</div>
 	<div class="container3">
-		<h2 class="last_line">Наші нові чаї:</h2>
-		<section class="new_tea">
-			{newTeas.map((tea: { data: { image: unknown; title: unknown; subtitle: unknown; category: unknown; }; id: any; }) => 
+		<h2 class="last-line">Наші нові чаї:</h2>
+		<section class="new-tea">
+			{newTeas.map((tea) => 
 				<TeaCard 
 					image={tea.data.image} 
 					url={`/teas/${tea.id}/`} 
@@ -84,7 +84,7 @@ const newTeas = (await getCollection('teas'))
 		place-content: start center;
 	}
 
-	.new_posts {
+	.new-posts {
 		background-color: var(--button);
 	}
 
@@ -96,7 +96,7 @@ const newTeas = (await getCollection('teas'))
 		.container3 { padding: 3rem 2rem 2rem; }
 
 		
-		.new_tea {
+		.new-tea {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: 1fr;

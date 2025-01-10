@@ -5,7 +5,7 @@ import Social from './Social.astro';
 <footer>
     <nav class="footer-links-grid">
       <dl>
-        <dt><a class="" href='/'><strong>Чайна Хатинка</strong></a></dt>
+        <dt><a class="column-header" href='/'>Чайна Хатинка</a></dt>
             <dd>
                 <a class="" href='/our-tradition/'>Наша Традиція</a>
             </dd>
@@ -17,7 +17,7 @@ import Social from './Social.astro';
             </dd>
       </dl>
       <dl>
-        <dt><a class="" href='/teas/'><strong>Чай</strong></a></dt>
+        <dt><a class="column-header" href='/teas/'>Чай</a></dt>
             <dd>
                 <a class="" href='/tags/ShengPuerh'>Шен пуери</a>
             </dd>
@@ -41,7 +41,7 @@ import Social from './Social.astro';
             </dd>
       </dl>
       <dl>
-          <dt><a class="" href='/library/'><strong>Читальня</strong></a></dt>
+          <dt><a class="column-header" href='/library/'>Читальня</a></dt>
           <dd>
               <a class="" href='/library/'>Статті</a>
             </dd>
@@ -80,6 +80,13 @@ import Social from './Social.astro';
         font-size: 16px;
     }
 
+    dt .column-header {
+        font-size: 1rem;
+        font-weight: 900;
+        color: unset;
+        opacity: 0.7;
+    }
+
     a,
     a:visited {
         text-decoration: none;
@@ -88,11 +95,12 @@ import Social from './Social.astro';
         opacity: 0.7;
     }
 
+    dt .column-header:hover,
     a:hover,
     a:focus,
     a:active {
         opacity: 1;
-        color: rgb(163, 128, 23);
+        color: var(--active);
     }
 
     .copyright {
@@ -115,9 +123,6 @@ import Social from './Social.astro';
 
     .footer-links-grid dl dt {
         margin-bottom: 0.5rem;
-    }
-    .footer-links-grid dl dt strong {
-        font-weight: 900;
     }
 
     .footer-bottom-container {

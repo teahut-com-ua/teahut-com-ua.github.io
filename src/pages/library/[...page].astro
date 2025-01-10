@@ -19,8 +19,8 @@ const pageNumber = page.currentPage
 ---
 
 <ArticleLayout title={title}>
-  <h1 class="last_line">{title}</h1>
-  <h4 class="last_line">сторінка {pageNumber}</h4>
+  <h1 class="last-line">{title}</h1>
+  <h4 class="last-line">сторінка {pageNumber}</h4>
 
   <section class="posts-preview">
     {
@@ -65,30 +65,25 @@ const pageNumber = page.currentPage
     
     .pagination-block > a {
         padding: 0.2rem 0.5rem 0.1rem;
-        border: 1px solid var(--foreground);
+        border: 1px solid light-dark(var(--foreground), var(--foreground-dark));
         border-radius: 0.5rem;
         font-size: 0.9rem;
-        color: var(--foreground);
+        color: light-dark(var(--foreground), var(--foreground-dark));
     }
-
-    :global(.dark) .pagination-block > a {
-        color: var(--foreground-dark);
-        border: 1px solid var(--foreground-dark);
-    }
-
-    .pagination-block > a:hover {
-        color: var(--active);
-        border: 1px solid var(--active);
-    }
-
+    
     @media(min-width: 48rem) {
         section.posts-preview {
             gap: 2rem;
             justify-content: space-between;
         }
-
+        
         .pagination-block {
             margin-bottom: 2rem;
+        }
+
+        .pagination-block > a:hover {
+            color: var(--active);
+            border: 1px solid var(--active);
         }
     }
 </style>

@@ -6,8 +6,8 @@ import BlogPost from "../../components/BlogPost.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = (await getCollection("gongfuchateatips"))
-        .filter((post: { data: { posted: boolean; }; }) => post.data.posted !== false)
-        .sort((a: { data: { pubDate: string | number | Date; }; }, b: { data: { pubDate: string | number | Date; }; }) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+        .filter((post) => post.data.posted !== false)
+        .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
     return paginate(allPosts, { pageSize: 12 });
 }) satisfies GetStaticPaths;
@@ -19,8 +19,8 @@ const pageNumber = `сторінка ${page.currentPage}`
 ---
 
 <ArticleLayout title={title}>
-  <h1 class="last_line">{title}</h1>
-  <h4 class="last_line">{pageNumber}</h4>
+  <h1 class="last-line">{title}</h1>
+  <h4 class="last-line">{pageNumber}</h4>
 
   <section class="posts-preview">
     {
@@ -54,7 +54,7 @@ const pageNumber = `сторінка ${page.currentPage}`
         flex-wrap: wrap;
         gap: 2em;
         place-content: start center;
-		margin-bottom: 2rem;
+		    margin-bottom: 2rem;
     }
 
     .pagination-block {
