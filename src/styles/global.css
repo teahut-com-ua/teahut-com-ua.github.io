@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand');
+/* @import url('https://fonts.googleapis.com/css?family=Just+Another+Hand'); */
+
 
 :root {
     color-scheme: light dark;
@@ -27,7 +28,7 @@
 
 html,
 body {
-    font-family: "Just Another Hand", cursive, "Inter", sans-serif;
+    font-family: "Inter", cursive, serif;
     font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
     background: light-dark(var(--background), var(--background-dark));
@@ -39,7 +40,7 @@ body {
 body {
     width: 100%;
     min-width: 320px;
-    max-width: 135ch;
+    max-width: 54rem;
     min-height: 100vh;
     margin: 0 auto;
     padding-top: 1rem;
