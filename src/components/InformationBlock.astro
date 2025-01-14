@@ -46,7 +46,9 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
             </div>
             <div class="tags last-line">
                 {tags.map((tag: unknown) => (
-                    <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+                    <button class="tag">
+                        <a type="button" aria-label="To Tag" href={`/tags/${tag}`}>{tag}</a>
+                    </button>
                 ))}
             </div>
         </div>
@@ -94,7 +96,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         color: rgb(0, 153, 33);
     }
 
-    a { color: var(--foreground); }
+    button>a { color: light-dark(var(--foreground), var(--background)); }
   
     .tags {
         display: flex;
@@ -102,16 +104,29 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         justify-content: center;
     }
   
-    .tag {
+    button.tag {
         margin: 0.25em;
         border: dotted 1px #7c7c7c;
         border-radius: .5em;
-        padding: .3rem .5rem .1rem;
-        font-size: .9rem;
+        padding: .3rem .5rem;
+        font-size: 1rem;
         background-color: var(--button);
+        cursor: pointer;
     }
 
-    .tag:hover { background-color: #a38017; }
+    .tag:hover>a {
+        color: var(--background);
+        transition: 0.3s;
+
+    }
+
+    .tag:hover { 
+        background-color: var(--active);
+        transition: 0.3s;
+        &a{
+            color: var(--background);
+        }
+    }
 
     @media screen  and (min-width: 48rem){
         .container {

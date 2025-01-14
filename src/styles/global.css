@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap'); */
 
 @font-face {
     font-family: RuteniaArial2009VasylChebanyk;
-    src: url(/public/fonts/RuteniaArial2009VasylChebanyk.woff2);
+    src: url(/fonts/RuteniaArial2009VasylChebanyk.woff2);
+}
+
+@font-face {
+    font-family: Gabriela;
+    src: url(/fonts/Gabriela.woff2);
 }
 
 :root {
     color-scheme: light dark;
-    font-family: 'RuteniaArial2009VasylChebanyk', 'Inter', cursive, sans-serif;
+    font-family: 'RuteniaArial2009VasylChebanyk', 'Gabriela', sans-serif;
     --background: oklch(92.82% 0.057 96.44);
     --foreground: oklch(24.84% 0.039 95.36); 
     --background-dark: oklch(24.43% 0.008 84.59);
@@ -174,7 +179,7 @@ figure>img.align-center {
 }
 
 @supports (font-variation-settings: normal) {
-    :root { font-family: 'RuteniaArial2009VasylChebanyk', 'Inter var', cursive, sans-serif; }
+    :root { font-family: 'RuteniaArial2009VasylChebanyk', 'Gabriela', sans-serif; }
 }
 
 @media(min-width: 48rem) {
