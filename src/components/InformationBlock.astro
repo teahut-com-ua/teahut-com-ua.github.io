@@ -20,37 +20,37 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
             image5alt={image5alt}
         />
     </div>
-        <div class="textInformation"> 
-            <div class="headerContainer">
-                <h1 class="title">{title}</h1>
-                <h4 class="subtitle">{subtitle}</h4>
-                <div class="yieldYear">
-                    <div>Врожай:</div>
-                    <div><p>{yieldYear}</p></div>
+    <div class="textInformation"> 
+        <div class="headerContainer">
+            <h1 class="title">{title}</h1>
+            <h4 class="subtitle">{subtitle}</h4>
+            <div class="yieldYear">
+                <div>Врожай:</div>
+                <div><p>{yieldYear}</p></div>
+            </div>
+            <div class="region">
+                <div class="heading">Походження:</div>
+                <div class="content"><p>{region}</p></div>
+            </div>
+            <div class="variety">
+                <div class="heading">Різновид:</div>
+                <div><p>{variety}</p></div>
+            </div>
+            <div class="priceBlock">
+                <div>
+                    <p>{item}: </p>
                 </div>
-                <div class="region">
-                    <div class="heading">Походження:</div>
-                    <div class="content"><p>{region}</p></div>
-                </div>
-                <div class="variety">
-                    <div class="heading">Різновид:</div>
-                    <div><p>{variety}</p></div>
-                </div>
-                <div class="priceBlock">
-                    <div>
-                        <p>{item}: </p>
-                    </div>
-                    <div>
-                        <p><span class="price">{exchangePrice(price)}</span> грн.</p>
-                    </div>
-                </div>
-                <div class="tags last-line">
-                    {tags.map((tag: unknown) => (
-                      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-                    ))}
+                <div>
+                    <p><span class="price">{exchangePrice(price)}</span> грн.</p>
                 </div>
             </div>
+            <div class="tags last-line">
+                {tags.map((tag: unknown) => (
+                    <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+                ))}
+            </div>
         </div>
+    </div>
 </div>
 
 <style>
@@ -124,7 +124,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         .slider {
             height: 100%;
             width: 100%
-            margin: 0 auto;; */
+            margin: 0 auto;
         }
         .textInformation {
             grid-column: 2/3;

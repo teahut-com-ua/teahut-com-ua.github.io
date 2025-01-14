@@ -1,8 +1,13 @@
-/* @import url('https://fonts.googleapis.com/css?family=Just+Another+Hand'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 
+@font-face {
+    font-family: RuteniaArial2009VasylChebanyk;
+    src: url(/public/fonts/RuteniaArial2009VasylChebanyk.woff2);
+}
 
 :root {
     color-scheme: light dark;
+    font-family: 'RuteniaArial2009VasylChebanyk', 'Inter', cursive, sans-serif;
     --background: oklch(92.82% 0.057 96.44);
     --foreground: oklch(24.84% 0.039 95.36); 
     --background-dark: oklch(24.43% 0.008 84.59);
@@ -28,7 +33,6 @@
 
 html,
 body {
-    font-family: "Inter", cursive, serif;
     font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
     background: light-dark(var(--background), var(--background-dark));
@@ -167,6 +171,10 @@ iframe.align-center {
 figure>img.align-center {
     display:block;
     margin: 1rem auto;
+}
+
+@supports (font-variation-settings: normal) {
+    :root { font-family: 'RuteniaArial2009VasylChebanyk', 'Inter var', cursive, sans-serif; }
 }
 
 @media(min-width: 48rem) {

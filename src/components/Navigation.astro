@@ -81,11 +81,15 @@ import Logo from './Logo.astro';
         color: var(--background);
     }
 
+    button {
+      border: 0;
+    }
+
     .logo-btn{
       display: flex;
         border-radius: 100%;
         border-width: 0;
-        background-color: var(--foreground-dark);
+        background-color: light-dark(var(--background), var(--foreground-dark));
         width: 56px;
         cursor: pointer;
     }
@@ -100,12 +104,12 @@ import Logo from './Logo.astro';
         justify-content: center;
         align-items: center;
         border-radius: 100%;
-        border-left: 2px solid light-dark(var(--foreground), var(--background)); 
+        border-right: 2px solid light-dark(var(--foreground), var(--background)); 
         border-top: 2px solid light-dark(var(--foreground), var(--background));
         border-bottom: 2px solid light-dark(var(--foreground), var(--background));
         /* border-width: 2px; */
         /* border-color: var(--foreground); */
-        background-color: var(--foreground-dark);
+        background-color: light-dark(var(--background), var(--foreground-dark));
         width: 56px;
         height: 56px;
         cursor: pointer;
@@ -220,7 +224,7 @@ import Logo from './Logo.astro';
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 48rem) {
         .menu-btn, .close-btn {
             display: none;
         }
@@ -249,10 +253,16 @@ import Logo from './Logo.astro';
         }
 
         .link4 {
+          width: 56px;
+          height: 56px;
           grid-area: link4;
           display: flex;
           justify-content: center;
           align-items: center;
+          border-radius: 100%;
+          border-right: 2px solid light-dark(var(--foreground), var(--background)); 
+          border-top: 2px solid light-dark(var(--foreground), var(--background));
+          border-bottom: 2px solid light-dark(var(--foreground), var(--background));
         }
 
         .link:not(.home-link) {
@@ -265,7 +275,8 @@ import Logo from './Logo.astro';
             opacity: 0.7;
         }
 
-        .link:hover:not(.link4),
+        .link:hover,
+        .link4:hover,
         .home-link:hover,
         .link:active {
             padding: 0 .5rem;
@@ -274,6 +285,10 @@ import Logo from './Logo.astro';
             border: solid 1px var(--active);
             color: light-dark(var(--background), var(--active));
             opacity: 1;
+        }
+
+        .link4:hover {
+          border-radius: 100%;
         }
   }
 </style>

@@ -77,11 +77,11 @@ const pageNumber = `сторінка ${page.currentPage}`
 			))}
 		</div>
 	</section>
-    <h5 class="page-number">{pageNumber}</h5>
-    <div class="pagination-block">
-        {page.url.prev && <a href={page.url.prev}>Попередня</a>}
-        {page.url.next && <a href={page.url.next}>Наступна</a>}
-    </div>
+	<h5 class="page-number">{pageNumber}</h5>
+	<div class="pagination-block">
+		{page.url.prev && <a href={page.url.prev}>Попередня</a>}
+		{page.url.next && <a href={page.url.next}>Наступна</a>}
+	</div>
 </ArticleLayout>
 
 <style>
