@@ -96,7 +96,11 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         color: rgb(0, 153, 33);
     }
 
-    button>a { color: light-dark(var(--foreground), var(--background)); }
+    button>a { 
+        color: light-dark(var(--foreground), var(--background));
+        padding: .3rem .5rem;
+        display: block;
+    }
   
     .tags {
         display: flex;
@@ -105,10 +109,10 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
     }
   
     button.tag {
+        padding: .3rem .5rem;
         margin: 0.25em;
         border: dotted 1px #7c7c7c;
         border-radius: .5em;
-        padding: .3rem .5rem;
         font-size: 1rem;
         background-color: var(--button);
         cursor: pointer;
