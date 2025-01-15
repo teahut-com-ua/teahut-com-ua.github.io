@@ -95,6 +95,8 @@ import Logo from './Logo.astro';
         cursor: pointer;
     }
 
+
+
     .menu-btn {
         /* position: fixed;
         top: 1rem;
@@ -277,15 +279,21 @@ import Logo from './Logo.astro';
         }
 
         .link:hover,
-        .link4:hover,
         .home-link:hover,
         .link:active {
-            padding: 0 .5rem;
-            background-color: light-dark(var(--foreground), var(--footer));
-            border-radius: 9px;
-            border: solid 1px var(--active);
-            color: light-dark(var(--background), var(--active));
-            opacity: 1;
+          padding: 0 .5rem;
+          background-color: light-dark(var(--foreground), var(--footer));
+          border-radius: 9px;
+          border: solid 1px var(--active);
+          color: light-dark(var(--background), var(--active));
+          opacity: 1;
+        }
+        
+        .link4:hover,
+        .header-logo:hover {
+          color: light-dark(var(--foreground), var(--active));
+          border: solid 3px var(--active);
+          border-radius: 100%;
         }
 
         .link4:hover {

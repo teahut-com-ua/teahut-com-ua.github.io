@@ -3,16 +3,16 @@ import { getCollection } from "astro:content";
 import MainLayout from '../../layouts/MainLayout.astro';
 
 const allTeas = await getCollection("teas");
-const tags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
-const pageTitle = "Позначки чаїв";
+const categories = [...new Set(allTeas.map((tea) => tea.data.category).flat())];
+const pageTitle = "Категорії чаїв";
 ---
 
 <MainLayout {pageTitle}>
   <div class="container">
     <h1>{pageTitle}:</h1>
-      <div class="tags last-line">
-          {tags.map((tag) => (
-              <p class="tag"><a href={`/tags/${tag}/`}>{tag}</a></p>
+      <div class="categories last-line">
+          {categories.map((category) => (
+              <p class="category"><a href={`/categories/${category}/`}>{category}</a></p>
           ))}
       </div>
   </div>
@@ -25,14 +25,14 @@ const pageTitle = "Позначки чаїв";
       display: block;
     }
   
-    .tags {
+    .categories {
       margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
   
-    .tag {
+    .category {
       margin: 0.25em;
       border: dotted 1px #7c7c7c;
       border-radius: .5em;
@@ -48,7 +48,7 @@ const pageTitle = "Позначки чаїв";
 
       a:hover, a:focus-visible { color: light-dark(var(--background), var(--background-dark));}
 
-      .tag:hover,
+      .category:hover,
       a:focus-visible { background-color: var(--active); }
 
     }

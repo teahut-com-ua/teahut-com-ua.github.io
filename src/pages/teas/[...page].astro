@@ -14,6 +14,8 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const pageTitle = "Наші чаї";
+const allTeas = await getCollection("teas");
+const categories = [...new Set(allTeas.map((tea) => tea.data.category).flat())];
 const { page } = Astro.props;
 const pageNumber = `сторінка ${page.currentPage}`
 ---
@@ -21,6 +23,12 @@ const pageNumber = `сторінка ${page.currentPage}`
 <ArticleLayout {pageTitle}>
 	<section>
 		<h1 class="last-line">{pageTitle}:</h1>
+
+		<div class="categories-btn last-line">
+			{categories.map((category) => (
+				<p class="category-btn"><a href={`/categories/${category}/`}>{category}</a></p>
+			))}
+		</div>
 		
 		<div class="tea-block">
 			{page.data.map((tea) => (
@@ -43,7 +51,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 							<date class="pub-date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
 							<p class="price-row"><span class="price">{exchangePrice(tea.data.price)}</span>&#8372; / 10гр</p>
 						</div>
-						<p class="categories" data-category={tea.data.category}></p>
+						<a href={`/categories/${tea.data.category}/`} class="categories" data-category={tea.data.category}></a>
 					</div>
 				</article>
 			))}
@@ -66,6 +74,27 @@ const pageNumber = `сторінка ${page.currentPage}`
 	}
 
 	.tea-block article { width: 100%; }
+
+	.category-btn>a {
+      color: light-dark (var(--foreground), var(--foreground-dark));
+      padding: .3rem .5rem;
+      display: block;
+    }
+
+	.categories-btn {
+		margin-top: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+    }
+  
+    .category-btn {
+		margin: 0.25em;
+		border: dotted 1px #7c7c7c;
+		border-radius: .5em;
+		font-size: 1.1rem;
+		background-color: var(--button);
+    }
 
 	article {
 		container-type: inline-size;
@@ -198,6 +227,11 @@ const pageNumber = `сторінка ${page.currentPage}`
 			gap: 2rem;
 			justify-content: space-between;
 		}
+
+		.category-btn>a:hover, .category-btn>a:focus-visible { color: light-dark(var(--background), var(--background-dark));}
+
+		.category-btn:hover,
+		a:focus-visible { background-color: var(--active); }
 
 		.tea-block article { width: calc(50% - 1rem); }
 
