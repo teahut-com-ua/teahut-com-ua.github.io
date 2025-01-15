@@ -2,8 +2,9 @@
 import { getCollection } from "astro:content";
 import MainLayout from '../../layouts/MainLayout.astro';
 
-const allTeas = await getCollection("teas");
-const tags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
+const allTeas = await getCollection("teas")
+const filteredTeas = allTeas.filter((tea) => tea.data.posted !== false);
+const tags = [...new Set(filteredTeas.map((tea) => tea.data.tags).flat())];
 const pageTitle = "Позначки чаїв";
 ---
 

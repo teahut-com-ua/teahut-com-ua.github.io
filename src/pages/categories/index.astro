@@ -3,7 +3,8 @@ import { getCollection } from "astro:content";
 import MainLayout from '../../layouts/MainLayout.astro';
 
 const allTeas = await getCollection("teas");
-const categories = [...new Set(allTeas.map((tea) => tea.data.category).flat())];
+const filteredTeas = allTeas.filter((tea) => tea.data.posted !== false);
+const categories = [...new Set(filteredTeas.map((tea) => tea.data.category).flat())];
 const pageTitle = "Категорії чаїв";
 ---
 
