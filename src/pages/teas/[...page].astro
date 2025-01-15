@@ -21,35 +21,7 @@ const pageNumber = `сторінка ${page.currentPage}`
 <ArticleLayout {pageTitle}>
 	<section>
 		<h1 class="last-line">{pageTitle}:</h1>
-		<form class="tea-picker">
-			<fieldset>
-				<legend>Відфільтрувати за категоріями:</legend>
-					<label>
-						<input type="checkbox" name="shengcha" checked />
-						Шени
-					</label>
-					<label>
-						<input type="checkbox" name="heicha" checked />
-						Чорні та Шу
-					</label>
-					<label>
-						<input type="checkbox" name="hongcha" checked />
-						Червоні
-					</label>
-					<label>
-						<input type="checkbox" name="baicha&lucha" checked />
-						Білі й Зелені
-					</label>
-					<label>
-						<input type="checkbox" name="wulong&gaba" checked />
-						Вулони й ҐАБА
-					</label>
-					<label>
-						<input type="checkbox" name="japanese" checked />
-						Японські
-					</label>
-			</fieldset>
-		</form>
+		
 		<div class="tea-block">
 			{page.data.map((tea) => (
 				<article>
@@ -95,82 +67,9 @@ const pageNumber = `сторінка ${page.currentPage}`
 
 	.tea-block article { width: 100%; }
 
-	form {
-		display: flex;
-		flex-direction: column;
-		background-color: light-dark(var(--button), var(--foreground));
-		border: 1px solid light-dark(var(--button), var(--active));
-		border-radius: .8rem;
-		font-size: 1rem;
-		margin-block-end: 2rem;
-		justify-content: center;
-		padding: 1rem;
-		box-shadow:
-			2.8px 2.8px 17.4px rgba(0, 0, 0, 0.035),
-			6.7px 6.7px 28px rgba(0, 0, 0, 0.045),
-			12.5px 12.5px 34.9px rgba(0, 0, 0, 0.051),
-			22.3px 22.3px 40.7px rgba(0, 0, 0, 0.055),
-			41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
-			100px 100px 80px rgba(0, 0, 0, 0.07);
-	}
-
-	.tea-picker > fieldset {
-		border: 0;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.7rem;
-	}
-
-	legend {
-		margin-bottom: 0.7rem;
-	}
-	
-	input {
-		accent-color: var(--green);
-	}
-	
-	form p {
-		line-height: 1;
-		margin-bottom: .7rem;
-	}
-	
-	.boxes {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 1rem;
-
-	}
-	
-	label,
-	input {
-		align-items: baseline;
-		color: inherit;
-		font-size: 1rem;
-		line-height: 1;
-		margin: 0;
-		padding: 0;
-	}
-	
-	input {
-		block-size: 1rem;
-		inline-size: 1rem;
-		position: relative;
-		inset-block-start: 0.125rem;
-	}
-
-	section:has([name="shengcha"]:checked) article:has([data-category="shengcha"]),
-	section:has([name="heicha"]:checked) article:has([data-category="heicha"]),
-	section:has([name="hongcha"]:checked) article:has([data-category="hongcha"]),
-	section:has([name="baicha&lucha"]:checked) article:has([data-category="baicha&lucha"]),
-	section:has([name="wulong&gaba"]:checked) article:has([data-category="wulong&gaba"]),
-	section:has([name="japanese"]:checked) article:has([data-category="japanese"]) {
-		display: block;
-	}
-
 	article {
 		container-type: inline-size;
-		display: none;
+		display: block;
 		margin: 0;
 	}
 

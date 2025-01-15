@@ -21,7 +21,7 @@ image4alt: Настій десятої чашки
 image5: "/src/assets/teas/2009-liubao/slide5.jpg"
 image5alt: Спите листя
 category: ["heicha"]
-tags: ["LiuBao", "Heicha", "AgedTea", "TeaTrees"]
+tags: ["Любао", "Хейча", "Витримані", "Чаї з дерев"]
 ---
 
 Витриманий Лю Бао

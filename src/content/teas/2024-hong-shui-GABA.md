@@ -21,7 +21,7 @@ image4alt: Колір десятої чашки
 image5: "/src/assets/teas/2024-hong-shui-GABA/slide5.jpg"
 image5alt: Окремі листочки
 category: ["wulong&gaba"]
-tags: ["GABA", "TeaBushes"]
+tags: ["ҐАБА", "Чаї з кущів"]
 ---
 
 Різновид куща Сі Дзі Чвень, чай має МОА сертифікат органічности.

@@ -21,7 +21,7 @@ image4alt: Десята чашка
 image5: "/src/assets/teas/2004-manzhuang-sheng/slide5.jpg"
 image5alt: Спите листя (чайне дно)
 category: ["shengcha"]
-tags: ["ShengPuerh", "AgedTea", "GuShuCha", "TeaTrees"]
+tags: ["Шен Пуери", "Витримані", "Ґу Шу", "Чаї з дерев"]
 ---
 
 Є щось невимовно особливе в чаях зі славнозвісних Шести Стародавніх Чайних гір. Зрештою, відомі вони не лише за дивовижні краєвиди...

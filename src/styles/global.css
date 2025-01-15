@@ -1,6 +1,6 @@
 @font-face {
-    font-family: RuteniaArial2009VasylChebanyk;
-    src: url(/fonts/RuteniaArial2009VasylChebanyk.woff2);
+    font-family: InterTightRegular;
+    src: url(/public/fonts/InterTightRegular.woff2);
 }
 
 @font-face {
@@ -8,9 +8,15 @@
     src: url(/fonts/Gabriela.woff2);
 }
 
+@font-face {
+    font-family: RuteniaArial2009VasylChebanyk;
+    src: url(/fonts/RuteniaArial2009VasylChebanyk.woff2);
+}
+
+
 :root {
     color-scheme: light dark;
-    font-family: 'RuteniaArial2009VasylChebanyk', 'Gabriela', sans-serif;
+    font-family: 'InterTightRegular', 'RuteniaArial2009VasylChebanyk', 'Gabriela', cursive, sans-serif;
     --background: oklch(92.82% 0.057 96.44);
     --foreground: oklch(24.84% 0.039 95.36); 
     --background-dark: oklch(24.43% 0.008 84.59);
@@ -177,7 +183,7 @@ figure>img.align-center {
 }
 
 @supports (font-variation-settings: normal) {
-    :root { font-family: 'RuteniaArial2009VasylChebanyk', 'Gabriela', sans-serif; }
+    :root { font-family: 'InterTightRegular var', cursive, sans-serif; }
 }
 
 @media(min-width: 48rem) {
