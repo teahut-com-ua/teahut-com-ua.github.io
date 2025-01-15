@@ -36,7 +36,6 @@ const pageTitle = "Позначки чаїв";
       margin: 0.25em;
       border: dotted 1px #7c7c7c;
       border-radius: .5em;
-      padding: .3rem .5rem;
       font-size: 1.1rem;
       background-color: var(--button);
     }
@@ -47,6 +46,7 @@ const pageTitle = "Позначки чаїв";
     @media(min-width: 48rem) {
       .container { padding: 3rem 4rem 1rem; }
 
-      .tag:hover { background-color: var(--active); }
+      .tag:hover,
+      a:focus { background-color: var(--active); }
     }
 </style>
