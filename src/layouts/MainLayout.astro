@@ -13,7 +13,38 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
 		<Navigation />
         <main data-pagefind-body>
 			<slot />
+			<div class="container">
+				<h4 class="header">Пошук на сайті</h4>
+				<div id="search"></div>
+				<script>
+					window.addEventListener('DOMContentLoaded', (event) => {
+						//@ts-ignore
+						new PagefindUI({
+							element: "#search", 
+							debounceTimeoutMs: 500,
+							showEmptyFilters: false,
+							showSubResults: true, 
+						});
+					});
+				</script>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+		
+		<style>
+			.container {
+				padding: 1rem 1rem 1.5rem;
+				background-color: var(--button);
+				color: var(--active);
+			}
+
+			.header {
+				color: var(--header);
+			}
+		
+			@media(min-width: 48rem) {
+				.container { padding: 1rem 4rem 1.5rem; }
+			}
+		</style>

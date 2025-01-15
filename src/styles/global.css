@@ -5,7 +5,7 @@
     --foreground: oklch(24.84% 0.039 95.36); 
     --background-dark: oklch(24.43% 0.008 84.59);
     --foreground-dark: oklch(79.64% 0.04 95.94);
-    --header: oklch(23.07% 0.037 96.74);
+    --header: oklch(30% 0.0533 102.55);
     --footer: oklch(20% 0.031 96.93);
     --button: oklch(72.18% 0.093 108.52 / 52%);
     --green: oklch(46% 0.12 144 / 90%);
@@ -16,13 +16,13 @@
     --animation-timing: 200ms;
 
     --pagefind-ui-scale: 1;
-    --pagefind-ui-primary: var(--active);
-    --pagefind-ui-text: light-dark(var(--background-dark), var(--foreground-dark));
-    --pagefind-ui-background: light-dark((#fdf3d5), var(--foreground));
-    --pagefind-ui-border: rgb(175, 174, 174);
+    --pagefind-ui-primary: var(--header);
+    --pagefind-ui-text: var(--footer);
+    --pagefind-ui-background: oklch(83% 0.1 93.5);
+    --pagefind-ui-border: rgb(146, 142, 142);
     --pagefind-ui-tag: #dad8d8;
-    --pagefind-ui-border-width: 2px;
-    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-border-width: 3px;
+    --pagefind-ui-border-radius: 0.7rem;
     --pagefind-ui-image-border-radius: 8px;
     --pagefind-ui-image-box-ratio: 3 / 2;
     --pagefind-ui-font: sans-serif;
