@@ -1,22 +1,6 @@
-@font-face {
-    font-family: RuteniaArial2009VasylChebanyk;
-    src: url(/public/fonts/RuteniaArial2009VasylChebanyk.woff2);
-}
-
-@font-face {
-    font-family: Gabriela;
-    src: url(/fonts/Gabriela.woff2);
-}
-
-@font-face {
-    font-family: Rutenia2008VasylChebanyk;
-    src: url(/fonts/RuteniaArial2009VasylChebanyk.woff2);
-}
-
 
 :root {
     color-scheme: light dark;
-    font-family: 'Gabriela', 'RuteniaArial2009VasylChebanyk', sans-serif;
     --background: oklch(92.82% 0.057 96.44);
     --foreground: oklch(24.84% 0.039 95.36); 
     --background-dark: oklch(24.43% 0.008 84.59);
@@ -180,10 +164,6 @@ iframe.align-center {
 figure>img.align-center {
     display:block;
     margin: 1rem auto;
-}
-
-@supports (font-variation-settings: normal) {
-    :root { font-family: 'Gabriela', sans-serif; }
 }
 
 @media(min-width: 48rem) {
