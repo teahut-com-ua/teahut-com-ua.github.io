@@ -95,12 +95,7 @@ import Logo from './Logo.astro';
         cursor: pointer;
     }
 
-
-
     .menu-btn {
-        /* position: fixed;
-        top: 1rem;
-        right: 1rem; */
         padding: 0.5rem;
         color: var(--foreground);
         display: flex;
@@ -110,8 +105,6 @@ import Logo from './Logo.astro';
         border-right: 2px solid light-dark(var(--foreground), var(--background)); 
         border-top: 2px solid light-dark(var(--foreground), var(--background));
         border-bottom: 2px solid light-dark(var(--foreground), var(--background));
-        /* border-width: 2px; */
-        /* border-color: var(--foreground); */
         background-color: light-dark(var(--background), var(--foreground-dark));
         width: 56px;
         height: 56px;
@@ -232,6 +225,13 @@ import Logo from './Logo.astro';
             display: none;
         }
 
+        .navigation {
+            margin: 0 1rem;
+            grid-template-columns: 56px 3% repeat(3, auto) 15% 56px;
+            grid-template-areas:
+            "logo . link1 link2 link3 . link4";
+        }
+
         .link2, .link3, .link4 {
           display: block;
           font-size: 1.5rem;
@@ -240,11 +240,10 @@ import Logo from './Logo.astro';
           opacity: 0.7;
         }
 
-        .navigation {
-            margin: 0 1rem;
-            grid-template-columns: 56px 3% repeat(3, auto) 15% 56px;
-            grid-template-areas:
-            "logo . link1 link2 link3 . link4";
+        a.home-link,
+        a.link {
+          padding: 0 0.5rem;
+          opacity: 0.7;
         }
 
         .link2 {
@@ -268,22 +267,10 @@ import Logo from './Logo.astro';
           border-bottom: 2px solid light-dark(var(--foreground), var(--background));
         }
 
-        .link:not(.home-link) {
-            display: flex;
-            padding: 0;
-            opacity: 0.7;
-        }
-
-        .home-link {
-            opacity: 0.7;
-        }
-
         .link:hover,
-        .home-link:hover,
-        .link:active {
-          padding: 0 .5rem;
+        .home-link:hover {
           background-color: light-dark(var(--foreground), var(--footer));
-          border-radius: 9px;
+          border-radius: 0.5rem;
           border: solid 1px var(--active);
           color: light-dark(var(--background), var(--active));
           opacity: 1;

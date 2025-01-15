@@ -1,12 +1,24 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 
-const pageTitle = "Пошук"
+const pageTitle = "Пошук на сайті:"
 ---
 
 <MainLayout {pageTitle}>
 	<div class="container">
 		<h1>{pageTitle}</h1>
+		<div id="search"></div>
+		<script>
+			window.addEventListener('DOMContentLoaded', (event) => {
+				//@ts-ignore
+        		new PagefindUI({
+					element: "#search", 
+					debounceTimeoutMs: 500,
+					showEmptyFilters: false,
+					showSubResults: true, 
+				});
+			});
+		</script>
 	</div>
 </MainLayout>
 
