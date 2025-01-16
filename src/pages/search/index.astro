@@ -7,18 +7,6 @@ const pageTitle = "Пошук на сайті:"
 <MainLayout {pageTitle}>
 	<div class="container">
 		<h1>{pageTitle}</h1>
-		<div id="search"></div>
-		<script>
-			window.addEventListener('DOMContentLoaded', (event) => {
-				//@ts-ignore
-        		new PagefindUI({
-					element: "#search", 
-					debounceTimeoutMs: 500,
-					showEmptyFilters: false,
-					showSubResults: true, 
-				});
-			});
-		</script>
 	</div>
 </MainLayout>
 
@@ -26,6 +14,7 @@ const pageTitle = "Пошук на сайті:"
 	.container { padding: 3rem 1rem 1rem; }
 
 	@media(min-width: 48rem) {
-		.container { padding: 3rem 4rem 1rem; }
+		.container { padding: 3rem 5rem 1rem; }
+		h1 { margin-bottom: 0; }
 	}
 </style>

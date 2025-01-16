@@ -14,7 +14,7 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
         <main data-pagefind-body>
 			<slot />
 			<div class="container">
-				<h4 class="header">Пошук на сайті</h4>
+				<!-- <h4 class="header">Пошук на сайті</h4> -->
 				<div id="search"></div>
 				<script>
 					window.addEventListener('DOMContentLoaded', (event) => {
@@ -35,7 +35,7 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
 		
 		<style>
 			.container {
-				padding: 1rem 1rem 1.5rem;
+				padding: 1.5rem 1rem;
 				background-color: var(--button);
 				color: var(--active);
 			}
@@ -45,6 +45,6 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
 			}
 		
 			@media(min-width: 48rem) {
-				.container { padding: 1rem 4rem 1.5rem; }
+				.container { padding: 1.5rem 5rem; }
 			}
 		</style>
