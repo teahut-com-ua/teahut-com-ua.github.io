@@ -2,9 +2,9 @@
 import InformationBlock from '../components/InformationBlock.astro';
 import MainLayout from './MainLayout.astro';
 
-const { frontmatter } = Astro.props;
+const { frontmatter, width2, height2, margin2, color2, background2, word2 } = Astro.props;
 ---
-<MainLayout pageTitle={frontmatter.title}>
+<MainLayout pageTitle={frontmatter.title} {width2} {height2} {margin2} {color2} {background2} {word2}>
         <InformationBlock
             image1={frontmatter.image1}
             image2={frontmatter.image2}
