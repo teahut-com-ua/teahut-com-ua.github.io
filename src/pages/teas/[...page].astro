@@ -18,10 +18,17 @@ const allTeas = await getCollection("teas");
 const filteredTeas = allTeas.filter((tea) => tea.data.posted !== false);
 const categories = [...new Set(filteredTeas.map((tea) => tea.data.category).flat())];
 const { page } = Astro.props;
-const pageNumber = `сторінка ${page.currentPage}`
+const pageNumber = `сторінка ${page.currentPage}`;
+
+const width2 = "100%";
+const height2 = "100%";
+const margin2 = "0.3rem 0 0 0.5rem";
+const color2 = "var(--background)";
+const background2 = "var(--nav-item-back)";
+const word2 = "Чай";
 ---
 
-<ArticleLayout {pageTitle}>
+<ArticleLayout {pageTitle} {width2} {height2} {margin2} {color2} {background2} {word2}>
 	<section>
 		<h1 class="last-line">{pageTitle}:</h1>
 

@@ -3,8 +3,29 @@ import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import MobileNavigation from '../components/MobileNavigation.astro';
 
 const { pageTitle = "Чайна Хатинка" } = Astro.props;
+const {
+	width1, 
+	height1, 
+	margin1, 
+	color1, 
+	background1,
+	word1,
+	width2, 
+	height2, 
+	margin2, 
+	color2, 
+	background2,
+	word2,
+	width3,
+	height3, 
+	margin3, 
+	color3, 
+	background3,
+	word3
+} = Astro.props;
 ---
 
 <html lang="uk">
@@ -29,6 +50,7 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
 			</div>
 		</main>
 		<Footer />
+		<MobileNavigation {width1} {height1} {margin1} {color1} {background1} {word1} {width2} {height2} {margin2} {color2} {background2} {word2} {width3} {height3} {margin3} {color3} {background3} {word3}/>
 	</body>
 </html>
 		

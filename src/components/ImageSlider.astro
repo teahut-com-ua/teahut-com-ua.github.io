@@ -296,36 +296,3 @@ const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = imag
 		}
 	}
 </style>
-
-<!-- <script>
-    document.addEventListener("astro:page-load", () => {
-
-		const list = document.querySelector(".list");
-		const items = Array.from(document.querySelectorAll(".slide"));
-		const indicators = Array.from(document.querySelectorAll(".indicator"));
-
-		const observer = new IntersectionObserver(onIntersectionObserved, {
-			root: list,
-			threshold: 0.6
-		});
-
-		function onIntersectionObserved(entries: any) {
-			entries.forEach((entry: any) => {
-				if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-					const intersectingIndex = items.indexOf(entry.target);
-					activateIndicator(intersectingIndex);
-				}
-			});
-		}
-
-		function activateIndicator(index: number) {
-  			indicators.forEach((indicator, i) => {
-    			indicator.classList.toggle("active", i === index);
-  			});
-		}
-
-		items.forEach(item => {
-  			observer.observe(item);
-		});
-	});
-</script> -->

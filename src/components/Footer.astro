@@ -64,8 +64,8 @@ import { Icon } from 'astro-icon/components';
         </dl>
     </nav>
     <div class="footer-bottom-container">
-      <p class="copyright">&copy; 2014-{new Date().getFullYear()} TEAHUT.COM.UA</p>
-      <Social />
+        <Social />
+        <p class="copyright">&copy; 2014-{new Date().getFullYear()} TEAHUT.COM.UA</p>
     </div>
 </footer>
 
@@ -110,7 +110,7 @@ import { Icon } from 'astro-icon/components';
 
     .footer-links-grid {
         padding: 5vh 0 9vh;
-        display: grid;
+        display: none;
         grid-template-columns: 1fr;
         gap: 2rem;
     }
@@ -126,13 +126,13 @@ import { Icon } from 'astro-icon/components';
     }
 
     .footer-bottom-container {
-        padding: 0 0 1rem 0;
+        padding: 1rem 0 6rem 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .copyright {
@@ -151,14 +151,16 @@ import { Icon } from 'astro-icon/components';
         }
 
         .footer-bottom-container {
-        flex-direction: row;
-        gap: unset;
-        font-size: 1rem;
+            padding: 1rem 0 6rem 0;
+            flex-direction: row;
+            gap: unset;
+            font-size: 1.1rem;
         }
     }
 
     @media(min-width: 768px) {
         .footer-links-grid {
+            display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
         }

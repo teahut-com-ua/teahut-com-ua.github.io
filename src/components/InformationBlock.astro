@@ -20,7 +20,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
             image5alt={image5alt}
         />
     </div>
-    <div class="textInformation"> 
+    <div class="text-information"> 
         <div class="headerContainer">
             <h1 class="title">{title}</h1>
             <h4 class="subtitle">{subtitle}</h4>
@@ -60,7 +60,12 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         margin: 2rem auto 0;
     }
 
-    .information {
+    .slider {
+        width: 100%;
+    }
+
+    .text-information {
+        width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -96,7 +101,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         color: rgb(0, 153, 33);
     }
 
-    button > a { 
+    button>a { 
         color: light-dark(var(--foreground), var(--background));
         padding: .3rem .5rem;
         display: block;

@@ -59,7 +59,7 @@ import Logo from './Logo.astro';
                 <Icon name="sun-filled" size={24} />
                 <input 
                     class="visually-hidden"
-                    name="color-scheme-mobile" 
+                    name="color-scheme" 
                     type="radio" 
                     value="light"
                     id="light"
@@ -69,7 +69,7 @@ import Logo from './Logo.astro';
                 <Icon name="moon-filled" size={24} />
                 <input 
                     class="visually-hidden"
-                    name="color-scheme-mobile" 
+                    name="color-scheme" 
                     type="radio" 
                     value="dark"
                     id="dark"
@@ -124,7 +124,7 @@ import Logo from './Logo.astro';
   }
 
   .home-link {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
     grid-area: home-link;
     color: light-dark(var(--foreground), var(--background));
@@ -347,10 +347,35 @@ import Logo from './Logo.astro';
       border-radius: 100%;
     }
 
-    label:has(input[name="color-scheme"][value="light"]:checked),
-    label:has(input[name="color-scheme"][value="dark"]:checked) {
+    label:has(input[name="color-scheme"][type="radio"]:checked) {
       color: var(--active);
       border: 1px solid var(--active);
       border-radius: 100%;
-    }    
+    }
+  }
 </style>
+
+<script is:inline>
+  const colorThemes = document.querySelectorAll('[name="color-scheme"]')
+
+  const storeTheme = function(theme) {
+    sessionStorage.setItem("theme", theme);
+  }
+
+  colorThemes.forEach((themeOption) => {
+    themeOption.addEventListener("click", () => {
+      storeTheme(themeOption.id);
+    })
+  });
+
+  const retrieveTheme = function() {
+    const activeTheme = sessionStorage.getItem("theme");
+    colorThemes.forEach((themeOption) => {
+      if (themeOption.id === activeTheme) {
+        themeOption.checked = true;
+      }
+    })
+  }
+
+  document.onload = retrieveTheme();
+</script>
