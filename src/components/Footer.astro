@@ -64,8 +64,8 @@ import { Icon } from 'astro-icon/components';
         </dl>
     </nav>
     <div class="footer-bottom-container">
-        <Social />
         <p class="copyright">&copy; 2014-{new Date().getFullYear()} TEAHUT.COM.UA</p>
+        <Social />
     </div>
 </footer>
 
@@ -137,6 +137,7 @@ import { Icon } from 'astro-icon/components';
 
     .copyright {
         text-align: center;
+        order: 5;
     }
 
     @media(min-width: 480px) {
@@ -155,6 +156,10 @@ import { Icon } from 'astro-icon/components';
             flex-direction: row;
             gap: unset;
             font-size: 1.1rem;
+        }
+
+        .copyright {
+            order: 0;
         }
     }
 
