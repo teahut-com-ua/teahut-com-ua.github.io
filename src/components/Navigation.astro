@@ -9,48 +9,44 @@ import logo from '../../public/logo.png';
       <Image class="logo" src={logo} alt="Logo" />
   </a>
   <a class="home-link" href="/" aria-label="To Home" data-astro-prefetch>Майстерня Ча Дао</a>
+
   <nav class="desktop-menu">
-    <a class="link1 link" href="/" aria-label="To Home" data-astro-prefetch>Майстерня</a>
-    <div>
-      <a class="link2 link" href="/teas/" aria-label="To Teas" data-astro-prefetch>Ча</a>
-      <a class="link3 link" href="/library/" aria-label="To Articles" data-astro-prefetch>Дао</a>
-    </div>
+    <ul class="menu">
+      <li>
+        <h5 class="first-header link">Майстерня</h5>
+        <ul>
+          <li><a class="menu-link" href='/'><Icon name="hut" size={24} /> Хатинка</a></li>
+          <li><a class="menu-link" href='/our-tradition/'>Наша Традиція</a></li>
+          <li><a class="menu-link" href='/about/'>Про нас</a></li>
+          <li><a class="menu-link" href='/'>Про нашу крамничку</a></li>
+      </ul>
+      </li>
+      <li>
+          <h5 class="second-header link">Ча</h5>
+          <ul>
+              <li><a class="menu-link" href='/teas/'><Icon name="teapot-leaves" size={24} /> Усі чаї</a></li>
+              <li><a class="menu-link" href='/categories/shengcha/'>Шен пуери</a></li>
+              <li><a class="menu-link" href='/categories/heicha/'>Шу пуери й Хейча</a></li>
+              <li><a class="menu-link" href='/categories/hongcha/'>Червоні чаї</a></li>
+              <li><a class="menu-link" href='/categories/wulong&gaba/'>Вулони й ҐАБА</a></li>
+              <li><a class="menu-link" href='/categories/baicha&lucha/'>Білі й Зелені</a></li>
+              <li><a class="menu-link" href='/categories/japanese/'>Японські</a></li>
+              <li><a class="menu-link" href='/tags/'>Позначки чаїв</a></li>
+          </ul>
+      </li>
+      <li class="third-block">
+        <h5 class="menu-link link">Дао</h5>
+          <ul>
+            <li><a class="menu-link" href='/library/'><Icon name="books" size={24} /> Статті</a></li>
+            <li><a class="menu-link" href='/gongfuchateatips/'>Поради з Ґонфу Ча</a></li>
+            <li><a class="menu-link" href='/gongfuteapot/'>Чайник Ґонфу</a></li>
+            <li><a class="menu-link" href='/brewingtips/'>Деякі поради щодо заварювання "Чаю місяця"</a></li>
+            <li><a class="menu-link" href='/teaandseasons/'>Про чаї та пори року</a></li>
+            <li><a class="menu-link" href='/questionsandanswers/'>Питання і відповіді</a></li>
+        </ul>
+      </li>
+    </ul>
   </nav>
-    <!-- <form class="theme-picker link4" action="">
-      <fieldset>
-          <legend class="visually-hidden">Кольорова тема:</legend>
-          <label class="icon-label" for="light-dark">
-            <Icon name="computer" size={24} />
-            <input 
-                class="visually-hidden"
-                name="color-scheme" 
-                type="radio" 
-                value="light dark"
-                id="light-dark"
-            >
-        </label>
-          <label class="icon-label" for="light">
-              <Icon name="sun-filled" size={24} />
-              <input 
-                  class="visually-hidden"
-                  name="color-scheme" 
-                  type="radio" 
-                  value="light"
-                  id="light"
-              >
-          </label>
-          <label class="icon-label" for="dark">
-              <Icon name="moon-filled" size={24} />
-              <input 
-                  class="visually-hidden"
-                  name="color-scheme" 
-                  type="radio" 
-                  value="dark"
-                  id="dark"
-                  >
-          </label>
-      </fieldset>
-  </form> -->
   <a class="search-logo link4" href="/search/" aria-label="To Search" data-astro-prefetch>
     <Icon name="search" size={32} />
   </a>
@@ -111,10 +107,6 @@ import logo from '../../public/logo.png';
   .desktop-menu,
   form.theme-picker { display: none; }
   
-  .link {
-    color: var(--background);
-  }
-  
   .search-logo {
     height: 3.5rem;
     width: 3.5rem;
@@ -126,39 +118,6 @@ import logo from '../../public/logo.png';
     border-top: 2px solid light-dark(var(--foreground), var(--background));
     border-bottom: 2px solid light-dark(var(--foreground), var(--background));
     border-radius: 100%;
-  }
-  
-
-
-
-  form.theme-picker-mobile {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-  }
-
-  .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
-
-  .theme-picker > fieldset {
-    border: 0;
-    display: flex;
-    border-radius: 999px;
-    background-color: light-dark(var(--background), var(--foreground-dark));
-    color: light-dark(var(--foreground), var(--footer));
-  }
-        
-  .icon-label {
-    display: flex;
-    padding: 0.7rem;
-    text-align: center;
   }
 
   @media screen and (min-width: 630px) {
@@ -179,29 +138,20 @@ import logo from '../../public/logo.png';
       grid-area: desktop-menu;
       font-size: 1.8rem;
       font-weight: 600;
+      background-color: light-dark(var(--background), var(--footer));
     }
 
-    form.theme-picker {
-      display: block;
-      width: fit-content;
-      margin: 0 auto;
-    }
-
-    a.link {
-      color: light-dark(var(--foreground), var(--background));
-      padding: 0 0.5rem;
-      opacity: 0.8;
-    }
+    h5 { cursor: pointer; }
+    .first-header { margin-right: 3rem;}
+    .second-header { margin-right: 1rem;}
 
     .link4 {
       grid-area: link4;
     }
 
-    .link:hover {
-      background-color: light-dark(var(--foreground), var(--footer));
-      border-radius: 0.5rem;
-      border: solid 1px var(--active);
-      color: light-dark(var(--background), var(--active));
+    .link:hover,
+    li.menu-link:hover {
+      color: var(--active);
       opacity: 1;
     }
         
@@ -216,30 +166,97 @@ import logo from '../../public/logo.png';
       border: 1px solid var(--active);
       border-radius: 100%;
     }
+
+    .menu a{
+      font-size: 1.8rem;
+      font-weight: 600;
+      width: 100%;
+    }
+
+    .menu::after{
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+    .menu a{
+        display: block;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-size: 1rem;
+        color: light-dark(var(--foreground), var(--foreground-dark));
+        background-color: light-dark(var(--background), var(--foreground));
+    }
+
+    .menu a:hover{
+        background-color: var(--button-noop);
+        color: var(--foreground);
+    }
+
+    .menu > li:hover > .link {
+        color: var(--active);
+    }
+
+    .menu li{
+        position: relative;
+    }
+
+    .menu > li{
+        float: left;
+    }
+
+    .menu, .menu ul{
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .menu ul li+li{
+        border-top: 1px solid #fff;
+    }
+
+    .menu ul{
+        position: absolute;
+        box-shadow:  5px 5px 10px 0 rgba(0,0,0, 0.5);
+    }
+
+    .menu > li ul, .menu ul ul{
+        opacity: 0;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    .menu > li ul{
+        top: 130%;
+        left: 0;
+    }
+
+    .menu ul ul{
+        left: 130%;
+        top: 0;
+    }
+
+    .menu ul a{
+        width: 250px;
+    }
+
+    .menu > li:hover > ul{
+        top: 100%;
+        opacity: 1;
+        z-index: 1;
+        visibility: visible;
+    }
+
+    .menu ul > li:hover > ul{
+        left: 100%;
+        opacity: 1;
+        z-index: 1;
+        visibility: visible;
+    }
   }
 </style>
-
-<!-- <script is:inline>
-  const colorThemes = document.querySelectorAll('[name="color-scheme"]')
-
-  const storeTheme = function(theme) {
-    sessionStorage.setItem("theme", theme);
-  }
-
-  colorThemes.forEach((themeOption) => {
-    themeOption.addEventListener("click", () => {
-      storeTheme(themeOption.id);
-    })
-  });
-
-  const retrieveTheme = function() {
-    const activeTheme = sessionStorage.getItem("theme");
-    colorThemes.forEach((themeOption) => {
-      if (themeOption.id === activeTheme) {
-        themeOption.checked = true;
-      }
-    })
-  }
-
-  document.onload = retrieveTheme();
-</script> -->
