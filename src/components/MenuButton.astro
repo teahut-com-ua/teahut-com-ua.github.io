@@ -1,51 +1,23 @@
 ---
 import { Icon } from "astro-icon/components";
+import MobileMenu from "./MobileMenu.astro";
+import ThemePickerMobile from "./ThemePickerMobile.astro";
 ---
 
 <button popovertarget="nav-menu" popovertargetaction="show" class="menu-btn icon">
-    <span class="menu-btn-alt">Показати меню</span>
     <Icon name="menu" size={32} />
-  </button>
-  <div id="nav-menu" popover="" class="main-nav">
+</button>
+<div id="nav-menu" popover="" class="main-nav">
     <button popovertarget="nav-menu" popovertargetaction="hide" class="close-btn icon">
-      <span class="menu-btn-alt">Сховати меню</span>
-      <Icon name="close-rounded" size={32} />
+        <Icon name="close-rounded" size={32} />
     </button>
     <nav class="mobile-menu">
-      <form class="theme-picker-mobile" action="">
-        <fieldset>
-            <legend class="visually-hidden">Кольорова тема:</legend>
-            <label class="icon-label" for="light">
-                <Icon name="sun-filled" size={24} />
-                <input 
-                    class="visually-hidden"
-                    name="color-scheme" 
-                    type="radio" 
-                    value="light"
-                    id="light"
-                >
-            </label>
-            <label class="icon-label" for="dark">
-                <Icon name="moon-filled" size={24} />
-                <input 
-                    class="visually-hidden"
-                    name="color-scheme" 
-                    type="radio" 
-                    value="dark"
-                    id="dark"
-                    >
-            </label>
-        </fieldset>
-      </form>
-      <a class="link" href="/" aria-label="To Home" data-astro-prefetch>Чайна Хатинка</a>
-      <a class="link" href="/teas/" aria-label="To Teas" data-astro-prefetch>Чай</a>
-      <a class="link" href="/library/" aria-label="To Articles" data-astro-prefetch>Читальня</a>
+        <ThemePickerMobile/>
+        <MobileMenu/>
     </nav>
-  </div>
+</div>
 
 <style>
-    .link { color: var(--background); }
-
     button {
         border: 0;
     }
@@ -65,50 +37,10 @@ import { Icon } from "astro-icon/components";
         transition-duration: 500ms;
     }
 
-    .menu-btn-alt {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
+    .icon {
+        color: light-dark(var(--foreground), #f3eddb);
     }
 
-    form.theme-picker-mobile {
-        display: block;
-        width: fit-content;
-        margin: 0 auto;
-    }
-
-    .visually-hidden {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
-    }
-
-    .theme-picker > fieldset,
-    .theme-picker-mobile > fieldset {
-        border: 0;
-        display: flex;
-        border-radius: 999px;
-        background-color: light-dark(var(--background), var(--foreground-dark));
-        color: light-dark(var(--foreground), var(--footer));
-    }
-        
-    .icon-label {
-        display: flex;
-        padding: 0.7rem;
-        text-align: center;
-    }
-
-  
     .main-nav {
         padding: 0; 
         place-items: center; 
@@ -121,8 +53,8 @@ import { Icon } from "astro-icon/components";
     }
 
   .close-btn {
-    position: absolute; 
-    top: 1rem; 
+    position: fixed; 
+    bottom: 1rem; 
     right: 1rem; 
     z-index: 10; 
     display: flex;
@@ -184,10 +116,7 @@ import { Icon } from "astro-icon/components";
   .main-nav:popover-open::backdrop {
     opacity: 1;
   }
-  
-  .icon {
-    color: light-dark(var(--foreground), #f3eddb);
-  }
+   
 
   @starting-style {
     .main-nav:popover-open,
@@ -235,14 +164,6 @@ import { Icon } from "astro-icon/components";
 
     .link4 {
       grid-area: link4;
-    }
-
-    .link:hover {
-      background-color: light-dark(var(--foreground), var(--footer));
-      border-radius: 0.5rem;
-      border: solid 1px var(--active);
-      color: light-dark(var(--background), var(--active));
-      opacity: 1;
     }
         
     .header-logo:hover {

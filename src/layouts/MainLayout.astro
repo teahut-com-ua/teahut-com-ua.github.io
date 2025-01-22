@@ -3,29 +3,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-import MobileNavigation from '../components/MobileNavigation2.astro';
+import MobileNavigation from '../components/MobileNavigation.astro';
 
 const { pageTitle = "Чайна Хатинка" } = Astro.props;
-const {
-	width1, 
-	height1, 
-	margin1, 
-	color1, 
-	background1,
-	word1,
-	width2, 
-	height2, 
-	margin2, 
-	color2, 
-	background2,
-	word2,
-	width3,
-	height3, 
-	margin3, 
-	color3, 
-	background3,
-	word3
-} = Astro.props;
 ---
 
 <html lang="uk">
@@ -34,23 +14,9 @@ const {
 		<Navigation />
         <main data-pagefind-body>
 			<slot />
-			<div class="container">
-				<div id="search"></div>
-				<script>
-					window.addEventListener('DOMContentLoaded', (event) => {
-						//@ts-ignore
-						new PagefindUI({
-							element: "#search", 
-							debounceTimeoutMs: 500,
-							showEmptyFilters: false,
-							showSubResults: true, 
-						});
-					});
-				</script>
-			</div>
 		</main>
 		<Footer />
-		<MobileNavigation {width1} {height1} {margin1} {color1} {background1} {word1} {width2} {height2} {margin2} {color2} {background2} {word2} {width3} {height3} {margin3} {color3} {background3} {word3}/>
+		<MobileNavigation/>
 	</body>
 </html>
 		
@@ -59,10 +25,6 @@ const {
 				padding: 1.5rem 1rem;
 				background-color: var(--button);
 				color: var(--active);
-			}
-
-			.header {
-				color: var(--header);
 			}
 		
 			@media(min-width: 48rem) {

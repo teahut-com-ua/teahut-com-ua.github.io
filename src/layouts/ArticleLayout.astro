@@ -1,9 +1,9 @@
 ---
 import MainLayout from './MainLayout.astro';
 
-const { pageTitle = "Чайна Хатинка", width2, height2, margin2, color2, background2, word2, width3, height3, margin3, color3, background3, word3 } = Astro.props;
+const { pageTitle = "Чайна Хатинка" } = Astro.props;
 ---
-<MainLayout {pageTitle} {width2} {height2} {margin2} {color2} {background2} {word2} {width3} {height3} {margin3} {color3} {background3} {word3}>
+<MainLayout {pageTitle} >
     <div class="container">
         <slot />
     </div>

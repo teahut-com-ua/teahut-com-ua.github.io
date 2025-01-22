@@ -131,8 +131,8 @@ body {
         margin: 0 auto;
         padding-top: 1rem;
         display: grid;
-        /* grid-template-rows: auto 1fr auto; */
-        place-content: center;
+        grid-template-rows: auto 1fr auto;
+        /* place-content: center; */
     }
 
     h1,

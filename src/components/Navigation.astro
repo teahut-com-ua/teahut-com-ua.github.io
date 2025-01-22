@@ -1,15 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Logo from './Logo.astro';
-
+import { Image } from "astro:assets";
+import logo from '../../public/logo.png';
 ---
 
 <div class="navigation" aria-label="Primary">
-  <button class="logo-btn">
-    <a class="header-logo" href="/" aria-label="To Home" data-astro-prefetch>
-      <Logo />
-    </a>
-  </button>
+  <a class="header-logo" href="/" aria-label="To Home" data-astro-prefetch>
+      <Image class="logo" src={logo} alt="Logo" />
+  </a>
   <a class="home-link" href="/" aria-label="To Home" data-astro-prefetch>Майстерня Ча Дао</a>
   <nav class="desktop-menu">
     <a class="link1 link" href="/" aria-label="To Home" data-astro-prefetch>Майстерня</a>
@@ -18,9 +16,19 @@ import Logo from './Logo.astro';
       <a class="link3 link" href="/library/" aria-label="To Articles" data-astro-prefetch>Дао</a>
     </div>
   </nav>
-    <form class="theme-picker link4" action="">
+    <!-- <form class="theme-picker link4" action="">
       <fieldset>
           <legend class="visually-hidden">Кольорова тема:</legend>
+          <label class="icon-label" for="light-dark">
+            <Icon name="computer" size={24} />
+            <input 
+                class="visually-hidden"
+                name="color-scheme" 
+                type="radio" 
+                value="light dark"
+                id="light-dark"
+            >
+        </label>
           <label class="icon-label" for="light">
               <Icon name="sun-filled" size={24} />
               <input 
@@ -42,7 +50,10 @@ import Logo from './Logo.astro';
                   >
           </label>
       </fieldset>
-  </form>
+  </form> -->
+  <a class="search-logo link4" href="/search/" aria-label="To Search" data-astro-prefetch>
+    <Icon name="search" size={32} />
+  </a>
 </div>
 
 <style>
@@ -58,16 +69,16 @@ import Logo from './Logo.astro';
       41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
       100px 100px 80px rgba(0, 0, 0, 0.07);
     display: grid;
-    grid-template-columns: 3.5rem 1fr;
+    grid-template-columns: 3.5rem 1fr 3.5rem;
     grid-auto-rows: 3.5rem;
     grid-template-areas: 
-      "logo home-link";
+      "logo home-link search";
     align-items: center;
     justify-items: center;
     transition: all var(--animation-timing) ease-in-out;
   }
 
-  .logo-btn{
+  .header-logo {
     display: flex;
     width: 3.5rem;
     height: 3.5rem;
@@ -76,14 +87,19 @@ import Logo from './Logo.astro';
     background-color: light-dark(var(--background), var(--foreground-dark));
     border-color: light-dark(var(--background), var(--foreground-dark));
     cursor: pointer;
-  }
-
-  .header-logo {
     grid-area: logo;
     margin: 0;
     aspect-ratio: 1 / 1;
   }
 
+  
+  .logo{
+    border-left: 2px solid light-dark(var(--foreground), var(--background)); 
+    border-top: 2px solid light-dark(var(--foreground), var(--background));
+    border-bottom: 2px solid light-dark(var(--foreground), var(--background));
+    border-radius: 100%;
+  }
+  
   .home-link {
     font-size: 1.4rem;
     font-weight: 600;
@@ -91,19 +107,29 @@ import Logo from './Logo.astro';
     color: light-dark(var(--foreground), var(--background));
     opacity: 0.8;
   }
-
+  
   .desktop-menu,
   form.theme-picker { display: none; }
-
+  
   .link {
     color: var(--background);
   }
-
-  button {
-    border: 0;
-  }
-
   
+  .search-logo {
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: light-dark(var(--foreground), var(--foreground-dark));
+    border-right: 2px solid light-dark(var(--foreground), var(--background)); 
+    border-top: 2px solid light-dark(var(--foreground), var(--background));
+    border-bottom: 2px solid light-dark(var(--foreground), var(--background));
+    border-radius: 100%;
+  }
+  
+
+
 
   form.theme-picker-mobile {
     display: block;
@@ -135,30 +161,13 @@ import Logo from './Logo.astro';
     text-align: center;
   }
 
-  @starting-style {
-    .main-nav:popover-open,
-    .main-nav:popover-open::backdrop {
-      opacity: 0;
-    }
-
-    .main-nav:popover-open a {
-      transform: translateY(48px);
-    }
-  }
-
-  /* @media screen and (min-width: 28.75rem) {
-    .home-link {
-      font-size: 1.8rem;
-    }
-  } */
-
   @media screen and (min-width: 630px) {
     .home-link, .close-btn {
       display: none;
     }
 
     .navigation {
-      margin: 0 1rem;
+      margin: 0 1rem 1rem;
       grid-template-columns: 3.5rem auto 1fr auto auto;
       grid-template-areas:
         "logo . desktop-menu . link4";
@@ -170,7 +179,6 @@ import Logo from './Logo.astro';
       grid-area: desktop-menu;
       font-size: 1.8rem;
       font-weight: 600;
-      /* opacity: 0.7; */
     }
 
     form.theme-picker {
@@ -211,7 +219,7 @@ import Logo from './Logo.astro';
   }
 </style>
 
-<script is:inline>
+<!-- <script is:inline>
   const colorThemes = document.querySelectorAll('[name="color-scheme"]')
 
   const storeTheme = function(theme) {
@@ -234,4 +242,4 @@ import Logo from './Logo.astro';
   }
 
   document.onload = retrieveTheme();
-</script>
+</script> -->

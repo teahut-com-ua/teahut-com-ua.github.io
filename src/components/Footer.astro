@@ -62,6 +62,46 @@ import { Icon } from 'astro-icon/components';
                 <a class="" href='/questionsandanswers/'>Питання і відповіді</a>
             </dd>
         </dl>
+        <dl class="theme-picker-block">
+            <dt><p class="column-header4">Кольорова схема:</p></dt>
+            <dd class="form-container">
+                <form class="theme-picker link4" action="">
+                    <fieldset>
+                        <legend class="visually-hidden"></legend>
+                        <label class="icon-label" for="light-dark">
+                          <Icon name="computer" size={32} />
+                          <input 
+                              class="visually-hidden"
+                              name="color-scheme" 
+                              type="radio" 
+                              value="light dark"
+                              id="light-dark"
+                          >
+                      </label>
+                        <label class="icon-label" for="light">
+                            <Icon name="sun-filled" size={32} />
+                            <input 
+                                class="visually-hidden"
+                                name="color-scheme" 
+                                type="radio" 
+                                value="light"
+                                id="light"
+                            >
+                        </label>
+                        <label class="icon-label" for="dark">
+                            <Icon name="moon-filled" size={32} />
+                            <input 
+                                class="visually-hidden"
+                                name="color-scheme" 
+                                type="radio" 
+                                value="dark"
+                                id="dark"
+                                >
+                        </label>
+                    </fieldset>
+                </form>
+            </dd>
+        </dl>
     </nav>
     <div class="footer-bottom-container">
         <p class="copyright">&copy; 2014-{new Date().getFullYear()} TEAHUT.COM.UA</p>
@@ -80,19 +120,15 @@ import { Icon } from 'astro-icon/components';
         font-size: 16px;
     }
 
-    dt .column-header {
-        font-size: 1rem;
-        font-weight: 900;
-        color: unset;
-        opacity: 0.7;
+    .column-header {
+        color: var(--background);
     }
 
-    a,
-    a:visited {
+    a:not(.column-header) {
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 0.93rem;
         color: unset;
-        opacity: 0.7;
+        opacity: 0.8;
     }
 
     dt .column-header:hover,
@@ -110,7 +146,7 @@ import { Icon } from 'astro-icon/components';
 
     .footer-links-grid {
         padding: 5vh 0 9vh;
-        display: grid;
+        display: none;
         grid-template-columns: 1fr;
         gap: 2rem;
     }
@@ -126,7 +162,7 @@ import { Icon } from 'astro-icon/components';
     }
 
     .footer-bottom-container {
-        padding: 1rem 0 6rem 0;
+        padding: 2rem 0 6rem 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -140,6 +176,10 @@ import { Icon } from 'astro-icon/components';
         order: 5;
     }
 
+    .theme-picker-block {
+        display: none;
+    }
+
     @media(min-width: 480px) {
         .footer-links-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -147,8 +187,13 @@ import { Icon } from 'astro-icon/components';
     }
 
     @media(min-width: 630px) {
+    
         footer {
             padding: 0 2rem;
+        }
+
+        .footer-links-grid {
+            display: grid;
         }
 
         .footer-bottom-container {
@@ -156,6 +201,84 @@ import { Icon } from 'astro-icon/components';
             flex-direction: row;
             gap: unset;
             font-size: 1.1rem;
+        }
+
+        .theme-picker-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .column-header4 {
+            margin-bottom: 0.5rem;
+
+        }
+    
+        .theme-picker {
+            width: fit-content;
+        }
+
+        .visually-hidden {
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
+
+        .theme-picker > fieldset {
+            border: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-radius: 999px;
+            background-color: light-dark(var(--background), var(--foreground-dark));
+            color: light-dark(var(--foreground), var(--footer));
+        }
+
+        .icon-label {
+            display: flex;
+            padding: 0.7rem;
+            text-align: center;
+        }
+
+        a.link {
+        color: light-dark(var(--foreground), var(--background));
+        padding: 0 0.5rem;
+        opacity: 0.8;
+        }
+
+        .link4 {
+        grid-area: link4;
+        }
+
+        .link:hover {
+        background-color: light-dark(var(--foreground), var(--footer));
+        border-radius: 0.5rem;
+        border: solid 1px var(--active);
+        color: light-dark(var(--background), var(--active));
+        opacity: 1;
+        }
+            
+        .header-logo:hover {
+        color: light-dark(var(--foreground), var(--active));
+        border: solid 3px var(--active);
+        border-radius: 100%;
+        }
+
+        label:has(input[name="color-scheme"][type="radio"]:checked) {
+        color: var(--active);
+        border: 1px solid var(--active);
+        border-radius: 100%;
+        }
+
+
+        .icon-label:has(input[name="color-scheme"][type="radio"]:checked) {
+            color: var(--active);
+            border: 1px solid var(--active);
+            border-radius: 100%;
         }
 
         .copyright {
@@ -171,3 +294,28 @@ import { Icon } from 'astro-icon/components';
         }
     }        
 </style>
+
+<script is:inline>
+    const colorThemes = document.querySelectorAll('[name="color-scheme"]')
+  
+    const storeTheme = function(theme) {
+      sessionStorage.setItem("theme", theme);
+    }
+  
+    colorThemes.forEach((themeOption) => {
+      themeOption.addEventListener("click", () => {
+        storeTheme(themeOption.id);
+      })
+    });
+  
+    const retrieveTheme = function() {
+      const activeTheme = sessionStorage.getItem("theme");
+      colorThemes.forEach((themeOption) => {
+        if (themeOption.id === activeTheme) {
+          themeOption.checked = true;
+        }
+      })
+    }
+  
+    document.onload = retrieveTheme();
+</script>

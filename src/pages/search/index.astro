@@ -1,5 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
+import Search from "astro-pagefind/components/Search";
 
 const pageTitle = "Пошук на сайті:"
 ---
@@ -7,14 +8,25 @@ const pageTitle = "Пошук на сайті:"
 <MainLayout {pageTitle}>
 	<div class="container">
 		<h1>{pageTitle}</h1>
+		<Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
 	</div>
 </MainLayout>
 
 <style>
+	main {
+		background-color: var(--button);
+	}
 	.container { padding: 3rem 1rem 1rem; }
+	h1 { margin-bottom: 1rem; }
 
 	@media(min-width: 48rem) {
-		.container { padding: 3rem 5rem 1rem; }
-		h1 { margin-bottom: 0; }
+		main {
+			margin-top: 5rem;
+		}
+		.container { 
+			padding: 3rem 5rem 1rem; 
+			background-color: var(--button);
+		}
 	}
+
 </style>

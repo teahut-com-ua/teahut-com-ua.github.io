@@ -1,10 +1,10 @@
 ---
 import MainLayout from './MainLayout.astro';
 
-const { frontmatter, width3, height3, margin3, color3, background3, word3 } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<MainLayout pageTitle={frontmatter.title} {width3} {height3} {margin3} {color3} {background3} {word3}>
+<MainLayout pageTitle={frontmatter.title} >
     <div class="container">
         <img src={frontmatter.image} alt="" class="header-image">
         <h1 class="title">{frontmatter.title}</h1>
