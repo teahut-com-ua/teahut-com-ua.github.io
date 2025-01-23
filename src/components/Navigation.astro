@@ -13,7 +13,7 @@ import logo from '../../public/logo.png';
   <nav class="desktop-menu">
     <ul class="menu">
       <li>
-        <h5 class="first-header link">Майстерня</h5>
+        <h5 class="first-header headers">Майстерня</h5>
         <ul>
           <li><a class="menu-link home" href='/'><Icon name="hut" size={24} />Хатинка</a></li>
           <li><a class="menu-link" href='/our-tradition/'>Наша Традиція</a></li>
@@ -22,7 +22,7 @@ import logo from '../../public/logo.png';
       </ul>
       </li>
       <li>
-          <h5 class="second-header link">Ча</h5>
+          <h5 class="second-header headers">Ча</h5>
           <ul>
               <li><a class="menu-link teas" href='/teas/'><Icon name="teapot-leaves" size={24} /> Усі чаї</a></li>
               <li><a class="menu-link" href='/categories/shengcha/'>Шен пуери</a></li>
@@ -35,7 +35,7 @@ import logo from '../../public/logo.png';
           </ul>
       </li>
       <li class="third-block">
-        <h5 class="menu-link link">Дао</h5>
+        <h5 class="third-header headers">Дао</h5>
           <ul>
             <li><a class="menu-link library" href='/library/'><Icon name="books" size={24} /> Статті</a></li>
             <li><a class="menu-link" href='/gongfuchateatips/'>Поради з Ґонфу Ча</a></li>
@@ -141,9 +141,14 @@ import logo from '../../public/logo.png';
       background-color: light-dark(var(--background), var(--footer));
     }
 
-    h5 { cursor: pointer; }
-    .first-header { margin-right: 3rem;}
-    .second-header { margin-right: 1rem;}
+    .first-header { 
+      margin-right: 3rem;
+      width: 100%;
+    }
+    .second-header {
+      margin-right: 1rem;
+      width: 100%;
+    }
 
     .link4 {
       grid-area: link4;
@@ -198,6 +203,11 @@ import logo from '../../public/logo.png';
 
     .menu > li:hover > .link {
         color: var(--active);
+    }
+
+    .menu > li:hover > .headers {
+      color: transparent;
+      cursor: url("/public/arrow_downward_24dp.svg"), auto;
     }
 
     .menu li{
