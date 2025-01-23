@@ -17,7 +17,7 @@ import { Icon } from 'astro-icon/components';
                 <a class="" href='/'>Про нашу крамничку</a>
             </dd>
       </dl>
-      <dl>
+      <dl class="second-block">
         <dt><a class="column-header" href='/teas/'>Чай</a></dt>
             <dd>
                 <a class="" href='/categories/shengcha/'>Шен пуери</a>
@@ -53,7 +53,7 @@ import { Icon } from 'astro-icon/components';
                 <a class="" href='/gongfuteapot/'>Чайник Ґонфу</a>
             </dd>
             <dd>
-                <a class="" href='/brewingtips/'>Деякі поради щодо заварювання "Чаю місяця"</a>
+                <a class="long-text" href='/brewingtips/'>Деякі поради щодо заварювання</a>
             </dd>
             <dd>
                 <a class="" href='/teaandseasons/'>Про чаї та пори року</a>
@@ -62,10 +62,10 @@ import { Icon } from 'astro-icon/components';
                 <a class="" href='/questionsandanswers/'>Питання і відповіді</a>
             </dd>
         </dl>
-        <dl class="theme-picker-block">
+        <dl class="fourth-block">
             <dt><p class="column-header4">Кольорова схема:</p></dt>
             <dd class="form-container">
-                <form class="theme-picker link4" action="">
+                <form class="theme-picker" action="">
                     <fieldset>
                         <legend class="visually-hidden"></legend>
                         <label class="icon-label" for="light-dark">
@@ -197,17 +197,14 @@ import { Icon } from 'astro-icon/components';
         }
 
         .footer-bottom-container {
-            padding: 1rem 0 6rem 0;
+            padding: 1rem 0 2rem 0;
             flex-direction: row;
             gap: unset;
             font-size: 1.1rem;
         }
 
-        .theme-picker-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 auto;
+        .long-text {
+            text-wrap: balance;
         }
 
         .column-header4 {
@@ -250,10 +247,6 @@ import { Icon } from 'astro-icon/components';
         opacity: 0.8;
         }
 
-        .link4 {
-        grid-area: link4;
-        }
-
         .link:hover {
         background-color: light-dark(var(--foreground), var(--footer));
         border-radius: 0.5rem;
@@ -291,6 +284,13 @@ import { Icon } from 'astro-icon/components';
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
+        }
+
+        .fourth-block {
+            justify-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     }        
 </style>
