@@ -14,19 +14,12 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 const { page } = Astro.props;
 
-const title = `Читальня`;
+const pageTitle = "Читальня";
 const pageNumber = page.currentPage
-
-const width3 = "100%";
-const height3 = "100%";
-const margin3 = "0.3rem 0 0 0.5rem";
-const color3 = "var(--background)";
-const background3 = "var(--nav-item-back)";
-const word3 = "Читальня";
 ---
 
-<ArticleLayout {title} {width3} {height3} {margin3} {color3} {background3} {word3}>
-  <h1 class="last-line">{title}</h1>
+<ArticleLayout {pageTitle}>
+  <h1 class="last-line">{pageTitle}</h1>
   <h4 class="last-line">сторінка {pageNumber}</h4>
 
   <section class="posts-preview">

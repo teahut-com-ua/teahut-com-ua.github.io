@@ -12,14 +12,14 @@ import logo from '../../public/logo.png';
 
   <nav class="desktop-menu">
     <ul class="menu">
-      <li>
+      <li class="menu-block">
         <h5 class="first-header headers">Майстерня</h5>
         <ul>
           <li><a class="menu-link home" href='/'><Icon name="hut" size={24} />Хатинка</a></li>
           <li><a class="menu-link" href='/our-tradition/'>Наша Традиція</a></li>
           <li><a class="menu-link" href='/about/'>Про нас</a></li>
           <li><a class="menu-link" href='/'>Про нашу крамничку</a></li>
-      </ul>
+        </ul>
       </li>
       <li>
           <h5 class="second-header headers">Ча</h5>
@@ -81,14 +81,12 @@ import logo from '../../public/logo.png';
     border-radius: 100%;
     border-width: 0;
     background-color: light-dark(var(--background), var(--foreground-dark));
-    border-color: light-dark(var(--background), var(--foreground-dark));
     cursor: pointer;
     grid-area: logo;
     margin: 0;
     aspect-ratio: 1 / 1;
   }
 
-  
   .logo{
     border-left: 2px solid light-dark(var(--foreground), var(--background)); 
     border-top: 2px solid light-dark(var(--foreground), var(--background));
@@ -114,9 +112,6 @@ import logo from '../../public/logo.png';
     justify-content: center;
     align-items: center;
     color: light-dark(var(--foreground), var(--foreground-dark));
-    border-right: 2px solid light-dark(var(--foreground), var(--background)); 
-    border-top: 2px solid light-dark(var(--foreground), var(--background));
-    border-bottom: 2px solid light-dark(var(--foreground), var(--background));
     border-radius: 100%;
   }
 
@@ -130,6 +125,7 @@ import logo from '../../public/logo.png';
       grid-template-columns: 3.5rem auto 1fr auto auto;
       grid-template-areas:
         "logo . desktop-menu . link4";
+
     }
 
     .desktop-menu {
@@ -141,14 +137,9 @@ import logo from '../../public/logo.png';
       background-color: light-dark(var(--background), var(--footer));
     }
 
-    .first-header { 
-      margin-right: 3rem;
-      width: 80%;
-    }
-    .second-header {
-      margin: 0 1rem;
-      width: 100%;
-    }
+    .first-header { margin: 0.7rem 2rem 0.6rem 0;}
+    .second-header { margin: 0.7rem 1rem 0.6rem 1rem;}
+    .third-header { margin: 0.7rem 0.5rem 0.6rem 0;}
 
     .link4 {
       grid-area: link4;
@@ -164,12 +155,6 @@ import logo from '../../public/logo.png';
     .search-logo:hover {
       color: var(--active);
       border: solid 3px var(--active);
-      border-radius: 100%;
-    }
-
-    label:has(input[name="color-scheme"][type="radio"]:checked) {
-      color: var(--active);
-      border: 1px solid var(--active);
       border-radius: 100%;
     }
 
@@ -193,12 +178,16 @@ import logo from '../../public/logo.png';
         text-decoration: none;
         font-size: 1rem;
         color: light-dark(var(--foreground), var(--foreground-dark));
-        background-color: light-dark(var(--background), var(--foreground));
+        background-color: light-dark(var(--background), var(--footer));
     }
 
     .menu a:hover{
         background-color: var(--button-noop);
         color: var(--foreground);
+    }
+
+    .menu ul > li:hover > ul {
+      background-color: light-dark(var(--background), var(--footer));
     }
 
     .menu > li:hover > .link {
@@ -225,12 +214,12 @@ import logo from '../../public/logo.png';
     }
 
     .menu ul li+li{
-        border-top: 1px solid #fff;
+        border-top: 1px solid light-dark(var(--foreground), var(--foreground-dark));
     }
 
     .menu ul{
         position: absolute;
-        box-shadow:  5px 5px 10px 0 rgba(0,0,0, 0.5);
+        box-shadow:  0px 5px 10px 0px rgba(0,0,0, 0.5);
     }
 
     .menu > li ul, .menu ul ul{
