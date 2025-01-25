@@ -46,6 +46,7 @@ html {
 
 html,
 body {
+    width: 100%;
     font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
     color: var(--primary-color);
@@ -59,7 +60,7 @@ body {
     width: 100%;
     padding-top: 1rem;
     min-width: 350px;
-    max-width: 56.25rem;
+    /* max-width: 56.25rem; */
     min-height: 100dvh;
     margin: 0 auto;
     padding-top: 1rem;
@@ -212,6 +213,10 @@ body {
 
     .last-line {
         margin-bottom: 1.8rem;
+    }
+
+    .double-last-line {
+        margin-bottom: 3.6rem;
     }
 
     img .float-left,

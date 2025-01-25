@@ -11,12 +11,14 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
 <html lang="uk">
 	<BaseHead {pageTitle} />
 	<body>
-		<Navigation />
-        <main data-pagefind-body>
-			<slot />
-		</main>
-		<Footer />
-		<MobileNavigation/>
+		<div>
+			<Navigation />
+			<main data-pagefind-body>
+				<slot />
+			</main>
+			<Footer />
+			<MobileNavigation/>
+		</div>
 	</body>
 </html>
 		
