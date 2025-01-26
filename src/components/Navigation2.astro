@@ -8,7 +8,7 @@ import logo from '../../public/logo.png';
     <a class="header-logo" href="/" aria-label="To Home" data-astro-prefetch>
         <Image class="logo" src={logo} alt="Logo" />
     </a>
-        <h3 class="home-link">Майстерня Ча Дао</h3>
+        <h3 class="home-header">Майстерня Ча Дао</h3>
     <ul class="menu">
         <li class="first-block menu-blocks">
             <h3 class="first-header headers">Майстерня</h3>
@@ -53,7 +53,7 @@ import logo from '../../public/logo.png';
 <style>
     nav {
         display: grid;
-        margin: 0 1rem 1rem;
+        margin: 1rem;
         grid-template-columns: 3.5rem auto 1fr auto 3.5rem;
         grid-template-areas:
             "logo . desktop-menu . search";
@@ -68,7 +68,8 @@ import logo from '../../public/logo.png';
         clear: both;
     }
 
-    .menu {
+    .menu,
+    .first-header-word {
         display: none;
     }
 
@@ -96,8 +97,13 @@ import logo from '../../public/logo.png';
         border-bottom: 2px solid light-dark(var(--foreground), var(--background));
         border-radius: 100%;
     }
-    
+
     h3 {
+        margin-bottom: unset;
+    }
+    
+    .home-header {
+        font-size: 1.3rem;
         margin-bottom: unset;
         grid-area: desktop-menu;
         text-align: center;
@@ -122,8 +128,14 @@ import logo from '../../public/logo.png';
       border-radius: 100%;
     }
 
+    @media screen and (min-width: 420px) {
+        .home-header {
+            font-size: 1.6rem;
+        }
+    }
+
     @media screen and (min-width: 630px) {
-        .home-link {
+        .home-header {
             display: none;
         }
         .menu {
