@@ -228,7 +228,6 @@ body {
     .header-image {
         margin: 0 auto 2rem;
         border-radius: 1rem;
-        border: 3px solid light-dark(var(--foreground), var(--background));
     }
 
     @media(min-width: 39.38rem) {
