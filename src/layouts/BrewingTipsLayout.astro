@@ -6,7 +6,7 @@ const { frontmatter } = Astro.props;
 
 <MainLayout pageTitle={frontmatter.title} >
     <div class="container">
-        <img src={frontmatter.image} alt="" class="header-image">
+        <img src={frontmatter.heroImage} alt="" class="header-image">
         <h1 class="title">{frontmatter.title}</h1>
         <h4 class="title">{frontmatter.subtitle}</h4>
         <h4 class="title last-line">{frontmatter.subsubtitle}</h4>
@@ -23,8 +23,10 @@ const { frontmatter } = Astro.props;
 	.container { padding: 3rem 1rem 1rem; }
 
     .header-image {
+        width: 100%;
+        height: 100%;
         margin: 0 auto 2rem;
-
+        border-radius: 0.6rem;
     }
 
     .title { text-align: center;}

@@ -41,6 +41,7 @@ const library = defineCollection({
         author: z.string().optional(),
         description: z.string(),
         pubDate: z.coerce.date(),
+        heroImage: z.string().optional(),
         image: z.string().optional(),
         posted: z.boolean().optional(),
         category: z.array(z.string())
@@ -55,6 +56,7 @@ const brewingtips = defineCollection({
       author: z.string().optional(),
       description: z.string(),
       pubDate: z.date(),
+      heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
       category: z.array(z.string())
@@ -69,6 +71,7 @@ const gongfuchateatips = defineCollection({
       author: z.string().optional(),
       description: z.string(),
       pubDate: z.date(),
+      heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
       category: z.array(z.string())
@@ -83,6 +86,7 @@ const gongfuteapot = defineCollection({
       author: z.string().optional(),
       description: z.string(),
       pubDate: z.date(),
+      heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
       category: z.array(z.string())
@@ -97,6 +101,7 @@ const questionsandanswers = defineCollection({
       author: z.string().optional(),
       description: z.string(),
       pubDate: z.date(),
+      heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
       category: z.array(z.string())
@@ -111,6 +116,7 @@ const teaandseasons = defineCollection({
       author: z.string().optional(),
       description: z.string(),
       pubDate: z.date(),
+      heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
       category: z.array(z.string())

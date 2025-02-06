@@ -15,16 +15,9 @@ const newTeas = (await getCollection('teas'))
 	.sort(
 		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
-
-const width1 = "100%";
-const height1 = "100%";
-const margin1 = "0.3rem 0 0 0.5rem";
-const color1 = "var(--background)";
-const background1 = "var(--nav-item-back)";
-const word1 = "Хатинка";
 ---
 
-<MainLayout {width1} {height1} {margin1} {color1} {background1} {word1}>
+<MainLayout>
 	<div class="container">
 		<h1 class="">Ласкаво просимо</h1>
 		<h3>до нашої</h3>

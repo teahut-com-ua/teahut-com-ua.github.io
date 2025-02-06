@@ -225,11 +225,6 @@ body {
         margin: 1rem auto;
     }
 
-    .header-image {
-        margin: 0 auto 2rem;
-        border-radius: 0.6rem;
-    }
-
     @media(min-width: 39.38rem) {
         .float-left {
             display: inline;
@@ -254,5 +249,4 @@ body {
             background-repeat: repeat;
             background-color: var(--footer);
         }
-
     }
