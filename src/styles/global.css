@@ -227,7 +227,7 @@ body {
 
     .header-image {
         margin: 0 auto 2rem;
-        border-radius: 1rem;
+        border-radius: 0.6rem;
     }
 
     @media(min-width: 39.38rem) {

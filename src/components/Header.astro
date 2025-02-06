@@ -1,0 +1,9 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<img src={frontmatter.image} alt="" class="header-image">
+<h1 class="title">{frontmatter.title}</h1>
+<h2 class="title last-line">{frontmatter.subtitle}</h2>
+<h4 class="title">{frontmatter.subsubtitle}</h4>
+<p class="author last-line">{frontmatter.author}</p>
