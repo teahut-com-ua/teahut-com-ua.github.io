@@ -92,6 +92,10 @@ body {
         list-style: none;
     }
     
+    li {
+        list-style-position: inside;
+    }
+    
     label {
         cursor: pointer;
         /* max-width: max-content; */
@@ -178,7 +182,7 @@ body {
 
     img {
         display: block;
-        width: 100%;
+        max-width: 100%;
         height: auto;
     }
 
