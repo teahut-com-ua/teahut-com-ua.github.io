@@ -4,54 +4,56 @@ import { Icon } from 'astro-icon/components';
 import logo from '../../public/logo.png';
 ---
 
-<nav class="desktop-menu">
+<header>
     <a class="header-logo" href="/" aria-label="To Home" data-astro-prefetch>
         <Image class="logo" src={logo} alt="Logo" />
     </a>
-        <h3 class="home-header">Майстерня Ча Дао</h3>
-    <ul class="menu">
-        <li class="first-block menu-blocks">
-            <h3 class="first-header headers">Майстерня</h3>
-            <ul>
-                <li><a class="menu-link home" href='/'><Icon name="hut" size={32} /><span class="menu-link-header">Хатинка</span></a></li>
-                <li><a class="menu-link" href='/our-tradition/'>Наша Традиція</a></li>
-                <li><a class="menu-link" href='/about'>Про нас</a></li>
-                <li><a class="menu-link" href='/about-our-teashop'>Про нашу крамничку</a></li>
-            </ul>
-        </li>
-        <li class="second-block menu-blocks">
-            <h3 class="second-header headers">Ча</h3>
-            <ul>
-                <li><a class="menu-link teas" href='/teas/'><Icon name="teapot-leaves" size={32} /><span class="menu-link-header">Усі чаї</span></a></li>
-                <li><a class="menu-link" href='/categories/shengcha/'>Шен пуери</a></li>
-                <li><a class="menu-link" href='/categories/heicha/'>Шу пуери й Хейча</a></li>
-                <li><a class="menu-link" href='/categories/hongcha/'>Червоні чаї</a></li>
-                <li><a class="menu-link" href='/categories/wulong&gaba/'>Вулони й ҐАБА</a></li>
-                <li><a class="menu-link" href='/categories/baicha&lucha/'>Білі й Зелені</a></li>
-                <li><a class="menu-link" href='/categories/japanese/'>Японські</a></li>
-                <li><a class="menu-link" href='/tags/'>Позначки чаїв</a></li>
-            </ul>
-        </li>
-        <li class="third-block menu-blocks">
-            <h3 class="third-header headers">Дао</h3>
-            <ul>
-                <li><a class="menu-link library" href='/library/'><Icon name="books" size={32} /><span class="menu-link-header">Статті</span></a></li>
-                <li><a class="menu-link" href='/gongfuchateatips/'>Поради з Ґонфу Ча</a></li>
-                <li><a class="menu-link" href='/gongfuteapot/'>Чайник Ґонфу</a></li>
-                <li><a class="menu-link" href='/brewingtips/'>Деякі поради щодо заварювання</a></li>
-                <li><a class="menu-link" href='/teaandseasons/'>Про чаї та пори року</a></li>
-                <li><a class="menu-link" href='/questionsandanswers/'>Питання і відповіді</a></li>
-            </ul>
-        </li>
-        <div class="clear"></div>
-    </ul>
+    <h3 class="home-header">Майстерня Ча Дао</h3>
+    <nav class="desktop-menu">
+        <ul class="menu">
+            <li class="first-block menu-blocks">
+                <h3 class="first-header headers">Майстерня</h3>
+                <ul>
+                    <li><a class="menu-link home" href='/'><Icon name="hut" size={32} /><span class="menu-link-header">Хатинка</span></a></li>
+                    <li><a class="menu-link" href='/our-tradition/'>Наша Традиція</a></li>
+                    <li><a class="menu-link" href='/about'>Про нас</a></li>
+                    <li><a class="menu-link" href='/about-our-teashop'>Про нашу крамничку</a></li>
+                </ul>
+            </li>
+            <li class="second-block menu-blocks">
+                <h3 class="second-header headers">Ча</h3>
+                <ul>
+                    <li><a class="menu-link teas" href='/teas/'><Icon name="teapot-leaves" size={32} /><span class="menu-link-header">Усі чаї</span></a></li>
+                    <li><a class="menu-link" href='/categories/shengcha/'>Шен пуери</a></li>
+                    <li><a class="menu-link" href='/categories/heicha/'>Шу пуери й Хейча</a></li>
+                    <li><a class="menu-link" href='/categories/hongcha/'>Червоні чаї</a></li>
+                    <li><a class="menu-link" href='/categories/wulong&gaba/'>Вулони й ҐАБА</a></li>
+                    <li><a class="menu-link" href='/categories/baicha&lucha/'>Білі й Зелені</a></li>
+                    <li><a class="menu-link" href='/categories/japanese/'>Японські</a></li>
+                    <li><a class="menu-link" href='/tags/'>Позначки чаїв</a></li>
+                </ul>
+            </li>
+            <li class="third-block menu-blocks">
+                <h3 class="third-header headers">Дао</h3>
+                <ul>
+                    <li><a class="menu-link library" href='/library/'><Icon name="books" size={32} /><span class="menu-link-header">Статті</span></a></li>
+                    <li><a class="menu-link" href='/gongfuchateatips/'>Поради з Ґонфу Ча</a></li>
+                    <li><a class="menu-link" href='/gongfuteapot/'>Чайник Ґонфу</a></li>
+                    <li><a class="menu-link" href='/brewingtips/'>Деякі поради щодо заварювання</a></li>
+                    <li><a class="menu-link" href='/teaandseasons/'>Про чаї та пори року</a></li>
+                    <li><a class="menu-link" href='/questionsandanswers/'>Питання і відповіді</a></li>
+                </ul>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </nav>
     <a class="search-logo" href="/search/" aria-label="To Search" data-astro-prefetch>
         <Icon name="search" size={32} />
     </a>
-</nav>
+</header>
 
 <style>
-    nav {
+    header {
         display: grid;
         margin: 1.5rem 1rem 1rem;
         grid-template-columns: 3.5rem auto 1fr auto 3.5rem;
@@ -61,7 +63,12 @@ import logo from '../../public/logo.png';
         border-radius: 9990px;
         
         box-shadow:  0px 5px 10px 0px rgba(0,0,0, 0.5);
-        transition: all var(--animation-timing) ease-in-out;
+    }
+
+    nav {
+        display: grid;
+        justify-content: center;
+        grid-area: desktop-menu;
     }
     
     .clear {
@@ -107,6 +114,7 @@ import logo from '../../public/logo.png';
     }
     
     .home-header {
+        display: block;
         font-size: 1.3rem;
         margin-bottom: unset;
         grid-area: desktop-menu;
@@ -132,6 +140,18 @@ import logo from '../../public/logo.png';
     }
 
     @media screen and (min-width: 630px) {
+        header {
+            position: sticky;
+            z-index: 1000;
+            top: 0.5rem;
+            transition: all var(--animation-timing) ease-in-out;
+            background-color: light-dark(var(--background), var(--background-dark));
+        }
+
+        nav {
+            display: grid;
+        }
+
         .header-logo:hover,
         .search-logo:hover {
             color: var(--active);
@@ -224,7 +244,7 @@ import logo from '../../public/logo.png';
     
         .menu li:hover > ul {
             display: block;
-            top: 4.5rem;
+            top: 3.5rem;
             background: var(--background);
             border-top: 0;
             z-index: 10;
@@ -233,7 +253,6 @@ import logo from '../../public/logo.png';
             border-radius: 10px;
             
             -webkit-box-shadow:  0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-            /* box-shadow:  0px 5px 10px 0px rgba(0,0,0, 0.5); */
             box-shadow: 0px 5px 20px light-dark(#444343,#f1c481);
             transition: all var(--animation-timing) ease-in-out;
         }
