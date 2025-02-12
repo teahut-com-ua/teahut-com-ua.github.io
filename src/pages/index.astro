@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { getCollection } from "astro:content";
 import TeaCard from '../components/TeaCard.astro';
 import BlogPost from '../components/BlogPost.astro';
+import Image1 from "/src/assets/articles/tea-wayfarer.jpg";
 
 const newPosts = (await getCollection('library'))
 	.filter((post) => post.data.posted !== false)
@@ -22,6 +23,7 @@ const newTeas = (await getCollection('teas'))
 		<h1 class="">Ласкаво просимо</h1>
 		<h3>до нашої</h3>
 		<h2 class="last-line">Чайної Хатинки!</h2>
+		<img class="float-left" src={Image1.src} alt="Чайний мандрівник" />
 		<p>
 			Кожен із нас шукає своєї досконалости так, як він чи вона розуміє її, залежно від загального знання і контексту, який отримали за своє життя, а також від того, що в нас закладено Матінкою Природою...
 		</p>
