@@ -7,6 +7,6 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://teahut-com-ua.github.io',
+  site: 'https://teahut.com.ua',
   integrations: [mdx(), icon()]
 });
