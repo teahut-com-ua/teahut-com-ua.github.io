@@ -1,7 +1,13 @@
 ---
 import { AstroFont } from "astro-font";
+import {baseData} from '../data/siteData';
 
-const { pageTitle = "Чайна Хатинка" } = Astro.props;
+type Props = {
+  pageTitle?: string;
+  description?: string;
+}
+
+const { pageTitle = baseData.pageTitle, description = baseData.description } = Astro.props;
 ---
 
 <head>
@@ -9,6 +15,7 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
     <AstroFont
       config={[
         {
@@ -29,5 +36,5 @@ const { pageTitle = "Чайна Хатинка" } = Astro.props;
     />
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
     <script src="/pagefind/pagefind-ui.js" is:inline></script>
-    <title>{pageTitle}</title>
+    <title>{pageTitle }</title>
 </head>
