@@ -1,27 +1,26 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from './MainLayout.astro';
+
+import img1 from "../../public/teakettle.gif";
 
 const { frontmatter } = Astro.props;
 ---
 
 <MainLayout pageTitle={frontmatter.title} >
-    <div class="container">
-        <img src={frontmatter.heroImage} alt="" class="header-image">
+        {frontmatter.heroImage && <img src={frontmatter.heroImage} alt="" class="header-image">}
         <h1 class="title">{frontmatter.title}</h1>
         <h2 class="title last-line">{frontmatter.subtitle}</h2>
-        <h4 class="title">{frontmatter.subsubtitle}</h4>
-        <p class="author last-line">{frontmatter.author}</p>
+        {frontmatter.subsubtitle && <h4 class="title">{frontmatter.subsubtitle}</h4>}
+        {frontmatter.author &&<p class="author last-line">{frontmatter.author}</p>}
             <slot />
         <p class="bottom-sign">Українською перекладено спеціяльно для TeaHut.com.ua</p>
         <div style="display: flex; justify-content: end;">
-            <img style="display: block;  width: 70px;" src="/teakettle.gif" alt="Чайник і чашка" />
+            <Image style="display: block;  width: 70px;" src={img1} alt="Чайник і чашка" />
         </div>
-    </div>
 </MainLayout>
 
 <style>
-	.container { padding: 3rem 1rem 1rem; }
-
     .title { text-align: center;}
 
     .author { 
@@ -39,12 +38,8 @@ const { frontmatter } = Astro.props;
 
     .header-image {
         width: 100%;
-        height: 100%;
-        margin: 0 auto 2rem;
+        max-height: 100%;
+        margin: 0 auto 3rem;
         border-radius: 0.6rem;
     }
-
-	@media(min-width: 48rem) {
-		.container { padding: 3rem 4rem 2rem; }
-	}
 </style>

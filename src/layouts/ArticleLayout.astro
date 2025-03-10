@@ -4,9 +4,7 @@ import MainLayout from './MainLayout.astro';
 const { pageTitle = "Чайна Хатинка" } = Astro.props;
 ---
 <MainLayout {pageTitle} >
-    <div class="container">
-        <slot />
-    </div>
+    <slot />
 </MainLayout>
 
 <style>

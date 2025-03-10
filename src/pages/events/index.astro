@@ -1,0 +1,76 @@
+---
+import { Icon } from "astro-icon/components";
+import MainLayout from "../../layouts/MainLayout.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+
+const pageTitle = "Найближчі події";
+---
+
+<ArticleLayout {pageTitle}>
+    <section class="container">
+        <h1 class="">{pageTitle}</h1>
+        <h3>Березень:</h3>
+        <ul>
+            <li>
+                8-е, субота, 12:00 - Заняття 1 групи "Вступ до Ча Дао"
+            </li>
+            <li>
+                9-е, неділя, 12:00 - Заняття 2 групи "Вступ до Ча Дао"
+            </li>
+            <li>
+                15-е, неділя, 12:00 - чаювання-медитація <a href="/events/zentea">"Дзенський чай"</a>
+            </li>
+            <li>
+                16-е, субота, 12:00 - чаювання-медитація <a href="/events/zentea">"Дзенський чай"</a>
+            </li>
+            <li>
+                22-е, субота, 12:00 - Заняття 1 групи "Вступ до Ча Дао"
+            </li>
+            <li>
+                23-е, неділя, 12:00 - Заняття 2 групи "Вступ до Ча Дао"
+            </li>
+            <li>
+                29-е, субота, 12:00 - чаювання-медитація <a href="/events/zentea">"Дзенський чай"</a>
+            </li>
+            <li>
+                30-е, неділя, 12:00 - чаювання-медитація <a href="/events/zentea">"Дзенський чай"</a>
+            </li>
+        </ul>
+        <div class="coda">
+            <p>"Чайна Хатинка", Майстерня Чаю і Дао</p>    
+            <div class="kettle-image">
+                <img src="/teakettle.gif" alt="Чайник і чашка" />
+            </div>
+        </div>
+    </section>
+</ArticleLayout>
+
+<style>
+    h1 {
+		text-align: center;
+        margin-bottom: 3rem;
+	}
+
+    a {
+        cursor: pointer;
+    }
+
+    .coda {
+        margin: 5rem 0 1.5rem;
+        text-align: end;
+        justify-content: end;
+    }
+
+    .coda p {
+        margin: 0;
+    }
+
+    .kettle-image {
+        display: flex; 
+        justify-content: flex-end;
+    }
+    
+    .kettle-image img {
+        width: 5rem;
+    }
+</style>

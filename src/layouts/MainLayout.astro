@@ -2,9 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css';
 import MobileNavigation from '../components/MobileNavigation.astro';
-import {baseData} from '../data/siteData';
+import '../styles/global.css';
 
 const { pageTitle = "Чайна Хатинка" } = Astro.props;
 const description = "про справжній чай, Чайну традицію, чайну церемонію ґунфу ча, Шлях Чаю Ча Дао"
@@ -14,7 +13,7 @@ const description = "про справжній чай, Чайну традиці
 	<BaseHead {pageTitle} {description}/>
 	<body>
 		<Navigation />
-		<main data-pagefind-body>
+		<main class="content-grid" data-pagefind-body>
 			<slot />
 		</main>
 		<Footer />

@@ -8,8 +8,9 @@ import MainLayout from "../../layouts/MainLayout.astro";
 <MainLayout>
     <section class="container">
         <h3 class="first-line centered">Ви вступили в Потік,</h3>
-        <h3 class="centered">але він вже не той, що раніше.</h3>
+        <h3 class="centered">Але він вже не той, що раніше.</h3>
         <h3 class="centered">Так і цяя сторінка спливла разом з ним...</h3>
+        <h1 class="number">404</h1>
         <button class="home-btn first-line last-line">
             <a href="/">
                 Вертайтесь домів
@@ -41,6 +42,11 @@ import MainLayout from "../../layouts/MainLayout.astro";
     a {
         font-size: 1rem;
         color: light-dark(var(--foreground));
+    }
+
+    .number {
+        font-size: 4rem;
+        margin-top: 1rem;
     }
 
     .home-btn:hover {

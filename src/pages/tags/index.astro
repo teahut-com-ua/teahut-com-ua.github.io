@@ -9,14 +9,12 @@ const pageTitle = "Позначки чаїв";
 ---
 
 <MainLayout {pageTitle}>
-  <div class="container">
     <h1>{pageTitle}:</h1>
       <div class="tags last-line">
           {tags.map((tag) => (
               <p class="tag"><a href={`/tags/${tag}/`}>{tag}</a></p>
           ))}
       </div>
-  </div>
 </MainLayout>
 
 <style>
@@ -41,16 +39,8 @@ const pageTitle = "Позначки чаїв";
       background-color: var(--button);
     }
 
-    
-    .container { padding: 3rem 1rem 1rem; }
-    
-    @media(min-width: 48rem) {
-      .container { padding: 3rem 4rem 1rem; }
+    a:hover, a:focus-visible { color: light-dark(var(--background), var(--background-dark));}
 
-      a:hover, a:focus-visible { color: light-dark(var(--background), var(--background-dark));}
-
-      .tag:hover,
-      a:focus-visible { background-color: var(--active); }
-
-    }
+    .tag:hover,
+    a:focus-visible { background-color: var(--active); }
 </style>

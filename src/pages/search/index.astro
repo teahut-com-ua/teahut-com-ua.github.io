@@ -6,16 +6,13 @@ const pageTitle = "Пошук на сайті:"
 ---
 
 <MainLayout {pageTitle}>
-	<div class="container">
-		<h1>{pageTitle}</h1>
-		<div class="search-container">
-			<Search id="search" className="pagefind-ui" uiOptions={{ 
-				showImages: false,
-				resetStyles: true,
-				debounceTimeoutMs: 500
-			}} />
-
-		</div>
+	<h1>{pageTitle}</h1>
+	<div class="search-container">
+		<Search id="search" className="pagefind-ui" uiOptions={{ 
+			showImages: false,
+			resetStyles: true,
+			debounceTimeoutMs: 500
+		}} />
 	</div>
 </MainLayout>
 
@@ -99,23 +96,17 @@ const pageTitle = "Пошук на сайті:"
 	main {
 		background-color: var(--button);
 	}
-	.container {
-		padding: 3rem 1rem 1rem; 
-	}
-	h1 { margin-bottom: 1rem; }
-	
+
 	.search-container {
 		padding: 2rem;
 		border-radius: 0.5rem;
 	}
-
+	
 	@media(min-width: 48rem) {
 		main {
 			margin-top: 5rem;
 		}
-		.container { 
-			padding: 3rem 5rem 1rem; 
-		}
-	}
 
+		h1 { margin-bottom: 1rem; }
+	}
 </style>
