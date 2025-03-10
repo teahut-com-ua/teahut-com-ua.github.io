@@ -1,9 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
-import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
-import Banner from '../components/Banner.astro';
 import TeaCard from '../components/TeaCard.astro';
 import BlogPost from '../components/BlogPost.astro';
 
@@ -23,7 +21,6 @@ const newTeas = (await getCollection('teas'))
 ---
 
 <MainLayout>
-	<!-- <Banner /> -->
 	<h1 class="">Ласкаво просимо</h1>
 	<h3>до нашої</h3>
 	<h2 class="last-line">Чайної Хатинки!</h2>
@@ -54,7 +51,7 @@ const newTeas = (await getCollection('teas'))
 			}
 		</section>
 	</div>
-	<div class="tea-section">
+	<div class="tea-section breakout">
 		<h2 class="last-line">Наші нові чаї:</h2>
 		<section class="new-tea">
 			{newTeas.map((tea) => 
@@ -82,7 +79,7 @@ const newTeas = (await getCollection('teas'))
 		place-content: start center;
 	}
 
-	.new-posts, .tea-section { padding-block: 2rem; }
+	.new-posts, .tea-section { padding: 1rem; }
 	
 	.new-posts { background: var(--button); }
 
