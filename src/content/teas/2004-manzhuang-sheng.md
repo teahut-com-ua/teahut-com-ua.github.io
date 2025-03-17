@@ -9,17 +9,17 @@ yieldYear: 2004 рік
 pubDate: 2024-02-26
 price: 6.78
 image: "/src/assets/teas/2004-manzhuang-sheng/2004-manzhuang-sheng.jpg"
-imageAlt: Цеглинка 2004 року з Маньджван
+imageAlt: Цеглинка з Маньджван
 image1: "/src/assets/teas/2004-manzhuang-sheng/slide1.jpg"
-image1alt: Давні дерева Маньджван
+image1alt: "Листя з давніх дерев"
 image2: "/src/assets/teas/2004-manzhuang-sheng/slide2.jpg"
-image2alt: Листя доволі сильно спресоване
+image2alt: "спресоване трохи щільніше"
 image3: "/src/assets/teas/2004-manzhuang-sheng/slide3.jpg"
-image3alt: Настій у першій чашці
+image3alt: "Настій у першій чашці"
 image4: "/src/assets/teas/2004-manzhuang-sheng/slide4.jpg"
-image4alt: Десята чашка
+image4alt: "Десята чашка"
 image5: "/src/assets/teas/2004-manzhuang-sheng/slide5.jpg"
-image5alt: Спите листя (чайне дно)
+image5alt: "Спите листя"
 category: ["shengcha"]
 tags: ["Шен Пуери", "Витримані", "Ґу Шу", "Чаї з дерев"]
 ---

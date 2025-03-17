@@ -11,7 +11,7 @@ price: 5.1
 image: "/src/assets/teas/2016-shoumei-white/2016-shoumei-white.jpg"
 imageAlt: Витриманий Шоумей з Фудіна
 image1: "/src/assets/teas/2016-shoumei-white/slide1.jpg"
-image1alt: Млинець має достатньо бруньок
+image1alt: Млинець має чимало бруньок
 image2: "/src/assets/teas/2016-shoumei-white/slide2.jpg"
 image2alt: Його спресували у 2023-у
 image3: "/src/assets/teas/2016-shoumei-white/slide3.jpg"

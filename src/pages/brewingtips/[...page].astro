@@ -19,7 +19,12 @@ const pageNumber = `${page.currentPage}`
 ---
 
 <ArticleLayout title={title}>
-  <h1 class="double_last_line">{title}</h1>
+  <h1 class="last-line">{title}</h1>
+  <div class="pagination-block">
+    {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
+    <p class="page-number">сторінка {page.currentPage}</p>
+    {page.url.next && <a href={page.url.next} class="next-page-pagin">&#8594;</a>}
+  </div>
 
   <section class="posts-preview">
     {
@@ -36,9 +41,9 @@ const pageNumber = `${page.currentPage}`
     }
   </section>
   <div class="pagination-block">
-    {page.url.prev && <a href={page.url.prev}>Попередня</a>}
-    {pageNumber}
-    {page.url.next && <a href={page.url.next}>Наступна</a>}
+    {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
+    <p class="page-number">сторінка {page.currentPage}</p>
+    {page.url.next && <a href={page.url.next} class="next-page-pagin">&#8594;</a>}
   </div>
 </ArticleLayout>
 
@@ -48,41 +53,62 @@ const pageNumber = `${page.currentPage}`
     }
 
     section.posts-preview {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2em;
-        place-content: start center;
-		margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      place-content: start center;
+		  margin-bottom: 2rem;
     }
 
     .pagination-block {
-        display: flex; 
-        justify-content: center; 
-        gap: 3rem; 
-        margin-bottom: 1.5rem;
+      display: grid; 
+      grid-template-columns: 1fr auto 1fr;
+		  grid-template-areas: "prev page next";
+      justify-content: center; 
+      gap: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .prev-page-pagin {
+      grid-area: prev;
+      width: fit-content;
+      justify-self: end;
+    }
+
+    .next-page-pagin {
+      grid-area: next;
+      width: fit-content;
+      justify-self: start;
+    }
+
+    .page-number {
+      color: light-dark(var(--green), var(--active));
+      text-align: center;
+      grid-area: page;
+      margin-bottom: unset;
     }
     
     .pagination-block > a {
-        padding: 0.2rem 0.5rem 0.1rem;
-        border: 1px solid light-dark(var(--foreground), var(--foreground-dark));
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        color: light-dark(var(--foreground), var(--foreground-dark));
+      padding: 0.2rem 0.5rem 0.1rem;
+      border: 1px solid light-dark(var(--foreground), var(--foreground-dark));
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      color: light-dark(var(--foreground), var(--foreground-dark));
     }
+    
+    @media(min-width: 48rem) {
+      section.posts-preview {
+        gap: 2rem;
+        justify-content: space-between;
+      }
+      
+      .pagination-block {
+        margin-bottom: 2rem;
+      }
 
-    .pagination-block > a:hover {
+      .pagination-block > a:hover {
         color: var(--active);
         border: 1px solid var(--active);
-    }
-
-    @media(min-width: 48rem) {
-        section.posts-preview {
-            gap: 2rem;
-            justify-content: space-between;
-        }
-
-        .pagination-block {
-            margin-bottom: 2rem;
-        }
+      }
     }
 </style>

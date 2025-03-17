@@ -20,7 +20,11 @@ const pageNumber = page.currentPage
 
 <ArticleLayout {pageTitle}>
   <h1 class="last-line">{pageTitle}</h1>
-  <h4 class="last-line">сторінка {pageNumber}</h4>
+  <div class="pagination-block">
+    {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
+    <p class="page-number">сторінка {page.currentPage}</p>
+    {page.url.next && <a href={page.url.next} class="next-page-pagin">&#8594;</a>}
+  </div>
 
   <section class="posts-preview">
     {
@@ -38,9 +42,9 @@ const pageNumber = page.currentPage
     }
   </section>
   <div class="pagination-block">
-    {page.url.prev && <a href={page.url.prev}>&#8592;</a>}
-    {page.currentPage}
-    {page.url.next && <a href={page.url.next}>&#8594;</a>}
+    {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
+    <p class="page-number">сторінка {page.currentPage}</p>
+    {page.url.next && <a href={page.url.next} class="next-page-pagin">&#8594;</a>}
   </div>
 </ArticleLayout>
 
@@ -50,18 +54,39 @@ const pageNumber = page.currentPage
     }
 
     section.posts-preview {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2em;
-        place-content: start center;
-		margin-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      place-content: start center;
+		  margin-bottom: 2rem;
     }
 
     .pagination-block {
-        display: flex; 
+        display: grid; 
+        grid-template-columns: 1fr auto 1fr;
+		    grid-template-areas: "prev page next";
         justify-content: center; 
-        gap: 3rem; 
+        gap: 3rem;
         margin-bottom: 1.5rem;
+    }
+
+    .prev-page-pagin {
+      grid-area: prev;
+      width: fit-content;
+      justify-self: end;
+    }
+
+    .next-page-pagin {
+      grid-area: next;
+      width: fit-content;
+      justify-self: start;
+    }
+
+    .page-number {
+      color: light-dark(var(--green), var(--active));
+      text-align: center;
+      grid-area: page;
+      margin-bottom: unset;
     }
     
     .pagination-block > a {
@@ -74,8 +99,8 @@ const pageNumber = page.currentPage
     
     @media(min-width: 48rem) {
         section.posts-preview {
-            gap: 2rem;
-            justify-content: space-between;
+          gap: 2rem;
+          justify-content: center;
         }
         
         .pagination-block {

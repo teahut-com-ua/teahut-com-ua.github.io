@@ -19,16 +19,9 @@ const filteredTeas = allTeas.filter((tea) => tea.data.posted !== false);
 const categories = [...new Set(filteredTeas.map((tea) => tea.data.category).flat())];
 const { page } = Astro.props;
 const pageNumber = `сторінка ${page.currentPage}`;
-
-const width2 = "100%";
-const height2 = "100%";
-const margin2 = "0.3rem 0 0 0.5rem";
-const color2 = "var(--background)";
-const background2 = "var(--nav-item-back)";
-const word2 = "Чай";
 ---
 
-<ArticleLayout {pageTitle} {width2} {height2} {margin2} {color2} {background2} {word2}>
+<ArticleLayout {pageTitle}>
 	<section>
 		<h1 class="last-line">{pageTitle}:</h1>
 
@@ -46,7 +39,7 @@ const word2 = "Чай";
 							<figure class="tea">
 								<Image 
 									src={tea.data.image} 
-									alt=""
+									alt={tea.data.title}
 									class="tea-image" 
 								/>
 								<figcaption>
@@ -65,10 +58,10 @@ const word2 = "Чай";
 			))}
 		</div>
 	</section>
-	<h5 class="page-number">{pageNumber}</h5>
 	<div class="pagination-block">
-		{page.url.prev && <a href={page.url.prev}>Попередня</a>}
-		{page.url.next && <a href={page.url.next}>Наступна</a>}
+		{page.url.prev && <a href={page.url.prev} class="prev-page-pagin">Попередня</a>}
+		<p class="page-number">{pageNumber}</p>
+		{page.url.next && <a href={page.url.next} class="next-page-pagin">Наступна</a>}
 	</div>
 </ArticleLayout>
 
@@ -209,18 +202,34 @@ const word2 = "Чай";
 		color: oklch(60% 0.104 var(--hue));
 	}
 
-    .page-number {
-        color: light-dark(var(--green), var(--active));
-        text-align: center;
-        margin: 3rem 0 1rem;
-    }
-
     .pagination-block {
-        display: flex; 
+		display: grid;
+		grid-template-columns: 1fr auto 1fr;
+		grid-template-areas: "prev page next";
         justify-content: center; 
         gap: 3rem; 
-        margin-bottom: 1.5rem;
+        margin: 2rem 0 1.5rem;
     }
+
+	.prev-page-pagin {
+		grid-area: prev;
+		width: fit-content;
+		justify-self: center;
+	}
+
+	.next-page-pagin {
+		grid-area: next;
+		width: fit-content;
+		justify-self: center;
+	}
+
+	.page-number {
+		color: light-dark(var(--green), var(--active));
+		text-align: center;
+		grid-area: page;
+		margin-bottom: unset;
+		/* margin: 3rem 0 1rem; */
+	}
     
     .pagination-block > a {
         padding: 0.2rem 0.5rem 0.1rem;

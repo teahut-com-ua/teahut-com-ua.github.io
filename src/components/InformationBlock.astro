@@ -5,8 +5,8 @@ import {exchangePrice} from "../utils/utils";
 const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt, image4alt, image5alt, title, subtitle, region, yieldYear, variety, item = "Вартість за 10 гр", price, tags } = Astro.props;
 ---
 
-<div class="container">
-    <div class="slider">
+<article class="container full-width">
+    <section class="slider">
         <ImageSlider
             image1={image1}
             image2={image2}
@@ -19,8 +19,8 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
             image4alt={image4alt}
             image5alt={image5alt}
         />
-    </div>
-    <div class="text-information"> 
+    </section>
+    <section class="text-information"> 
         <div class="headerContainer">
             <h1 class="title">{title}</h1>
             <h4 class="subtitle">{subtitle}</h4>
@@ -52,12 +52,13 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
                 ))}
             </div>
         </div>
-    </div>
-</div>
+    </section>
+</article>
 
 <style>
     .container {
-        margin: 2rem auto 0;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .slider {
@@ -65,7 +66,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
     }
 
     .text-information {
-        width: 100%;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -139,10 +140,9 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 
     @media screen  and (min-width: 48rem){
         .container {
-            margin: 2rem 2rem 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto;
+            /* margin: 2rem 1rem 0 0; */
+            display: flex;
+            padding-inline: 2.3rem;
         }
 
         .slider {

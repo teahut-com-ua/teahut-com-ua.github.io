@@ -11,9 +11,9 @@ price: 5.71
 image: "/src/assets/teas/2000s-sijinqian-liubao/2000s-sijinqian-liubao.jpg"
 imageAlt: Любао 2000-х років
 image1: "/src/assets/teas/2000s-sijinqian-liubao/slide1.jpg"
-image1alt: Витримане в Малайзії листя 2000-х років
+image1alt: Витримане в Малайзії листя
 image2: "/src/assets/teas/2000s-sijinqian-liubao/slide2.jpg"
-image2alt: Гонконзький бренд "Чотири золотих монети"
+image2alt: "Чотири золотих монети"
 image3: "/src/assets/teas/2000s-sijinqian-liubao/slide3.jpg"
 image3alt: Колір настою першої чашки
 image4: "/src/assets/teas/2000s-sijinqian-liubao/slide4.jpg"

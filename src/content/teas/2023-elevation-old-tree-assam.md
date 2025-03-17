@@ -11,7 +11,7 @@ price: 4.68
 image: "/src/assets/teas/2023-elevation-old-tree-assam/elevation-old-tree-assam.jpg"
 imageAlt: Піднесення, тайванський Червоний 2023 року
 image1: "/src/assets/teas/2023-elevation-old-tree-assam/slide1.jpg"
-image1alt: Листя окиснене трохи менше, ніж зазвичай
+image1alt: Листя окиснене трохи легше
 image2: "/src/assets/teas/2023-elevation-old-tree-assam/slide2.jpg"
 image2alt: Колір настою першої чашки
 image3: "/src/assets/teas/2023-elevation-old-tree-assam/slide3.jpg"

@@ -1,4 +1,5 @@
 ---
+import MobileNavigation from './MobileNavigation.astro';
 import Social from './Social.astro';
 import { Icon } from 'astro-icon/components';
 ---
@@ -107,13 +108,14 @@ import { Icon } from 'astro-icon/components';
         <p class="copyright">&copy; 2014-{new Date().getFullYear()} TEAHUT.COM.UA</p>
         <Social />
     </div>
+    <MobileNavigation />
 </footer>
 
 <style>
     footer {
         background: var(--footer);
         color: var(--background);
-        /* padding: 0 1em; */
+        padding: 0 1em;
     }
 
     dd {

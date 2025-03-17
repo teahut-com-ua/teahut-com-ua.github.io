@@ -11,15 +11,15 @@ price: 8.62
 image: "/src/assets/teas/2001-mengsa-sheng/2001-mengsa-sheng.jpg"
 imageAlt: Шен пуер 2001 року з Менса
 image1: "/src/assets/teas/2001-mengsa-sheng/slide1.jpg"
-image1alt: Млинець із Менса 2001 року
+image1alt: Млинець із Менса
 image2: "/src/assets/teas/2001-mengsa-sheng/slide2.jpg"
-image2alt: Зберігання відзначилося і на обгортці
+image2alt: Обгортка постраждала від часу
 image3: "/src/assets/teas/2001-mengsa-sheng/slide3.jpg"
-image3alt: Колір настою, перша чашка
+image3alt: Колір настою першої чашки
 image4: "/src/assets/teas/2001-mengsa-sheng/slide4.jpg"
-image4alt: Колір настою, десята чашка
+image4alt: Десята чашка
 image5: "/src/assets/teas/2001-mengsa-sheng/slide5.jpg"
-image5alt: Спите листя (чайне дно)
+image5alt: Спите листя
 category: ["shengcha"]
 tags: ["Шен Пуери", "Витримані", "Ґу Шу", "Чаї з дерев"]
 ---

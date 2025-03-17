@@ -12,14 +12,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const width2 = "100%";
-const height2 = "100%";
-const margin2 = "0.3rem 0 0 0.5rem";
-const color2 = "var(--background)";
-const background2 = "var(--nav-item-back)";
-const word2 = "Чай";
 ---
 
-<TeaLayout frontmatter={entry.data} {width2} {height2} {margin2} {color2} {background2} {word2}>
+<TeaLayout frontmatter={entry.data}>
     <Content />
 </TeaLayout>

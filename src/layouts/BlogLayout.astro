@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
         {frontmatter.author &&<p class="author last-line">{frontmatter.author}</p>}
             <slot />
         <p class="bottom-sign">Українською перекладено спеціяльно для TeaHut.com.ua</p>
-        <div style="display: flex; justify-content: end;">
+        <div class="last-line" style="display: flex; justify-content: end;">
             <Image style="display: block;  width: 70px;" src={img1} alt="Чайник і чашка" />
         </div>
 </MainLayout>
