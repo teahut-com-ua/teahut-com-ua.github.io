@@ -203,33 +203,32 @@ const pageNumber = `сторінка ${page.currentPage}`;
 	}
 
     .pagination-block {
-		display: grid;
-		grid-template-columns: 1fr auto 1fr;
-		grid-template-areas: "prev page next";
+        display: grid; 
+        grid-template-columns: 1fr auto 1fr;
+		    grid-template-areas: "prev page next";
         justify-content: center; 
-        gap: 3rem; 
-        margin: 2rem 0 1.5rem;
+        gap: 3rem;
+        margin-bottom: 1.5rem;
     }
 
-	.prev-page-pagin {
-		grid-area: prev;
-		width: fit-content;
-		justify-self: center;
-	}
+    .prev-page-pagin {
+      grid-area: prev;
+      width: fit-content;
+      justify-self: end;
+    }
 
-	.next-page-pagin {
-		grid-area: next;
-		width: fit-content;
-		justify-self: center;
-	}
+    .next-page-pagin {
+      grid-area: next;
+      width: fit-content;
+      justify-self: start;
+    }
 
-	.page-number {
-		color: light-dark(var(--green), var(--active));
-		text-align: center;
-		grid-area: page;
-		margin-bottom: unset;
-		/* margin: 3rem 0 1rem; */
-	}
+    .page-number {
+      color: light-dark(var(--green), var(--active));
+      text-align: center;
+      grid-area: page;
+      margin-bottom: unset;
+    }
     
     .pagination-block > a {
         padding: 0.2rem 0.5rem 0.1rem;
