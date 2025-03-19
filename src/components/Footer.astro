@@ -297,10 +297,10 @@ import { Icon } from 'astro-icon/components';
     }        
 </style>
 
-<script>
+<script is:inline>
     const colorThemes = document.querySelectorAll('[name="color-scheme"]')
   
-    const storeTheme = function(theme: string) {
+    const storeTheme = function(theme) {
       sessionStorage.setItem("theme", theme);
     }
   

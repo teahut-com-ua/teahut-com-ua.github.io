@@ -22,7 +22,7 @@ const pageNumber = `${page.currentPage}`
   <h1 class="last-line">{title}</h1>
   <div class="pagination-block">
     {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
-    <p class="page-number">сторінка {page.currentPage}</p>
+    <p class="page-number">сторінка {pageNumber}</p>
     {page.url.next && <a href={page.url.next} class="next-page-pagin">&#8594;</a>}
   </div>
 
@@ -44,7 +44,7 @@ const pageNumber = `${page.currentPage}`
   </section>
   <div class="pagination-block">
     {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
-    <p class="page-number">сторінка {page.currentPage}</p>
+    <p class="page-number">сторінка {pageNumber}</p>
     {page.url.next && <a href={page.url.next} class="next-page-pagin">&#8594;</a>}
   </div>
 </ArticleLayout>
