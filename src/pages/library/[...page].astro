@@ -22,7 +22,7 @@ const pageNumber = page.currentPage
   <h1 class="last-line">{pageTitle}</h1>
   <div class="pagination-block">
     {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
-    <p class="page-number">сторінка {page.currentPage}</p>
+    <p class="page-number">сторінка {pageNumber}</p>
     {page.url.next && <a href={page.url.next} class="next-page-pagin">&#8594;</a>}
   </div>
 
@@ -36,6 +36,8 @@ const pageNumber = page.currentPage
                 subtitle={p.data.subtitle}
                 author={p.data.author}
                 description={p.data.description}
+                categoryTitle={p.data.category.title}
+                categoryUrl={p.data.category.url}
                 pubDate={p.data.pubDate}
         />
       ))
@@ -53,12 +55,14 @@ const pageNumber = page.currentPage
         text-align: center;
     }
 
-    section.posts-preview {
-      display: flex;
-      flex-wrap: wrap;
+    .posts-preview {
+      display: grid;
+      grid-auto-flow: dense;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      grid-template-rows: 1fr auto;
       gap: 2em;
-      place-content: start center;
 		  margin-bottom: 2rem;
+      container-type: inline-size;
     }
 
     .pagination-block {
@@ -98,9 +102,8 @@ const pageNumber = page.currentPage
     }
     
     @media(min-width: 48rem) {
-        section.posts-preview {
+        .posts-preview {
           gap: 2rem;
-          justify-content: center;
         }
         
         .pagination-block {

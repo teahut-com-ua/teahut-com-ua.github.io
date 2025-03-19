@@ -7,16 +7,16 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
 <MainLayout>
     <section class="container">
-        <h3 class="first-line centered">Ви вступили в Потік,</h3>
-        <h3 class="centered">Але він вже не той, що раніше.</h3>
-        <h3 class="centered">Так і цяя сторінка спливла разом з ним...</h3>
         <h1 class="number">404</h1>
-        <button class="home-btn first-line last-line">
-            <a href="/">
+        <h3 class="centered">Ви вступили в Потік,</h3>
+        <h3 class="centered">Але він вже не той, що раніше.</h3>
+        <h3 class="centered last-line">Так і цяя сторінка спливла разом з ним...</h3>
+        <a href="/" class="last-line">
+            <button class="home-btn">
                 Вертайтесь домів
                 <Icon name="hut" size={27} />
-            </a>
-        </button>
+            </button>
+        </a>
     </section>
 </MainLayout>
 
@@ -33,23 +33,23 @@ import MainLayout from "../../layouts/MainLayout.astro";
     .home-btn {
         display: flex;
         justify-content: center;
+        column-gap: 1rem;
         align-items: center;
         padding: 0.5rem 1rem 0.6rem;
         width: fit-content;
-        border-radius: .3rem;
-    }
-    
-    a {
+        border-radius: .6rem;
+        cursor: pointer;
         font-size: 1rem;
-        color: light-dark(var(--foreground));
+        color: light-dark(var(--foreground), var(--green));
+        background-color: light-dark(var(--button), var(--gray));
     }
 
     .number {
-        font-size: 4rem;
-        margin-top: 1rem;
+        font-size: 6rem;
+        margin-bottom: 2rem;
     }
 
     .home-btn:hover {
-        color: var(--active);
+        color: light-dark(var(--active),var(--background));
     }
 </style>

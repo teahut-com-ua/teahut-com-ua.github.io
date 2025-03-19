@@ -45,22 +45,22 @@ import { Icon } from 'astro-icon/components';
       <dl>
             <dt><a class="column-header" href='/library/'>Читальня</a></dt>
             <dd>
-              <a class="" href='/library/'>Статті</a>
+              <a class="" href='/library/articles/'>Загальні статті</a>
             </dd>
             <dd>
-                <a class="" href='/gongfuchateatips/'>Поради з Ґонфу Ча</a>
+                <a class="" href='/library/gongfuchateatips/'>Поради з Ґонфу Ча</a>
             </dd>
             <dd>
-                <a class="" href='/gongfuteapot/'>Чайник Ґонфу</a>
+                <a class="" href='/library/gongfuteapot/'>Чайник Ґонфу</a>
             </dd>
             <dd>
-                <a class="long-text" href='/brewingtips/'>Деякі поради щодо заварювання</a>
+                <a class="long-text" href='/library/brewingtips/'>Деякі поради щодо заварювання</a>
             </dd>
             <dd>
-                <a class="" href='/teaandseasons/'>Про чаї та пори року</a>
+                <a class="" href='/library/teaandseasons/'>Про чай і сезони</a>
             </dd>
             <dd>
-                <a class="" href='/questionsandanswers/'>Питання і відповіді</a>
+                <a class="" href='/library/questionsandanswers/'>Питання і відповіді</a>
             </dd>
         </dl>
         <dl class="fourth-block">
@@ -297,10 +297,10 @@ import { Icon } from 'astro-icon/components';
     }        
 </style>
 
-<script is:inline>
+<script>
     const colorThemes = document.querySelectorAll('[name="color-scheme"]')
   
-    const storeTheme = function(theme) {
+    const storeTheme = function(theme: string) {
       sessionStorage.setItem("theme", theme);
     }
   

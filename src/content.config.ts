@@ -44,12 +44,53 @@ const library = defineCollection({
         heroImage: z.string().optional(),
         image: z.string().optional(),
         posted: z.boolean().optional(),
-        category: z.array(z.string())
+        category: z.object({
+          title: z.string(),
+          url: z.string().optional(),
+        }),
     })
 })
 
+const articles = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/articles" }),
+  schema: z.object({
+      title: z.string(),
+      subtitle: z.string().optional(),
+      subsubtitle: z.string().optional(),
+      author: z.string().optional(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      heroImage: z.string().optional(),
+      image: z.string().optional(),
+      posted: z.boolean().optional(),
+      category: z.object({
+        title: z.string(),
+        url: z.string().optional(),
+      }),
+  })
+})
+
+const aboutteas = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/aboutteas" }),
+  schema: z.object({
+      title: z.string(),
+      subtitle: z.string().optional(),
+      subsubtitle: z.string().optional(),
+      author: z.string().optional(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      heroImage: z.string().optional(),
+      image: z.string().optional(),
+      posted: z.boolean().optional(),
+      category: z.object({
+        title: z.string(),
+        url: z.string().optional(),
+      }),
+  })
+})
+
 const brewingtips = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/brewingtips" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/brewingtips" }),
   schema: z.object({
       title: z.string(),
       subtitle: z.string().optional(),
@@ -59,12 +100,15 @@ const brewingtips = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
-      category: z.array(z.string())
+      category: z.object({
+        title: z.string(),
+        url: z.string().optional(),
+      }),
   })
 })
 
 const gongfuchateatips = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/gongfuchateatips" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/gongfuchateatips" }),
   schema: z.object({
       title: z.string(),
       subtitle: z.string().optional(),
@@ -74,12 +118,15 @@ const gongfuchateatips = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
-      category: z.array(z.string())
+      category: z.object({
+        title: z.string(),
+        url: z.string().optional(),
+      }),
   })
 })
 
 const gongfuteapot = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/gongfuteapot" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/gongfuteapot" }),
   schema: z.object({
       title: z.string(),
       subtitle: z.string().optional(),
@@ -89,12 +136,15 @@ const gongfuteapot = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
-      category: z.array(z.string())
+      category: z.object({
+        title: z.string(),
+        url: z.string().optional(),
+      }),
   })
 })
 
 const questionsandanswers = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/questionsandanswers" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/questionsandanswers" }),
   schema: z.object({
       title: z.string(),
       subtitle: z.string().optional(),
@@ -104,12 +154,15 @@ const questionsandanswers = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
-      category: z.array(z.string())
+      category: z.object({
+        title: z.string(),
+        url: z.string().optional(),
+      }),
   })
 })
 
 const teaandseasons = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/teaandseasons" }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/teaandseasons" }),
   schema: z.object({
       title: z.string(),
       subtitle: z.string().optional(),
@@ -119,8 +172,11 @@ const teaandseasons = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
-      category: z.array(z.string())
+      category: z.object({
+        title: z.string(),
+        url: z.string().optional(),
+      }),
   })
 })
 
-export const collections = { teas, library, brewingtips, gongfuchateatips, gongfuteapot, questionsandanswers, teaandseasons };
+export const collections = { teas, library, articles, aboutteas, brewingtips, gongfuchateatips, gongfuteapot, questionsandanswers, teaandseasons };

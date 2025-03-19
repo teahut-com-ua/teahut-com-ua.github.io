@@ -1,37 +1,89 @@
 ---
 import { formatDate } from "../utils/utils";
+import Button from "./Button.astro";
 
-const { url, image, imageAlt, pill, title, description, author, pubDate } = Astro.props;
+const { url, image, imageAlt, categoryTitle, categoryUrl, title, description, author, pubDate } = Astro.props;
 const time = formatDate(pubDate);
 ---
 
 <article class="blog-post">
-    <a href={url} data-astro-prefetch>
+    <a class="main-block" href={url} data-astro-prefetch>
         <img src={image} alt={imageAlt}>
-        <p class="pill">{pill}</p>
         <h3 class="title">{title}</h3>
-        <p>{description}</p>
+        <p class="description">{description}</p>
     </a>
-    <div class="footer-block">
-        <p>{author}</p>
-        <p class="time">{time}</p>
-    </div>
+    <section class="footer-information">
+        <a href={categoryUrl}>
+            <Button 
+                class="btn-block"
+                background="var(--button)" 
+                color="light-dark(var(--foreground), var(--foreground-dark))"
+                isBordered={true}
+            >{categoryTitle}</Button>
+        </a>
+        <footer class="footer-block">
+            <p>{author}</p>
+            <p class="time">{time}</p>
+        </footer>
+    </section>
 </article>
 
 <style>
     article {
+        grid-row: span 2;
+           grid-template-areas:
+      "main"
+      "footer-information";
+        display: grid;
+        grid-template-rows: subgrid;
+        row-gap: 1rem;
+        align-content: space-between;
         margin: 0 0.5rem;
-        padding: 1.5rem 2rem 1rem;
+        border: 1px solid light-dark(var(--background-cards), var(--button));
         border-radius: .7rem; 
         background-color: light-dark(var(--background), var(--footer));
+    }
+    
+    .main-block {
+        padding: 1.5rem 2rem 0;
+        grid-row: span 2;
+        grid-area: main;
+        display: grid;
+        grid-template-areas:
+        "title"
+        "description";
+        grid-template-rows: auto 1fr;
     }
 
     .title {
         color: light-dark(var(--green), var(--active));
+        grid-area: title;
+    }
+
+    .description {
+        grid-area: description;
     }
 
     a {
         color: light-dark(var(--foreground), var(--foreground-dark));
+    }
+
+    .footer-information {
+        background-color: light-dark(var(--background-cards), rgb(37, 37, 37));
+        border-radius: 0 0 .7rem .7rem;
+        padding: 1.5rem 2rem 1rem;
+        grid-area: footer-information;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 1rem;
+        grid-template-areas:
+        "button"
+        "footer";
+    }
+
+    .btn-block {
+        grid-area: button;
     }
 
     p {
@@ -40,22 +92,20 @@ const time = formatDate(pubDate);
 
     .footer-block {
         font-size: 0.9rem;
-        display: flex;
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: subgrid;
         justify-content: space-between;
-        margin-top: 1rem;
     }
-
+    
     @media (min-width: 48rem) {
         article.blog-post {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            max-width: 43%;
             transition: all var(--animation-timing) ease-in-out;
         }
-
+        
         article:hover {
-			transform: scale(1.05);
+            transform: scale(1.05);
             box-shadow:
             2.8px 2.8px 17.4px rgba(0, 0, 0, 0.035),
             6.7px 6.7px 28px rgba(0, 0, 0, 0.045),
@@ -64,5 +114,13 @@ const time = formatDate(pubDate);
             41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
             100px 100px 80px rgba(0, 0, 0, 0.07);
 		}
+        
+        .btn-block {
+            font-size: 0.9rem;
+        }
+        
+        .footer-block {
+            padding-inline: .5rem;
+        }
     }
 </style>

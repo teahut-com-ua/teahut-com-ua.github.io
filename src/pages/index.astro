@@ -35,9 +35,9 @@ const newTeas = (await getCollection('teas'))
 	<p class="last-line">
 		Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао" чи "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття — приготуванням і вживанням однієї з найдавніше відомих лікарських рослин Світу. Мета цього — найкраща чашка чаю, сповнена Пробудження і Присутности для всіх нас. Перед Природою і перед Чаєм, Її часточкою, ми рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
 	</p>
-	<div class="new-posts full-width">
-		<h2 class="last-line">Найновіші статті:</h2>
-		<section>
+	<section class="full-width">
+		<h2 class="new-posts-header">Найновіші статті:</h2>
+		<div class="new-posts">
 			{newPosts.map((p) => 
 				<BlogPost
 					class="post"
@@ -47,10 +47,12 @@ const newTeas = (await getCollection('teas'))
 					author={p.data.author}
 					description={p.data.description}
 					pubDate={p.data.pubDate}
+					categoryTitle={p.data.category.title}
+                	categoryUrl={p.data.category.url}
 				/>)
 			}
-		</section>
-	</div>
+		</div>
+	</section>
 	<div class="tea-section breakout">
 		<h2 class="last-line">Наші нові чаї:</h2>
 		<section class="new-tea">
@@ -72,16 +74,29 @@ const newTeas = (await getCollection('teas'))
 
 	p::first-letter { font-size: 1.5em; }
 
-	section {
+	.new-posts-header { margin-top: 1rem; }
+	
+	.new-posts, .tea-section { padding: 1rem; }
+
+	.full-width {
+		background: var(--button);
+	}
+	
+	.new-posts {
+		display: grid;
+		grid-auto-flow: dense;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+		grid-template-rows: 1fr auto;
+		gap: 2em;
+		margin-bottom: .5rem;
+	}
+
+	.new-tea {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2em;
 		place-content: start center;
 	}
-
-	.new-posts, .tea-section { padding: 1rem; }
-	
-	.new-posts { background: var(--button); }
 
 	@media screen  and (min-width: 48rem){		
 		.new-tea {
