@@ -2,7 +2,7 @@
 import { formatDate } from "../utils/utils";
 import Button from "./Button.astro";
 
-const { url, image, imageAlt, categoryTitle, categoryUrl, title, description, author, pubDate } = Astro.props;
+const { url, image, imageAlt, categoryTitle, categoryUrl, title, subtitle, description, author, pubDate } = Astro.props;
 const time = formatDate(pubDate);
 ---
 
@@ -10,6 +10,7 @@ const time = formatDate(pubDate);
     <a class="main-block" href={url} data-astro-prefetch>
         <img src={image} alt={imageAlt}>
         <h3 class="title">{title}</h3>
+        <h5 class="subtitle">{subtitle}</h5>
         <p class="description">{description}</p>
     </a>
     <section class="footer-information">
@@ -51,6 +52,7 @@ const time = formatDate(pubDate);
         display: grid;
         grid-template-areas:
         "title"
+        "subtitle"
         "description";
         grid-template-rows: auto 1fr;
     }
@@ -58,6 +60,14 @@ const time = formatDate(pubDate);
     .title {
         color: light-dark(var(--green), var(--active));
         grid-area: title;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .subtitle {
+        color: light-dark(var(--green), var(--active));
+        grid-area: subtitle;
+        text-align: center;
     }
 
     .description {
