@@ -40,6 +40,7 @@
     --footer: oklch(20% 0.031 96.93);
     --button: oklch(72.18% 0.093 108.52 / 52%);
     --button-noop: oklch(72.18% 0.093 108.52);
+    --light-dark-text: light-dark(var(--foreground), var(--background));
 
     --green: oklch(46% 0.15 144 / 90%);
     --green-dark: oklch(75% 0.21 144 / 100%);

@@ -54,7 +54,7 @@ const time = formatDate(pubDate);
         "title"
         "subtitle"
         "description";
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto auto 1fr;
     }
 
     .title {
@@ -68,6 +68,7 @@ const time = formatDate(pubDate);
         color: light-dark(var(--green), var(--active));
         grid-area: subtitle;
         text-align: center;
+        font-size: 1rem;
     }
 
     .description {
