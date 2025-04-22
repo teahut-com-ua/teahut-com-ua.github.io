@@ -2,8 +2,8 @@
 import { formatDate } from "../utils/utils";
 import Button from "./Button.astro";
 
-const { url, image, imageAlt, categoryTitle, categoryUrl, title, subtitle, description, author, pubDate } = Astro.props;
-const time = formatDate(pubDate);
+const { url, image, imageAlt, categoryTitle, categoryUrl, title, subtitle, description, author, postedDate } = Astro.props;
+const time = formatDate(postedDate);
 ---
 
 <article class="blog-post">

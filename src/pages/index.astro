@@ -10,7 +10,7 @@ import Image1 from "/src/assets/articles/tea-wayfarer.jpg";
 const newPosts = (await getCollection('library'))
 	.filter((post) => post.data.posted !== false)
 	.sort(
-		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+		(a, b) => b.data.postedDate.valueOf() - a.data.postedDate.valueOf())
 	.slice(0, 2);
 
 const newTeas = (await getCollection('teas'))
@@ -47,6 +47,7 @@ const newTeas = (await getCollection('teas'))
 					author={p.data.author}
 					description={p.data.description}
 					pubDate={p.data.pubDate}
+					postedDate={p.data.postedDate}
 					categoryTitle={p.data.category.title}
                 	categoryUrl={p.data.category.url}
 				/>)
