@@ -2,15 +2,8 @@
 import MainLayout from './MainLayout.astro';
 
 const { pageTitle = "Чайна Хатинка" } = Astro.props;
+const { description = "Сторінки про справжній чай, Чайну традицію, чайну церемонію Ґонфу Ча, Шлях Чаю Ча Дао" } = Astro.props;
 ---
-<MainLayout {pageTitle} >
+<MainLayout {pageTitle} {description} >
     <slot />
 </MainLayout>
-
-<style>
-	.container { padding: 3rem 1rem 0; }
-
-	@media(min-width: 48rem) {
-		.container { padding: 3rem 4rem 0; }
-	}
-</style>

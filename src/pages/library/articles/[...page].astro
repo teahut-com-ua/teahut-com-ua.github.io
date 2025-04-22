@@ -30,15 +30,15 @@ const pageNumber = page.currentPage
     {
       page.data.map((p) => (
         <BlogPost
-                class="post"
-                url={`/library/articles/${p.id}`}
-                title={p.data.title}
-                subtitle={p.data.subtitle}
-                author={p.data.author}
-                description={p.data.description}
-                categoryTitle={p.data.category.title}
-                categoryUrl={p.data.category.url}
-                pubDate={p.data.pubDate}
+          class="post"
+          url={`/library/articles/${p.id}`}
+          title={p.data.title}
+          subtitle={p.data.subtitle}
+          author={p.data.author}
+          description={p.data.description}
+          categoryTitle={p.data.category.title}
+          categoryUrl={p.data.category.url}
+          pubDate={p.data.pubDate}
         />
       ))
     }

@@ -14,6 +14,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 const pageTitle = "Наші чаї";
+const description = "Тут подані всі наші чаї, якими ми можемо з вами поділитися";
 const allTeas = await getCollection("teas");
 const filteredTeas = allTeas.filter((tea) => tea.data.posted !== false);
 const categories = [...new Set(filteredTeas.map((tea) => tea.data.category).flat())];
@@ -21,7 +22,7 @@ const { page } = Astro.props;
 const pageNumber = `сторінка ${page.currentPage}`;
 ---
 
-<ArticleLayout {pageTitle}>
+<ArticleLayout {pageTitle} {description} >
 	<section>
 		<h1 class="last-line">{pageTitle}:</h1>
 

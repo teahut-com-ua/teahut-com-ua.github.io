@@ -15,10 +15,11 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 
 const pageTitle = "Читальня";
+const description = "Тут подані статті про Чай, чайну традицію і культуру";
 const pageNumber = page.currentPage
 ---
 
-<ArticleLayout {pageTitle}>
+<ArticleLayout {pageTitle} {description} >
   <h1 class="last-line">{pageTitle}</h1>
   <div class="pagination-block">
     {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
