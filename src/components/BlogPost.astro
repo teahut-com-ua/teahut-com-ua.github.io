@@ -31,11 +31,11 @@ const time = formatDate(postedDate);
 
 <style>
     article {
-        grid-row: span 2;
-           grid-template-areas:
-      "main"
-      "footer-information";
         display: grid;
+        grid-row: span 2;
+        grid-template-areas:
+            "main"
+            "footer-information";
         grid-template-rows: subgrid;
         row-gap: 1rem;
         align-content: space-between;
@@ -47,9 +47,9 @@ const time = formatDate(postedDate);
     
     .main-block {
         padding: 1.5rem 2rem 0;
+        display: grid;
         grid-row: span 2;
         grid-area: main;
-        display: grid;
         grid-template-areas:
         "title"
         "subtitle"

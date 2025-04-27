@@ -53,6 +53,7 @@
     --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
     --animation-timing: 200ms;
+    --red: rgb(156, 1, 1);
 
     &:has(input[name="color-scheme"][value="light dark"]:checked) {
     color-scheme: light dark;
