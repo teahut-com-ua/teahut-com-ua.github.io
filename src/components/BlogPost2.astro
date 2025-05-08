@@ -1,0 +1,92 @@
+---
+import { formatDate } from "../utils/utils";
+
+
+const { url, subtitle, questions, postedDate } = Astro.props;
+const time = formatDate(postedDate);
+---
+
+<div class="card">
+    <div class="date">{time}</div>
+    <section>
+        <a class="main-block" href={url} data-astro-prefetch>
+            <h2>{subtitle}</h2>
+            <div class="questions">
+                { questions.map((question: string) => 
+                <p>- {question}</p> ) }
+            </div>
+        </a>
+    </section>
+</div>
+
+
+<style>
+    .card{
+        width: 100%;
+        --w: 9em;
+        --h: 40px;
+        --outline: 6px;
+        --radius: 12px;
+        --offset: calc(-1 * var(--outline)); 
+        --size: calc(var(--radius) + var(--outline));
+        background: 
+            var(--offset) var(--h) radial-gradient(circle at right bottom, transparent var(--radius), light-dark(var(--background-darker), var(--footer)) var(--radius)),
+            var(--w) var(--offset) radial-gradient(circle at right bottom, transparent var(--radius), light-dark(var(--background-darker), var(--footer)) var(--radius)),
+            light-dark(var(--background-darker), var(--footer));
+        background-repeat: no-repeat;
+        background-size: var(--size) var(--size), var(--size) var(--size);
+        border: 1px solid light-dark(var(--background-cards), var(--button));
+        border-radius: var(--radius);
+        align-content: start;
+
+        .date {
+            outline: var(--outline) outset light-dark(var(--button-noop), oklch(0.68 0.12 102));
+            border-radius: var(--radius);
+            width: var(--w);
+            height: var(--h);
+            text-align: center;
+            line-height: var(--h);
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        section {
+            width: 80%;
+            margin: auto;
+            padding-top: 40px;
+            font-size: 1rem;
+            h2 {
+                color: light-dark(var(--green), var(--active));
+                font-size: 1.5em;
+                font-weight: 600;
+                margin-bottom: 0.7em;
+            }
+            a {
+                color: inherit;
+            }
+            p:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+            p:last-child {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+    
+    @media (min-width: 48rem) {
+        .card {
+            transition: all var(--animation-timing) ease-in-out;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow:
+            2.8px 2.8px 17.4px rgba(0, 0, 0, 0.035),
+            6.7px 6.7px 28px rgba(0, 0, 0, 0.045),
+            12.5px 12.5px 34.9px rgba(0, 0, 0, 0.051),
+            22.3px 22.3px 40.7px rgba(0, 0, 0, 0.055),
+            41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
+		}
+    }
+</style>

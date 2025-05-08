@@ -1,0 +1,108 @@
+---
+import { formatDate } from "../utils/utils";
+import Button from "./Button.astro";
+
+const { url, image, imageAlt, categoryTitle, categoryUrl, title, subtitle, description, author, postedDate } = Astro.props;
+const time = formatDate(postedDate);
+---
+
+<article class="card">
+    <div class="date">{time}</div>
+    <a class="main-block-1" href={url} data-astro-prefetch>
+        <div class="title-subtitle">
+            <h2 class="title">{title}</h2>
+            <h5 class="subtitle">{subtitle}</h5>
+        </div>
+    </a>
+    <a class="main-block-2" href={url} data-astro-prefetch>
+        <p class="description">{description}</p>
+    </a>
+    <footer class="footer-block">{author}</footer>
+</article>
+
+<style>
+    .card {
+        --width: 9em;
+        --height: 40px;
+        --outline: 6px;
+        --radius: 12px;
+        --offset: calc(-1 * var(--outline)); 
+        --size: calc(var(--radius) + var(--outline));
+       
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+        row-gap: 1rem;
+        background: 
+            var(--offset) var(--height) radial-gradient(circle at right bottom, transparent var(--radius), light-dark(var(--background-darker), var(--footer)) var(--radius)),
+            var(--width) var(--offset) radial-gradient(circle at right bottom, transparent var(--radius), light-dark(var(--background-darker), var(--footer)) var(--radius)),
+            light-dark(var(--background-darker), var(--footer));
+        background-repeat: no-repeat;
+        background-size: var(--size) var(--size), var(--size) var(--size);
+        border: 1px solid light-dark(var(--background-cards), var(--button));
+        border-radius: var(--radius);
+
+        .date {
+            grid-row: 1/2;
+            outline: var(--outline) outset light-dark(var(--button-noop), oklch(0.68 0.12 102));
+            border-radius: var(--radius);
+            width: var(--width);
+            height: var(--height);
+            text-align: center;
+            line-height: var(--height);
+            font-size: 0.9em;
+            font-weight: 500;
+            color: light-dark(var(--foreground), var(--foreground-dark));
+        }
+
+        .main-block-1 {
+            h2 {
+                font-size: 1.4em;
+                font-weight: 600;
+                color: light-dark(var(--green), var(--active));
+                text-align: center;
+                margin-top: 1em;
+            }
+        
+            h5 {
+                color: light-dark(var(--green), var(--active));
+                text-align: center;
+                font-size: 1rem;
+            }
+        }
+
+        .main-block-2 {
+            p {
+                padding-inline: 1rem;
+                color: light-dark(var(--foreground), var(--foreground-dark));
+            }
+        }
+
+        .footer-block {
+            font-style: italic;
+            background-color: light-dark(var(--background-cards), rgb(37, 37, 37));
+            border-radius: 0 0 .7rem .7rem;
+            padding: 1em 2em 1em;
+            text-align: end;
+        }
+    }
+    
+    
+    
+    @media (min-width: 48rem) {
+        .card {
+            transition: all var(--animation-timing) ease-in-out;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow:
+            2.8px 2.8px 17.4px rgba(0, 0, 0, 0.035),
+            6.7px 6.7px 28px rgba(0, 0, 0, 0.045),
+            12.5px 12.5px 34.9px rgba(0, 0, 0, 0.051),
+            22.3px 22.3px 40.7px rgba(0, 0, 0, 0.055),
+            41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
+            100px 100px 80px rgba(0, 0, 0, 0.07);
+		}
+    }
+</style>

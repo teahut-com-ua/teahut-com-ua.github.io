@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
-import BlogPost from "../../../components/BlogPost.astro";
+import BlogPost from "../../../components/BlogPost3.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = (await getCollection("gongfuteapot"))
@@ -56,8 +56,8 @@ const pageNumber = `сторінка ${page.currentPage}`
       display: grid;
       grid-auto-flow: dense;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-      grid-template-rows: 1fr auto;
-      gap: 2em;
+      grid-template-rows: repeat(4, auto);
+      row-gap: 2rem;
 		  margin-bottom: 2rem;
       container-type: inline-size;
     }
@@ -79,7 +79,7 @@ const pageNumber = `сторінка ${page.currentPage}`
     
     @media(min-width: 48rem) {
         section.posts-preview {
-            gap: 2rem;
+            column-gap: 2rem;
         }
         
         .pagination-block {

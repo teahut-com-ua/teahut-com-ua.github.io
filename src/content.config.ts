@@ -155,6 +155,7 @@ const questionsandanswers = defineCollection({
       title: z.string(),
       subtitle: z.string().optional(),
       author: z.string().optional(),
+      questions: z.array(z.string()),
       description: z.string(),
       pubDate: z.date(),
       postedDate: z.coerce.date(),

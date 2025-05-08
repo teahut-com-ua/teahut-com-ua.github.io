@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
-import BlogPost from "../../../components/BlogPost.astro";
+import BlogPost from "../../../components/BlogPost2.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = (await getCollection("questionsandanswers"))
@@ -30,6 +30,7 @@ const pageNumber = `сторінка ${page.currentPage}`
                 url={`/library/questionsandanswers/${p.id}`}
                 title={p.data.title}
                 subtitle={p.data.subtitle}
+                questions={p.data.questions}
                 description={p.data.description}
                 pubDate={p.data.pubDate}
                 postedDate={p.data.postedDate}
@@ -54,7 +55,8 @@ const pageNumber = `сторінка ${page.currentPage}`
     .posts-preview {
       display: grid;
       grid-auto-flow: dense;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      /* grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); */
+      grid-template-columns: 1fr;
       grid-template-rows: 1fr auto;
       gap: 2em;
 		  margin-bottom: 2rem;
@@ -78,7 +80,7 @@ const pageNumber = `сторінка ${page.currentPage}`
     
     @media(min-width: 48rem) {
         section.posts-preview {
-          gap: 2rem;
+          gap: 3rem;
         }
         
         .pagination-block {
