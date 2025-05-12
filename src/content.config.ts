@@ -45,6 +45,7 @@ const library = defineCollection({
         heroImage: z.string().optional(),
         image: z.string().optional(),
         posted: z.boolean().optional(),
+        featured: z.boolean().default(false),
         category: z.object({
           title: z.string(),
           url: z.string().optional(),
@@ -65,6 +66,7 @@ const articles = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
+      featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
         url: z.string().optional(),
@@ -85,6 +87,7 @@ const aboutteas = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
+      featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
         url: z.string().optional(),
@@ -104,6 +107,7 @@ const brewingtips = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
+      featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
         url: z.string().optional(),
@@ -123,6 +127,7 @@ const gongfuchateatips = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
+      featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
         url: z.string().optional(),
@@ -142,6 +147,7 @@ const gongfuteapot = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
+      featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
         url: z.string().optional(),
@@ -162,6 +168,7 @@ const questionsandanswers = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
+      featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
         url: z.string().optional(),
@@ -181,6 +188,7 @@ const teaandseasons = defineCollection({
       heroImage: z.string().optional(),
       image: z.string().optional(),
       posted: z.boolean().optional(),
+      featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
         url: z.string().optional(),

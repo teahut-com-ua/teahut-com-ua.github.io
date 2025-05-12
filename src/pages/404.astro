@@ -7,16 +7,16 @@ const pageTitle = "404 | Сторінку не знайдено";
 
 <MainLayout>
     <section class="container">
-        <h1 class="number">404</h1>
-        <h3 class="centered">Ви вступили в Потік,</h3>
-        <h3 class="centered">Але він вже не той, що раніше.</h3>
-        <h3 class="centered last-line">Так і цяя сторінка спливла разом з ним...</h3>
-        <a href="/" class="last-line">
+        <h1 class="number last">404</h1>
+        <a href="/" class="last">
             <button class="home-btn">
                 Вертайтесь домів
                 <Icon name="hut" size={27} />
             </button>
         </a>
+        <h3 class="centered">Ви вступили в Потік,</h3>
+        <h3 class="centered">Але він вже не той, що раніше.</h3>
+        <h3 class="centered last">Так і цяя сторінка спливла разом з ним...</h3>
     </section>
 </MainLayout>
 
@@ -46,10 +46,24 @@ const pageTitle = "404 | Сторінку не знайдено";
 
     .number {
         font-size: 6rem;
-        margin-bottom: 2rem;
+        margin: 4rem auto 1rem;
     }
 
     .home-btn:hover {
         color: light-dark(var(--active),var(--background));
+    }
+
+    .last {
+        padding-bottom: 3.8rem;
+    }
+
+    @media(min-width: 48rem) {
+        .number {
+        margin: 0 auto 1rem;
+        }
+
+        .last {
+            padding-bottom: 1.2rem;
+        }
     }
 </style>

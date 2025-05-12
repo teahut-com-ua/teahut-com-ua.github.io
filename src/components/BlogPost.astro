@@ -2,11 +2,11 @@
 import { formatDate } from "../utils/utils";
 import Button from "./Button.astro";
 
-const { url, image, imageAlt, categoryTitle, categoryUrl, title, subtitle, description, author, postedDate } = Astro.props;
+const { url, image, imageAlt, categoryTitle, categoryUrl, title, subtitle, description, author, postedDate, featured } = Astro.props;
 const time = formatDate(postedDate);
 ---
 
-<article class="blog-post">
+<article class="blog-post" data-featured={featured} >
     <a class="main-block" href={url} data-astro-prefetch>
         <img src={image} alt={imageAlt}>
         <h3 class="title">{title}</h3>
@@ -91,10 +91,12 @@ const time = formatDate(postedDate);
         grid-template-areas:
         "button"
         "footer";
+        justify-items: center;
     }
 
     .btn-block {
         grid-area: button;
+        align-content: center;
     }
 
     p {
@@ -104,15 +106,20 @@ const time = formatDate(postedDate);
     .footer-block {
         font-size: 0.9rem;
         grid-area: footer;
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr auto;
-        grid-template-rows: subgrid;
+        /* grid-template-rows: subgrid; */
         justify-content: space-between;
     }
     
     @media (min-width: 48rem) {
-        article.blog-post {
+        .blog-post {
             transition: all var(--animation-timing) ease-in-out;
+
+            &[data-featured="true"] {
+                /* grid-column: span 2; */
+            }
         }
         
         article:hover {
