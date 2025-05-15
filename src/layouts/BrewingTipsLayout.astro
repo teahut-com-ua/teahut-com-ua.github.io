@@ -8,8 +8,8 @@ const { frontmatter } = Astro.props;
         {frontmatter.heroImage && <img src={frontmatter.heroImage} alt="" class="header-image">}
         <h1 class="title">{frontmatter.title}</h1>
         <h4 class="title">{frontmatter.subtitle}</h4>
-        <h4 class="title last-line">{frontmatter.subsubtitle}</h4>
-        <p class="author last-line">{frontmatter.author}</p>
+        <h4 class="title">{frontmatter.subsubtitle}</h4>
+        <p class="author">{frontmatter.author}</p>
             <slot />
         <p class="bottom-sign">Українською перекладено спеціяльно для TeaHut.com.ua</p>
         <div style="display: flex; justify-content: end;">
@@ -32,7 +32,7 @@ const { frontmatter } = Astro.props;
     .author { 
         font-style: italic;
         text-align: end;
-        margin-right: clamp(2rem, 2cqw, 5rem);
+        margin: 0.7rem clamp(2rem, 2cqw, 5rem) 3rem 0;
     }
 
     .bottom-sign {
