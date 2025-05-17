@@ -7,8 +7,8 @@ const { frontmatter } = Astro.props;
 <MainLayout pageTitle={frontmatter.title} description={frontmatter.description}>
         {frontmatter.heroImage && <img src={frontmatter.heroImage} alt="" class="header-image">}
         <h1 class="title">{frontmatter.title}</h1>
-        <h4 class="title">{frontmatter.subtitle}</h4>
-        <h4 class="title">{frontmatter.subsubtitle}</h4>
+        <h3 class="title">{frontmatter.subtitle}</h3>
+        <h5 class="title">{frontmatter.subsubtitle}</h5>
         <p class="author">{frontmatter.author}</p>
             <slot />
         <p class="bottom-sign">Українською перекладено спеціяльно для TeaHut.com.ua</p>
