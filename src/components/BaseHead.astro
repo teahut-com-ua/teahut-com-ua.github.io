@@ -5,9 +5,10 @@ import { baseData } from '../data/siteData';
 type Props = {
   pageTitle?: string;
   description?: string;
+  ogImageUrl?: string;
 }
 
-const { pageTitle = baseData.pageTitle, description = baseData.description } = Astro.props;
+const { pageTitle = baseData.pageTitle, description = baseData.description, ogImageUrl } = Astro.props;
 ---
 
 <head>
@@ -16,6 +17,7 @@ const { pageTitle = baseData.pageTitle, description = baseData.description } = A
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content={Astro.generator} />
   <meta name="description" content={description} />
+  <meta property="og:image" content={ogImageUrl} />
   <AstroFont
     config={[
       {

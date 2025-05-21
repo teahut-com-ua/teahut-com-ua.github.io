@@ -7,7 +7,7 @@ import img1 from "../../public/teakettle.gif";
 const { frontmatter } = Astro.props;
 ---
 
-<MainLayout pageTitle={frontmatter.title} description={frontmatter.description} >
+<MainLayout pageTitle={frontmatter.title} description={frontmatter.description} ogImageUrl={frontmatter.ogImageUrl} >
         {frontmatter.heroImage && <img src={frontmatter.heroImage} alt="" class="header-image">}
         <h1 class="title">{frontmatter.title}</h1>
         <h2 class="title last-line">{frontmatter.subtitle}</h2>

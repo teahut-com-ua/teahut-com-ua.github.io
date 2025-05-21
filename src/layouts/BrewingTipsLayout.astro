@@ -4,7 +4,7 @@ import MainLayout from './MainLayout.astro';
 const { frontmatter } = Astro.props;
 ---
 
-<MainLayout pageTitle={frontmatter.title} description={frontmatter.description}>
+<MainLayout pageTitle={frontmatter.title} description={frontmatter.description} ogImageUrl={frontmatter.ogImageUrl} >
         {frontmatter.heroImage && <img src={frontmatter.heroImage} alt="" class="header-image">}
         <h1 class="title">{frontmatter.title}</h1>
         <h3 class="title">{frontmatter.subtitle}</h3>

@@ -15,6 +15,7 @@ const teas = defineCollection({
       pubDate: z.coerce.date(),
       item: z.string().optional(),
       price: z.number(),
+      ogImageUrl: z.string().optional(),
       image: image(),
       imageAlt: z.string(),
       image1: image(),
@@ -43,7 +44,7 @@ const library = defineCollection({
         pubDate: z.coerce.date(),
         postedDate: z.coerce.date(),
         heroImage: z.string().optional(),
-        image: z.string().optional(),
+        ogImageUrl: z.string().optional(),
         posted: z.boolean().optional(),
         featured: z.boolean().default(false),
         category: z.object({
@@ -64,7 +65,7 @@ const articles = defineCollection({
       pubDate: z.coerce.date(),
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
-      image: z.string().optional(),
+      ogImageUrl: z.string().optional(),
       posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
@@ -85,7 +86,7 @@ const aboutteas = defineCollection({
       pubDate: z.coerce.date(),
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
-      image: z.string().optional(),
+      ogImageUrl: z.string().optional(),
       posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
@@ -105,7 +106,7 @@ const brewingtips = defineCollection({
       pubDate: z.date(),
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
-      image: z.string().optional(),
+      ogImageUrl: z.string().optional(),
       posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
@@ -125,7 +126,7 @@ const gongfuchateatips = defineCollection({
       pubDate: z.date(),
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
-      image: z.string().optional(),
+      ogImageUrl: z.string().optional(),
       posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
@@ -145,7 +146,7 @@ const gongfuteapot = defineCollection({
       pubDate: z.date(),
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
-      image: z.string().optional(),
+      ogImageUrl: z.string().optional(),
       posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
@@ -166,7 +167,7 @@ const questionsandanswers = defineCollection({
       pubDate: z.date(),
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
-      image: z.string().optional(),
+      ogImageUrl: z.string().optional(),
       posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
@@ -186,7 +187,7 @@ const teaandseasons = defineCollection({
       pubDate: z.date(),
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
-      image: z.string().optional(),
+      ogImageUrl: z.string().optional(),
       posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
