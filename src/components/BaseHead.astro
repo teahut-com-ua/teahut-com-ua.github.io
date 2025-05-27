@@ -8,7 +8,7 @@ type Props = {
   ogImageUrl?: string;
 }
 
-const { pageTitle = baseData.pageTitle, description = baseData.description, ogImageUrl } = Astro.props;
+const { pageTitle = baseData.pageTitle, description = baseData.description, ogImageUrl = baseData.ogImageUrl } = Astro.props;
 ---
 
 <head>
