@@ -147,6 +147,8 @@ import { Icon } from 'astro-icon/components';
     .copyright {
         margin-bottom: unset;
         opacity: 0.8;
+        text-align: center;
+        order: 5;
     }
 
     .footer-links-grid {
@@ -172,13 +174,8 @@ import { Icon } from 'astro-icon/components';
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         font-size: 1rem;
-    }
-
-    .copyright {
-        text-align: center;
-        order: 5;
     }
 
     .theme-picker-block {
@@ -272,7 +269,6 @@ import { Icon } from 'astro-icon/components';
         border-radius: 100%;
         }
 
-
         .icon-label:has(input[name="color-scheme"][type="radio"]:checked) {
             color: var(--active);
             border: 1px solid var(--active);
@@ -280,7 +276,7 @@ import { Icon } from 'astro-icon/components';
         }
 
         .copyright {
-            order: 0;
+            /* order: 0; */
         }
     }
 
