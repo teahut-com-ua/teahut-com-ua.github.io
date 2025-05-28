@@ -20,7 +20,7 @@ const pageNumber = page.currentPage
 ---
 
 <ArticleLayout {pageTitle} {description} >
-  <h1 class="last-line">{pageTitle}</h1>
+  <h1 class="double-last-line">{pageTitle}</h1>
   <div class="pagination-block">
     {page.url.prev && <a href={page.url.prev} class="prev-page-pagin">&#8592;</a>}
     <p class="page-number">сторінка {pageNumber}</p>
