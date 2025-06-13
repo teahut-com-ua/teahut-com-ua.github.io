@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+
 .content-grid {
     --padding-inline: 1rem;
     --content-max-width: 56ch;
@@ -57,13 +59,13 @@
     --brown: rgb(155, 70, 1);
 
     &:has(input[name="color-scheme"][value="light dark"]:checked) {
-    color-scheme: light dark;
+        color-scheme: light dark;
     }
     &:has(input[name="color-scheme"][value="light"]:checked) {
-    color-scheme: light;
+        color-scheme: light;
     }
     &:has(input[name="color-scheme"][value="dark"]:checked) {
-    color-scheme: dark;
+        color-scheme: dark;
     }
 }
 
@@ -83,7 +85,7 @@ html {
 html,
 body {
     width: 100%;
-    font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
+    font-size: clamp(1.1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
     color: var(--primary-color);
     word-wrap: break-word;
@@ -110,12 +112,6 @@ body {
 }
 
 @layer reset {
-    *,
-    *:after,
-    *:before {
-        box-sizing: border-box;
-    }
-  
     html,
     body {
         margin: 0;
@@ -187,10 +183,11 @@ p:not(:last-child) {
 a {
     text-decoration: none;
     color: light-dark(var(--green), var(--green-dark));
-}
 
-a:hover {
-    color: var(--active);
+    &:hover {
+        color: var(--active);
+        text-decoration: underline;
+    }
 }
 
 img {
