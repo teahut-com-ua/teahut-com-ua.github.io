@@ -2,81 +2,126 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-<section class="social-icons">
-    <a href="https://www.facebook.com/teahut.com.ua" class="icon" aria-label="Facebook" rel="noopener">
-        <Icon name="facebook" size={36} />
+<ul class="social">
+  <li data-tooltip="Facebook" style="--bg: #095feb">
+    <a href="https://www.facebook.com/teahut.com.ua" aria-label="Facebook" rel="noopener">
+        <Icon class="icon" name="facebook" size={32} />
     </a>
-    <a href="https://www.instagram.com/teahut.com.ua" class="icon" aria-label="Instagram" rel="noopener">
-        <Icon name="instagram" size={36} />
+  </li>
+
+  <li data-tooltip="Instagram" style="--bg: linear-gradient(-45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)">
+    <a href="https://www.instagram.com/teahut.com.ua" aria-label="Instagram" rel="noopener">
+        <Icon class="icon" name="instagram" size={32} />
     </a>
-    <a href="https://wa.me/380507355445/?text=urlencodedtext" class="icon" aria-label="WhatsApp" rel="noopener">
-        <Icon name="whatsapp" size={36} />
+  </li>
+
+  <li data-tooltip="WhatsApp" style="--bg: #25d366">
+    <a href="https://wa.me/380507355445/?text=urlencodedtext" aria-label="WhatsApp" rel="noopener">
+        <Icon class="icon" name="whatsapp" size={32} />
     </a>
-    <a href="https://t.me/hutofsato" class="icon" aria-label="Telegram" rel="noopener">
-        <Icon name="telegram" size={36} />
+  </li>
+
+  <li data-tooltip="Telegram" style="--bg: #3a83f7">
+    <a href="https://t.me/hutofsato" aria-label="Telegram" rel="noopener">
+        <Icon class="icon" name="telegram" size={32} />
     </a>
-    <a href="viber://chat?number=%2B380507355445" class="icon" aria-label="Viber" rel="noopener">
-        <Icon name="viber" size={36} />
+  </li>
+
+  <li data-tooltip="Viber" style="--bg: #584f94">
+    <a href="viber://chat?number=%2B380507355445" aria-label="Viber" rel="noopener">
+        <Icon class="icon" name="viber" size={32} />
     </a>
-    <a href="mailto:hutofsato@gmail.com" class="icon" aria-label="Email" rel="noopener">
-        <Icon name="email" size={36} />
+  </li>
+
+  <li data-tooltip="Email" style="--bg: #111127">
+    <a href="mailto:hutofsato@gmail.com" aria-label="Email" rel="noopener">
+        <Icon class="icon" name="email" size={32} />
     </a>
-    <a href="tel:+380507355445" class="icon" aria-label="Phone" rel="noopener">
-        <Icon name="phone" size={36} />
+  </li>
+
+  <li data-tooltip="Phone" style="--bg: #33a133">
+    <a href="tel:+380507355445" aria-label="Phone" rel="noopener">
+        <Icon class="icon" name="phone" size={32} />
     </a>
-</section>
+  </li>
+</ul>
 
 <style>
-    a {
-        color: var(--background);
-        text-decoration: none;
-    }
-    
-    .social-icons {
+    .social {
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        /* align-items: center; */
-        gap: 1.8rem;
+        flex-flow: wrap;
+        gap: 1rem;
         list-style: none;
-
-        & li {
-            flex-basis: 4.5rem;
-        }
-
-        & a {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            aspect-ratio: 1;
-            font-size: 1.75rem;
-            /* color: #070707; */
-            border: 1px solid;
-            border-radius: 100%;
-            text-decoration: none;
-            outline: none;
-            padding: 0.5rem;
-
-            &::after {
-                position: absolute;
-                content: '';
-                inset: 100% 0 0;
-                pointer-events: none;
-            }
-        }
-    }
-    
-    .icon {
-        opacity: 0.8;
-        vertical-align: middle;
-        line-height: 0;
     }
 
-    .icon:hover,
-    .icon:focus {
-        color: var(--active);
+    .social li {
+        position: relative;
+        flex-basis: 3rem;
+    }
+
+    .social li::after {
+        position: absolute;
+        content: attr(data-tooltip);
+        inset: -45% auto auto 50%;
+        /* z-index: -1; */
+        translate: -50%;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+        color: #fff;
+        background: var(--bg);
+        border-radius: 0.25rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: inset 0.4s cubic-bezier(0.47, 2, 0.41, 1.5),
+            visibility 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    }
+
+    .social li:has(a:hover, a:focus-visible)::after {
         opacity: 1;
-        rotate: 7deg;
+        visibility: visible;
+        inset-block-start: -90%;
+    }
+
+    .social a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1;
+        /* font-size: 1rem; */
+        color: var(--active);
+        border: 1px solid;
+        border-radius: 100%;
+        text-decoration: none;
+        outline: none;
+        overflow: hidden;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .social a > .icon {
+        position: relative;
+        z-index: 1;
+    }
+
+    .social a::after {
+        position: absolute;
+        content: "";
+        inset: 100% 0 0;
+        background: var(--bg);
+        pointer-events: none;
+        transition: inset 0.3s ease-in-out;
+    }
+
+    .social a:hover,
+    .social a:focus-visible {
+        color: #f5f5f5;
+    }
+
+    .social a:hover::after,
+    .social a:focus-visible::after {
+        inset-block-start: 0;
     }
 </style>
