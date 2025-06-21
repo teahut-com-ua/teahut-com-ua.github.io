@@ -163,22 +163,13 @@ table {
     border-collapse: collapse;
 }
 
-tr {
-    border-bottom: 1px solid;
-}
+tr { border-bottom: 1px solid; }
 
-th,
-td {
-    border: 1px solid;
-}
+th, td { border: 1px solid; }
 
-td {
-    text-align: center;
-}
+td { text-align: center; }
 
-p:not(:last-child) {
-    margin-bottom: 1em;
-}
+p:not(:last-child) { margin-bottom: 1em; }
 
 a {
     text-decoration: none;
@@ -188,7 +179,12 @@ a {
         color: var(--active);
         text-decoration: underline;
     }
+
+    &.undecoration:hover {
+        text-decoration: none;
+    }
 }
+
 
 img {
     display: block;

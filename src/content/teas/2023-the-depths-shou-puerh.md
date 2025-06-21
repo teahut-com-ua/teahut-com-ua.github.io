@@ -1,5 +1,5 @@
 ---
-posted: true
+posted: false
 title: 'Шу пуер "Глибини"'
 subtitle: Млинець 2023-го
 description: Шу пуер із суміші листя з Фенціну, Юньнань; 2023 рік.

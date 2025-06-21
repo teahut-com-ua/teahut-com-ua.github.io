@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <ul class="social">
-  <li data-tooltip="Facebook" style="--bg: #0866FF">
+  <li data-tooltip="Facebook" style="--bg: #095feb">
     <a href="https://www.facebook.com/teahut.com.ua" aria-label="Facebook" rel="noopener">
         <Icon class="icon" name="facebook" />
     </a>
@@ -33,7 +33,7 @@ import { Icon } from 'astro-icon/components';
     </a>
   </li>
 
-  <li data-tooltip="Email" style="--bg: #181540">
+  <li data-tooltip="Email" style="--bg: #111127">
     <a href="mailto:hutofsato@gmail.com" aria-label="Email" rel="noopener">
         <Icon class="icon" name="email" />
     </a>
@@ -41,7 +41,7 @@ import { Icon } from 'astro-icon/components';
 
   <li data-tooltip="Phone" style="--bg: #33a133">
     <a href="tel:+380507355445" aria-label="Phone" rel="noopener">
-        <Icon class="icon" name="phone" size={36}/>
+        <Icon class="icon" name="phone" />
     </a>
   </li>
 </ul>
@@ -58,7 +58,7 @@ import { Icon } from 'astro-icon/components';
 
     .social li {
         position: relative;
-        flex-basis: 3.2rem;
+        flex-basis: 3rem;
     }
 
     .social a {
@@ -68,8 +68,7 @@ import { Icon } from 'astro-icon/components';
         align-items: center;
         aspect-ratio: 1;
         font-size: 2rem;
-        color: #f5f5f5;
-        background: var(--bg);
+        color: var(--active);
         border: 1px solid;
         border-radius: 100%;
         text-decoration: none;
@@ -92,11 +91,12 @@ import { Icon } from 'astro-icon/components';
         transition: inset 0.3s ease-in-out;
     }
 
-    
+    .social a:hover::after,
+    .social a:focus-visible::after {
+        inset-block-start: 0;
+    }
+
     @media (min-width: 48rem) {
-        .social li {
-            flex-basis: 3.4rem;
-        }
         .social li::after {
             position: absolute;
             content: attr(data-tooltip);
@@ -112,21 +112,16 @@ import { Icon } from 'astro-icon/components';
             visibility: hidden;
             pointer-events: none;
             transition: inset 0.4s cubic-bezier(0.47, 2, 0.41, 1.5),
-            visibility 0.3s ease-in-out, opacity 0.2s ease-in-out;
+                visibility 0.3s ease-in-out, opacity 0.2s ease-in-out;
         }
-        
+
         .social li:has(a:hover, a:focus-visible)::after {
             opacity: 1;
             visibility: visible;
             inset-block-start: -90%;
         }
 
-        .social a {
-            color: var(--active);
-            background: unset;
-        }
-        
-        .social a::after {
+         .social a::after {
             position: absolute;
             content: "";
             inset: 100% 0 0;
@@ -134,15 +129,10 @@ import { Icon } from 'astro-icon/components';
             pointer-events: none;
             transition: inset 0.3s ease-in-out;
         }
-        
+
         .social a:hover,
         .social a:focus-visible {
             color: #f5f5f5;
-        }
-
-        .social a:hover::after,
-        .social a:focus-visible::after {
-            inset-block-start: 0;
         }
     }
 </style>
