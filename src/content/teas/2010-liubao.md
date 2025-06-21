@@ -1,5 +1,5 @@
 ---
-posted: false
+posted: true
 title: Любао 2010 року
 subtitle: Незвичний чай із Ґвансі
 description: Любао з нетипово багатим букетом із Вуджов, Ґвансі; 2010 рік.
@@ -7,7 +7,7 @@ region: Вуджов, Ґвансі
 variety: дерева Любао
 yieldYear: 2010 рік
 pubDate: 2024-03-10
-price: 2.1
+price: 2.3
 image: "/src/assets/teas/2010-liubao/2010-liubao.jpg"
 imageAlt: Любао 2010 року з Вуджов
 image1: "/src/assets/teas/2010-liubao/slide1.jpg"
