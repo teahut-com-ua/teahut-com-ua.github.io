@@ -2,7 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import ArticleLayout from "../../../layouts/ArticleLayout.astro";
-import BlogPost from "../../../components/BlogPost3.astro";
+import BlogPost from "../../../components/BlogPost4.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const allPosts = (await getCollection("teaandseasons"))

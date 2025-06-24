@@ -17,7 +17,6 @@ const time = formatDate(postedDate);
     <a class="main-block-2" href={url} data-astro-prefetch>
         <p class="description">{description}</p>
     </a>
-    <footer class="footer-block">{author}</footer>
 </article>
 
 <style>
@@ -81,16 +80,6 @@ const time = formatDate(postedDate);
                 color: light-dark(var(--foreground), var(--foreground-dark));
             }
         }
-
-        .footer-block {
-            /* width: 100%; */
-            margin: 0 .9rem 1rem 0;
-            font-style: italic;
-            background-color: light-dark(var(--background-cards), rgb(37, 37, 37));
-            border-radius: .5rem;
-            padding: .5em 1em .5em;
-            justify-self: end;
-        }
     }
     
     @media (min-width: 48rem) {
@@ -106,10 +95,6 @@ const time = formatDate(postedDate);
                 22.3px 22.3px 40.7px rgba(0, 0, 0, 0.055),
                 41.8px 41.8px 49.3px rgba(0, 0, 0, 0.06),
                 100px 100px 80px rgba(0, 0, 0, 0.07);
-            }
-
-            &[data-featured="true"] {
-                /* grid-column: span 2; */
             }
         }
     }

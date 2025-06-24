@@ -169,7 +169,9 @@ th, td { border: 1px solid; }
 
 td { text-align: center; }
 
-p:not(:last-child) { margin-bottom: 1em; }
+/* p:not(:last-child) { margin-bottom: 1em; } */
+
+p { margin-block-end: 1em; }
 
 a {
     text-decoration: none;
@@ -184,7 +186,6 @@ a {
         text-decoration: none;
     }
 }
-
 
 img {
     display: block;
@@ -255,7 +256,11 @@ section.footnotes {
 
     h5 { font-size: 1.04em; }
 
-    .float-left { margin: 5px 20px 10px 0; float: left; }
+    .float-left { 
+        display: inline;
+        margin: 5px 20px 10px 0; 
+        float: left; 
+    }
     
     .float-right { float: right; margin: 5px 0 10px 12px; }
     

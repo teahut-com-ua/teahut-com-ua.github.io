@@ -54,9 +54,9 @@ const newTeas = (await getCollection('teas'))
 			}
 		</div>
 	</section>
-	<div class="tea-section breakout">
+	<section class="tea-section breakout">
 		<h2 class="last-line">Наші нові чаї:</h2>
-		<section class="new-tea">
+		<div class="new-tea">
 			{newTeas.map((tea) => 
 				<TeaCard 
 					image={tea.data.image} 
@@ -66,8 +66,8 @@ const newTeas = (await getCollection('teas'))
 					category={tea.data.category} 
 				/>)
 			}
-		</section>
-	</div>
+		</div>
+	</section>
 </MainLayout>
 
 <style>
