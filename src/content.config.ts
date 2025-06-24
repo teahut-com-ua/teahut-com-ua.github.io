@@ -116,8 +116,8 @@ const brewingtips = defineCollection({
   })
 })
 
-const gongfuchateatips = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/gongfuchateatips" }),
+const gongfuchatips = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/gongfuchatips" }),
   schema: z.object({
       title: z.string(),
       subtitle: z.string().optional(),
@@ -197,4 +197,4 @@ const teaandseasons = defineCollection({
   })
 })
 
-export const collections = { teas, library, articles, aboutteas, brewingtips, gongfuchateatips, gongfuteapot, questionsandanswers, teaandseasons };
+export const collections = { teas, library, articles, aboutteas, brewingtips, gongfuchatips, gongfuteapot, questionsandanswers, teaandseasons };

@@ -5,7 +5,7 @@ import ArticleLayout from "../../../layouts/ArticleLayout.astro";
 import BlogPost from "../../../components/BlogPost3.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const allPosts = (await getCollection("gongfuchateatips"))
+    const allPosts = (await getCollection("gongfuchatips"))
         .filter((post) => post.data.posted !== false)
         .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
@@ -24,19 +24,19 @@ const pageNumber = `сторінка ${page.currentPage}`
 
   <section class="posts-preview">
     {
-      page.data.map((p) => (
+      page.data.map((post) => (
         <BlogPost
                 class="post"
-                url={`/library/gongfuchateatips/${p.id}`}
-                title={p.data.title}
-                subtitle={p.data.subtitle}
-                description={p.data.description}
-                author={p.data.author}
-                pubDate={p.data.pubDate}
-                postedDate={p.data.postedDate}
-                categoryTitle={p.data.category.title}
-                categoryUrl={p.data.category.url}
-                featured={p.data.featured}
+                url={`/library/gongfuchatips/${post.id}`}
+                title={post.data.title}
+                subtitle={post.data.subtitle}
+                description={post.data.description}
+                author={post.data.author}
+                pubDate={post.data.pubDate}
+                postedDate={post.data.postedDate}
+                categoryTitle={post.data.category.title}
+                categoryUrl={post.data.category.url}
+                featured={post.data.featured}
         />
       ))
     }
