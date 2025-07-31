@@ -1,5 +1,5 @@
 ---
-posted: true
+posted: false
 title: Весняний чай із Дзінґу
 subtitle: Дяньхон 2022 року
 description: Дяньхон з вікових дерев Дзінґу, Юньнань; 2022 рік.
