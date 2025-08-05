@@ -245,26 +245,25 @@ const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = imag
 	}
 
     @media screen and (min-width: 31rem){
+		.slider {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr auto;
+		}
+
         .wrapper,
         .list {
             border-radius: 1rem;
-            
-        }
-
-        .slider {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr auto;
         }
     }
 
     @media screen and (min-width: 48rem){
-		.wrapper {
-            border-radius: 1rem;
-		}
-
 		.slider {
 			max-width: 31rem;
+		}
+
+		.wrapper {
+            border-radius: 1rem;
 		}
 		
 		.list {

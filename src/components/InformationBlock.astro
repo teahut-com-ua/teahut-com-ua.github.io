@@ -6,7 +6,7 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
 ---
 
 <article class="container full-width">
-    <section class="slider">
+    <section class="container-slider">
         <ImageSlider
             image1={image1}
             image2={image2}
@@ -61,8 +61,8 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         margin: 0 auto;
     }
 
-    .slider {
-        width: 100%;
+    .container-slider {
+        max-width: 100%;
     }
 
     .text-information {
@@ -145,9 +145,9 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
             padding-inline: 2.3rem;
         }
 
-        .slider {
+        .container-slider {
             height: 100%;
-            width: 100%
+            max-width: 100%;
             margin: 0 auto;
         }
         .textInformation {
@@ -159,6 +159,5 @@ const { image1, image2, image3, image4, image5, image1alt, image2alt, image3alt,
         .information { flex-direction: row; }
 
         .headerContainer { padding: 1rem 0 0 2rem; }
-
     }
 </style>
