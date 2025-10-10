@@ -33,6 +33,34 @@ const teas = defineCollection({
     })
 });
 
+const teawares = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/teawares" }),
+    schema: ({image}) => z.object({
+      posted: z.boolean().default(true),
+      title: z.string(),
+      subtitle: z.string(),
+      description: z.string(),
+      pubDate: z.coerce.date(),
+      item: z.string().optional(),
+      price: z.number(),
+      ogImageUrl: z.string().optional(),
+      image: image(),
+      imageAlt: z.string(),
+      image1: image(),
+      image1alt: z.string(),
+      image2: image().optional(),
+      image2alt: z.string().optional(),
+      image3: image().optional(),
+      image3alt: z.string().optional(),
+      image4: image().optional(),
+      image4alt: z.string().optional(),
+      image5: image().optional(),
+      image5alt: z.string().optional(),
+      category: z.array(z.string()),
+      tags: z.array(z.string())
+    })
+});
+
 const library = defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library" }),
     schema: z.object({
@@ -197,4 +225,4 @@ const teaandseasons = defineCollection({
   })
 })
 
-export const collections = { teas, library, articles, aboutteas, brewingtips, gongfuchatips, gongfuteapot, questionsandanswers, teaandseasons };
+export const collections = { teas, teawares, library, articles, aboutteas, brewingtips, gongfuchatips, gongfuteapot, questionsandanswers, teaandseasons };
