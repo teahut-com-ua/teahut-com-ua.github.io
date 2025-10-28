@@ -1,5 +1,5 @@
 ---
-posted: true
+posted: false
 title: Чай з давніх дерев Менса
 subtitle: Витриманий Шен пуер
 description: Витриманий Шен пуер із Менса, Юньнань; 2001 рік.

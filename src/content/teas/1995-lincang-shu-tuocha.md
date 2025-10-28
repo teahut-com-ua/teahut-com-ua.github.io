@@ -1,5 +1,5 @@
 ---
-posted: true
+posted: false
 title: Шу пуер з Ліньцану
 subtitle: 1995 рік
 description: Витримана у Ґванджов твоча Шу пуеру з Ліньцану 1995-го.
