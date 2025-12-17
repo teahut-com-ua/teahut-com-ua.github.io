@@ -10,7 +10,7 @@ item: набір
 price: 100
 image: "/src/assets/teawares/japanese-5cups/japanese-5-cups.jpg"
 imageAlt: Стара японська порцеляна початку ХХ ст.
-image1: "/src/assets/teawares/japanese-5cups/slide1.jpg"
+image1: "/src/assets/teawares/japanese-5cups/slide1.JPG"
 image1alt: Якісна японська порцеляна
 image2: "/src/assets/teawares/japanese-5cups/slide2.jpg"
 image2alt: із чудернацькими чоловічками
