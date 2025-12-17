@@ -9,8 +9,8 @@ region: Японія
 item: набір
 price: 100
 image: "/src/assets/teawares/japanese-5cups/japanese-5cups.jpg"
-imageAlt: Стара японська порцеляна початку ХХ ст.
-image1: "/src/assets/teawares/japanese-5cups/slide1.JPG"
+imageAlt: Zпонська порцеляна початку ХХ століття
+image1: "/src/assets/teawares/japanese-5cups/slide1.jpg"
 image1alt: Якісна японська порцеляна
 image2: "/src/assets/teawares/japanese-5cups/slide2.jpg"
 image2alt: із чудернацькими чоловічками
