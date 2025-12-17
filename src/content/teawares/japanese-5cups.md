@@ -14,7 +14,7 @@ image1: "/src/assets/teawares/japanese-5cups/slide1.jpg"
 image1alt: Якісна японська порцеляна
 image2: "/src/assets/teawares/japanese-5cups/slide2.jpg"
 image2alt: із чудернацькими чоловічками
-image3: "/src/assets/teawares/japanese-5cups/slide3.JPG"
+image3: "/src/assets/teawares/japanese-5cups/slide3.jpg"
 image3alt: Час позначився на денці
 image4: "/src/assets/teawares/japanese-5cups/slide4.jpg"
 image4alt: Вигляд зверху

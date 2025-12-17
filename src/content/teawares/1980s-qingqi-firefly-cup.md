@@ -14,7 +14,7 @@ image1: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide1.jpg"
 image1alt: Вінтажний селадон із Лонцюань 80-х
 image2: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide2.jpg"
 image2alt: Із отворів наче квіти викладені
-image3: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide3.jpg"
+image3: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide3.JPG"
 image3alt: А біля денця намальовані пелюстки
 image4: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide4.jpg"
 image4alt: Вигляд зверху
