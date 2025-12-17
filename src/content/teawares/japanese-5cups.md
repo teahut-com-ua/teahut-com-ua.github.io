@@ -10,13 +10,13 @@ item: набір
 price: 100
 image: "/src/assets/teawares/japanese-5cups/japanese-5cups.jpg"
 imageAlt: Zпонська порцеляна початку ХХ століття
-image1: "/src/assets/teawares/japanese-5cups/slide1.jpg"
+image1: "/src/assets/teawares/japanese-5cups/slide1.JPG"
 image1alt: Якісна японська порцеляна
 image2: "/src/assets/teawares/japanese-5cups/slide2.jpg"
 image2alt: із чудернацькими чоловічками
 image3: "/src/assets/teawares/japanese-5cups/slide3.jpg"
 image3alt: Час позначився на денці
-image4: "/src/assets/teawares/japanese-5cups/slide4.jpg"
+image4: "/src/assets/teawares/japanese-5cups/slide4.JPG"
 image4alt: Вигляд зверху
 image5: "/src/assets/teawares/japanese-5cups/slide5.jpg"
 image5alt: Вигляд знизу
