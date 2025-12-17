@@ -6,7 +6,7 @@ description: 'Порцелянова чашка, Дзіндеджень; 1980-і
 pubDate: 2025-12-09
 madeIn: 1980-і роки
 region: Дзіндеджень, Джедзян
-item: велику
+item: штуку
 price: 15
 image: "/src/assets/teawares/1980s-jingdezhen-cup/1980s-jingdezhen-cup.jpg"
 imageAlt: Вінтажний селадон із Лонцюань 80-х
