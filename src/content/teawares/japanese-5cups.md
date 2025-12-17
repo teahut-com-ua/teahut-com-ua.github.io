@@ -1,5 +1,5 @@
 ---
-posted: false
+posted: true
 title: Японські чашки
 subtitle: Порцеляна
 description: Набір порцелянових чашок, Японія; початок ХХ ст.
@@ -8,7 +8,7 @@ madeIn: початок ХХ століття
 region: Японія
 item: набір
 price: 100
-image: "/src/assets/teawares/japanese-5cups/japanese-5-cups.jpg"
+image: "/src/assets/teawares/japanese-5cups/japanese-5cups.jpg"
 imageAlt: Стара японська порцеляна початку ХХ ст.
 image1: "/src/assets/teawares/japanese-5cups/slide1.JPG"
 image1alt: Якісна японська порцеляна
