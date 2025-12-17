@@ -18,7 +18,7 @@ image3: "/src/assets/teawares/japanese-5cups/slide3.jpg"
 image3alt: Час позначився на денці
 image4: "/src/assets/teawares/japanese-5cups/slide4.JPG"
 image4alt: Вигляд зверху
-image5: "/src/assets/teawares/japanese-5cups/slide5.jpg"
+image5: "/src/assets/teawares/japanese-5cups/slide5.JPG"
 image5alt: Вигляд знизу
 category: ["cups"]
 tags: ["Чашки"]
