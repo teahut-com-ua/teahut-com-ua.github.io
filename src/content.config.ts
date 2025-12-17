@@ -41,6 +41,8 @@ const teawares = defineCollection({
       subtitle: z.string(),
       description: z.string(),
       pubDate: z.coerce.date(),
+      madeIn: z.string().optional(),
+      region: z.string().optional(),
       item: z.string().optional(),
       price: z.number(),
       ogImageUrl: z.string().optional(),

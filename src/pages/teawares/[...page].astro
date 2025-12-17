@@ -6,18 +6,18 @@ import { Image } from "astro:assets";
 import {formatDate, exchangePrice} from "../../utils/utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const allTeas = (await getCollection("teas"))
-        .filter((tea) => tea.data.posted !== false)
+    const allTeawares = (await getCollection("teawares"))
+        .filter((teaware) => teaware.data.posted !== false)
         .sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
     );
-    return paginate(allTeas, { pageSize: 10 });
+    return paginate(allTeawares, { pageSize: 10 });
 }) satisfies GetStaticPaths;
 
-const pageTitle = "Наші чаї";
-const description = "Тут подані всі наші чаї, якими ми можемо з вами поділитися";
-const allTeas = await getCollection("teas");
-const filteredTeas = allTeas.filter((tea) => tea.data.posted !== false);
-const categories = [...new Set(filteredTeas.map((tea) => tea.data.category).flat())];
+const pageTitle = "Чайне начиння";
+const description = "Тут подано дещо з чайного начиння, яке ми можемо вам запропонувати";
+const allTeawares = await getCollection("teawares");
+const filteredTeawares = allTeawares.filter((teaware) => teaware.data.posted !== false);
+const categories = [...new Set(filteredTeawares.map((teaware) => teaware.data.category).flat())];
 const { page } = Astro.props;
 const pageNumber = `сторінка ${page.currentPage}`;
 ---
@@ -33,27 +33,27 @@ const pageNumber = `сторінка ${page.currentPage}`;
 		</div>
 		
 		<div class="tea-block">
-			{page.data.map((tea) => (
+			{page.data.map((teaware) => (
 				<article>
 					<div class="container">
-						<a href={`/teas/${tea.id}/`} data-astro-prefetch>
+						<a href={`/teawares/${teaware.id}/`} data-astro-prefetch>
 							<figure class="tea">
 								<Image 
-									src={tea.data.image} 
-									alt={tea.data.title}
+									src={teaware.data.image} 
+									alt={teaware.data.title}
 									class="tea-image" 
 								/>
 								<figcaption>
-									<h2>{tea.data.title}</h2>
-									<p>{tea.data.description}</p>
+									<h2>{teaware.data.title}</h2>
+									<p>{teaware.data.description}</p>
 								</figcaption>
 							</figure>				
 						</a>
 						<div class="price-block">
-							<date class="pub-date">Додано:<span>{formatDate(tea.data.pubDate)}</span></date>
-							<p class="price-row"><span class="price">{exchangePrice(tea.data.price)}</span>&#8372; / 10гр</p>
+							<date class="pub-date">Додано:<span>{formatDate(teaware.data.pubDate)}</span></date>
+							<p class="price-row"><span class="price">{exchangePrice(teaware.data.price)}</span>&#8372;</p>
 						</div>
-						<a href={`/categories/${tea.data.category}/`} class="categories" data-category={tea.data.category}></a>
+						<a href={`/categories/${teaware.data.category}/`} class="categories" data-category={teaware.data.category}></a>
 					</div>
 				</article>
 			))}

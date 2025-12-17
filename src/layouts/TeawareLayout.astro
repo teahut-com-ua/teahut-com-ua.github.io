@@ -1,0 +1,39 @@
+---
+import TeawareBlock from '../components/TeawareBlock.astro';
+import MainLayout from './MainLayout.astro';
+
+const { frontmatter } = Astro.props;
+---
+<MainLayout pageTitle={frontmatter.title} description={frontmatter.description} ogImageUrl={frontmatter.ogImageUrl} >
+    <TeawareBlock
+    image1={frontmatter.image1}
+    image2={frontmatter.image2}
+    image3={frontmatter.image3}
+    image4={frontmatter.image4}
+    image5={frontmatter.image5}
+    image1alt={frontmatter.image1alt}
+    image2alt={frontmatter.image2alt}
+    image3alt={frontmatter.image3alt}
+    image4alt={frontmatter.image4alt}
+    image5alt={frontmatter.image5alt}
+    title={frontmatter.title}
+    subtitle={frontmatter.subtitle}
+    region={frontmatter.region}
+    madeIn={frontmatter.madeIn}
+    variety={frontmatter.variety}
+    item={frontmatter.item}
+    price={frontmatter.price}
+    tags={frontmatter.tags}
+    />
+    <div class="content-grid container">
+        <slot />
+    </div>
+</MainLayout>
+
+<style>
+    .container { padding: 2rem 0; }
+
+    @media screen  and (min-width: 48rem){
+        .container { padding: 2rem 0; }
+    }
+</style>

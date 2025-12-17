@@ -245,6 +245,10 @@ section.footnotes {
     }
 }
 
+.wrap-nowrap {
+    flex-wrap: wrap;
+}
+
 @media(min-width: 39.38rem) {
     h1 { font-size: 2.54em; }
 
@@ -269,4 +273,8 @@ section.footnotes {
         max-width: 360px;
         max-height: 480px;
     }
+
+    .wrap-nowrap {
+    flex-wrap: nowrap;
+}
 }
