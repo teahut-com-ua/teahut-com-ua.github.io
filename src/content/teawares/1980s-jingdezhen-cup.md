@@ -1,5 +1,5 @@
 ---
-posted: True
+posted: false
 title:  '"Світлячок"'
 subtitle: Порцелянова чашка
 description: 'Порцелянова чашка, Дзіндеджень; 1980-і.'
