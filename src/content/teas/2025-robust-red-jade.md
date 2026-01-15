@@ -1,24 +1,24 @@
 ---
-posted: false
+posted: true
 title: '"Дужий Рубіновий"'
 subtitle: Тайванський Червоний чай №18, висота ~800м.
 description: Яскравий Червоний чай з озера Сонця та Місяця, Тайвань.
 region: Юйчі, округа Наньтов
 variety: чайні дерева
-yieldYear: літо 2023 року
-pubDate: 2024-10-09
-price: 3.91
-image: "/src/assets/teas/2023-robust-red-jade/2023-robust-red-jade.jpg"
-imageAlt: Дужий Рубіновий, тайванський Червоний 2023 року
-image1: "/src/assets/teas/2023-robust-red-jade/slide1.jpg"
+yieldYear: літо 2025 року
+pubDate: 2026-01-15
+price: 4.05
+image: "/src/assets/teas/2025-robust-red-jade/2025-robust-red-jade.jpg"
+imageAlt: Дужий Рубіновий, тайванський Червоний 2025 року
+image1: "/src/assets/teas/2025-robust-red-jade/slide1.jpg"
 image1alt: Листя "Рубінового №18"
-image2: "/src/assets/teas/2023-robust-red-jade/slide2.jpg"
+image2: "/src/assets/teas/2025-robust-red-jade/slide2.jpg"
 image2alt: Доволі велике
-image3: "/src/assets/teas/2023-robust-red-jade/slide3.jpg"
+image3: "/src/assets/teas/2025-robust-red-jade/slide3.jpg"
 image3alt: 1 чашка
-image4: "/src/assets/teas/2023-robust-red-jade/slide4.jpg"
+image4: "/src/assets/teas/2025-robust-red-jade/slide4.jpg"
 image4alt: 10 чашка
-image5: "/src/assets/teas/2023-robust-red-jade/slide5.jpg"
+image5: "/src/assets/teas/2025-robust-red-jade/slide5.jpg"
 image5alt: Спите листя
 category: ["hongcha"]
 tags: ["Червоні", "Тайванські Червоні"]
