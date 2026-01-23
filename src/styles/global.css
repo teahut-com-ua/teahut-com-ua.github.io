@@ -271,7 +271,11 @@ section.footnotes {
     .float-left, .float-right {
         display: inline;
         max-width: 360px;
-        max-height: 480px;
+        /* max-height: 480px; */
+    }
+
+    .align-center {
+        max-width: 100%;
     }
 
     .wrap-nowrap {
