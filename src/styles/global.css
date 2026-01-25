@@ -169,8 +169,6 @@ th, td { border: 1px solid; }
 
 td { text-align: center; }
 
-/* p:not(:last-child) { margin-bottom: 1em; } */
-
 p { margin-block-end: 1em; }
 
 a {
