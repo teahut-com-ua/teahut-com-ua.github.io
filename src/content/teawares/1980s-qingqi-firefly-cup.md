@@ -7,7 +7,7 @@ pubDate: 2025-12-09
 madeIn: 1980-і
 region: Лонцюань, Джедзян
 item: штуку
-price: 15
+price: 14
 image: "/src/assets/teawares/1980s-qingqi-firefly-cup/1980s-qingqi-firefly-cup.jpg"
 imageAlt: Вінтажний селадон із Лонцюань 80-х
 image1: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide1.jpg"
