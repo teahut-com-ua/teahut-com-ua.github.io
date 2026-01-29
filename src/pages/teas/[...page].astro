@@ -13,7 +13,7 @@ export const getStaticPaths = (async ({ paginate }) => {
     return paginate(allTeas, { pageSize: 10 });
 }) satisfies GetStaticPaths;
 
-const pageTitle = "Наші чаї";
+const pageTitle = "Чай і начиння";
 const description = "Тут подані всі наші чаї, якими ми можемо з вами поділитися";
 const allTeas = await getCollection("teas");
 const filteredTeas = allTeas.filter((tea) => tea.data.posted !== false);
@@ -24,7 +24,9 @@ const pageNumber = `сторінка ${page.currentPage}`;
 
 <ArticleLayout {pageTitle} {description} >
 	<section>
-		<h1 class="last-line">{pageTitle}:</h1>
+		<h1 class="last-line" style="text-align: center;">{pageTitle}</h1>
+
+		<div class="categories-btn"><p class="category-btn"><a class="" href='/teawares/'>чайний посуд</a></p></div>
 
 		<div class="categories-btn last-line">
 			{categories.map((category) => (
