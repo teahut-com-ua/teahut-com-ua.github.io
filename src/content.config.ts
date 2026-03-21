@@ -88,6 +88,7 @@ const library = defineCollection({
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: "./src/content/library/articles" }),
   schema: z.object({
+    posted: z.boolean().optional(),
       title: z.string(),
       subtitle: z.string().optional(),
       subsubtitle: z.string().optional(),
@@ -97,7 +98,6 @@ const articles = defineCollection({
       postedDate: z.coerce.date(),
       heroImage: z.string().optional(),
       ogImageUrl: z.string().optional(),
-      posted: z.boolean().optional(),
       featured: z.boolean().default(false),
       category: z.object({
         title: z.string(),
