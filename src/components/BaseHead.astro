@@ -1,6 +1,7 @@
 ---
 import { AstroFont } from "astro-font";
 import { baseData } from '../data/siteData';
+import { ClientRouter } from "astro:transitions";
 
 type Props = {
   pageTitle?: string;
@@ -39,4 +40,5 @@ const { pageTitle = baseData.pageTitle, description = baseData.description, ogIm
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <title>{pageTitle}</title>
+  <ClientRouter />
 </head>
