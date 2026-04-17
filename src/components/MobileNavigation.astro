@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import HeaderLink from './HeaderLink.astro';
 import MenuButton from "./MenuButton.astro";
 ---
 
@@ -12,24 +13,24 @@ import MenuButton from "./MenuButton.astro";
             <span class="third"></span>
         </div>
     </div>
-    <div class="action-items-bar">
+    <nav class="action-items-bar">
        <div class="left-part">
-           <a class="first-item" href="/">
+           <HeaderLink class="first-item" href="/">
                <Icon name="hut" size={36} />
-           </a>
-           <a class="second-item" href="/teas/">
+           </HeaderLink>
+           <HeaderLink class="second-item" href="/teas">
                <Icon name="teapot-leaves" size={36} />
-           </a>
+           </HeaderLink>
        </div>
        <div class="right-part">
-           <a class="third-item" href="/library/">
+           <HeaderLink class="third-item" href="/library">
                <Icon name="books" size={36} />
-           </a>
+           </HeaderLink>
            <div class="fourth-item">
                 <MenuButton />
            </div>
        </div>
-    </div>
+    </nav>
 </div>
 
 <style>
@@ -138,6 +139,11 @@ import MenuButton from "./MenuButton.astro";
         justify-content: center;
         color: light-dark(var(--foreground), var(--footer)) ;
     }
+
+    nav a.active {
+		text-decoration: none;
+		color: var(--active);
+	}
 
     .left-part {
         margin-right: 5%;

@@ -259,25 +259,21 @@ import { Icon } from 'astro-icon/components';
         }
             
         .header-logo:hover {
-        color: light-dark(var(--foreground), var(--active));
-        border: solid 3px var(--active);
-        border-radius: 100%;
+            color: light-dark(var(--foreground), var(--active));
+            border: solid 3px var(--active);
+            border-radius: 100%;
         }
 
-        label:has(input[name="color-scheme"][type="radio"]:checked) {
-        color: var(--active);
-        border: 1px solid var(--active);
-        border-radius: 100%;
-        }
-
-        .icon-label:has(input[name="color-scheme"][type="radio"]:checked) {
+        label:has(input[type="radio"]:checked) {
             color: var(--active);
             border: 1px solid var(--active);
             border-radius: 100%;
         }
 
-        .copyright {
-            /* order: 0; */
+        .icon-label:has(input[type="radio"]:checked) {
+            color: var(--active);
+            border: 1px solid var(--active);
+            border-radius: 100%;
         }
     }
 
@@ -298,26 +294,29 @@ import { Icon } from 'astro-icon/components';
 </style>
 
 <script is:inline>
-    const colorThemes = document.querySelectorAll('[name="color-scheme"]')
-  
-    const storeTheme = function(theme) {
-      sessionStorage.setItem("theme", theme);
-    }
-  
-    colorThemes.forEach((themeOption) => {
-      themeOption.addEventListener("click", () => {
-        storeTheme(themeOption.id);
-      })
-    });
-  
-    const retrieveTheme = function() {
-      const activeTheme = sessionStorage.getItem("theme");
-      colorThemes.forEach((themeOption) => {
-        if (themeOption.id === activeTheme) {
-          themeOption.checked = true;
+    document.addEventListener('astro:page-load', () => {
+        
+        const colorThemes = document.querySelectorAll('[name="color-scheme"]')
+    
+        const storeTheme = function(theme) {
+            sessionStorage.setItem("theme", theme);
         }
-      })
-    }
+    
+        colorThemes.forEach((themeOption) => {
+            themeOption.addEventListener("click", () => {
+                storeTheme(themeOption.id);
+            })
+        });
+    
+        const retrieveTheme = function() {
+            const activeTheme = sessionStorage.getItem("theme");
+            colorThemes.forEach((themeOption) => {
+                if (themeOption.id === activeTheme) {
+                themeOption.checked = true;
+                }
+            })
+        }
   
-    document.onload = retrieveTheme();
+        document.onload = retrieveTheme();
+    });
 </script>

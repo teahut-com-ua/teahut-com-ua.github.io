@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from 'astro-icon/components';
 import logo from '../../public/logo.png';
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <section class="nav-block">
@@ -14,7 +15,7 @@ import logo from '../../public/logo.png';
             <li class="first-block menu-blocks">
                 <h3 class="first-header headers">Майстерня</h3>
                 <ul>
-                    <li><a class="menu-link home" href='/'><Icon name="hut" size={32} /><span class="menu-link-header">Хатинка</span></a></li>
+                    <li><HeaderLink class="menu-link home" href='/'><Icon name="hut" size={32} /><span class="menu-link-header">Хатинка</span></HeaderLink></li>
                     <li><a class="menu-link" href='/our-tradition/'>Наша Традиція</a></li>
                     <li><a class="menu-link" href='/guiding-principles-of-this-hut'>Керівні засади цієї Хатинки</a></li>
                     <li><a class="menu-link" href='/about'>Про нас</a></li>
@@ -24,7 +25,7 @@ import logo from '../../public/logo.png';
             <li class="second-block menu-blocks">
                 <h3 class="second-header headers">Ча</h3>
                 <ul>
-                    <li><a class="menu-link teas" href='/teas/'><Icon name="teapot-leaves" size={32} /><span class="menu-link-header">Усі чаї</span></a></li>
+                    <li><HeaderLink class="menu-link teas" href='/teas'><Icon name="teapot-leaves" size={32} /><span class="menu-link-header">Усі чаї</span></HeaderLink></li>
                     <li><a class="menu-link" href='/categories/shengcha/'>- Шен пуери</a></li>
                     <li><a class="menu-link" href='/categories/heicha/'>- Шу пуери й Хейча</a></li>
                     <li><a class="menu-link" href='/categories/hongcha/'>- Червоні чаї</a></li>
@@ -32,13 +33,13 @@ import logo from '../../public/logo.png';
                     <li><a class="menu-link" href='/categories/baicha&lucha/'>- Білі й Зелені</a></li>
                     <li><a class="menu-link" href='/categories/japanese/'>- Японські</a></li>
                     <li><a class="menu-link" href='/tags/'>Позначки чаїв</a></li>
-                    <li><a class="menu-link teas" href='/teawares/'><Icon name="teapot-leaves" size={32} /><span class="menu-link-header">Чайне начиння</span></a></li>
+                    <li><HeaderLink class="menu-link teas" href='/teawares'><Icon name="teapot-leaves" size={32} /><span class="menu-link-header">Чайне начиння</span></HeaderLink></li>
                 </ul>
             </li>
             <li class="third-block menu-blocks">
                 <h3 class="third-header headers">Дао</h3>
                 <ul>
-                    <li><a class="menu-link library" href='/library/'><Icon name="books" size={32} /><span class="menu-link-header">Читальня</span></a></li>
+                    <li><HeaderLink class="menu-link library" href='/library'><Icon name="books" size={32} /><span class="menu-link-header">Читальня</span></HeaderLink></li>
                     <li><a class="menu-link" href='/library/articles/'>- Загальні статті</a></li>
                     <li><a class="menu-link" href='/library/gongfuchatips/'>- Поради з Ґонфу Ча</a></li>
                     <li><a class="menu-link" href='/library/gongfuteapot/'>- Чайник Ґонфу</a></li>
@@ -260,10 +261,11 @@ import logo from '../../public/logo.png';
         -webkit-border-radius: 0 0 5px 5px;
         border-radius: 0 0 5px 5px;
         }
-        
+
+        .menu li a.active,
         .menu li a:hover {
-        background: var(--button);
-        color: light-dark(var(--active), var(--background));
+            background: var(--button);
+            color: light-dark(var(--active), var(--background));
         }
     
         .menu ul li:last-child a,
