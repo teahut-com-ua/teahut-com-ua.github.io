@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 
 const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = image1, image1alt, image2alt = image1alt, image3alt = image1alt, image4alt = image1alt, image5alt = image1alt } = Astro.props;
 ---
@@ -211,6 +210,5 @@ const { image1, image2 = image1, image3 = image1, image4 = image1, image5 = imag
 		figcaption { grid-area: 2 / 1 / 3 / 2; }
 
 		[data-icon] { color: rgba(224, 150, 0, 1); }
-		
 	}
 </style>
