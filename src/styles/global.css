@@ -40,6 +40,7 @@
     --foreground-dark: oklch(79.64% 0.04 95.94);
     --header: oklch(30% 0.0533 102.55);
     --footer: oklch(20% 0.031 96.93);
+    --footer-light: oklch(26.472% 0.07435 145.098);
     --button: oklch(72.18% 0.093 108.52 / 52%);
     --button-noop: oklch(72.18% 0.093 108.52);
     --light-dark-text: light-dark(var(--foreground), var(--background));
@@ -49,13 +50,15 @@
     --active: rgb(163, 128, 23);
     --gray-op: rgba(110, 103, 82, 0.507);
     --gray: rgb(168, 157, 122);
+    --grey: rgb(168, 157, 122);
     --nav-item-back: oklch(100% 0 0 / 20%);
     --primary-color: light-dark(var(--background-dark), var(--foreground-dark));
     --primary-background: light-dark(var(--background), var(--background-dark));
     --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
     --animation-timing: 200ms;
-    --brown: rgb(155, 70, 1);
+    --brown: oklch(49.626% 0.13164 49.491);
+    --brown-dark: oklch(24.056% 0.05763 57.884);
 
     &:has(input[name="color-scheme"][value="light dark"]:checked) {
         color-scheme: light dark;

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import MobileNavigationNew from '../components/MobileNavigationNew.astro';
 
 const { pageTitle, description, ogImageUrl } = Astro.props;
 ---
@@ -15,6 +16,7 @@ const { pageTitle, description, ogImageUrl } = Astro.props;
 			<slot />
 		</main>
 		<Footer />
+		<MobileNavigationNew />
 	</body>
 </html>
 		
