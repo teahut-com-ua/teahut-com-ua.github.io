@@ -87,7 +87,7 @@ html {
 html,
 body {
     width: 100%;
-    font-size: clamp(1rem, 0.7rem + 0.7vw, 1.375rem);
+    font-size: clamp(1.1rem, 0.7rem + 0.7vw, 1.375rem);
     line-height: 1.7;
     color: var(--primary-color);
     word-wrap: break-word;
