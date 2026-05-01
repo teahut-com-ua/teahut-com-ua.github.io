@@ -20,7 +20,7 @@ image4: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide4.jpg"
 image4alt: Вигляд зверху
 image5: "/src/assets/teawares/1980s-qingqi-firefly-cup/slide5.jpg"
 image5alt: На денці зберіглася "зелена" наліпка
-category: ["cups"]
+category: ["teawares"]
 tags: ["Чашки"]
 ---
 

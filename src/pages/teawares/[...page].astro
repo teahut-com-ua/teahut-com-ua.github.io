@@ -24,14 +24,8 @@ const pageNumber = `сторінка ${page.currentPage}`;
 
 <ArticleLayout {pageTitle} {description} >
 	<section>
-		<h1 class="last-line" style="text-align: center;">{pageTitle}</h1>
+		<h1 class="double-last-line" style="text-align: center;">{pageTitle}</h1>
 
-		<div class="categories-btn last-line">
-			{categories.map((category) => (
-				<p class="category-btn"><a href={`/categories/${category}/`}>{category}</a></p>
-			))}
-		</div>
-		
 		<div class="tea-block">
 			{page.data.map((teaware) => (
 				<article>
@@ -76,27 +70,6 @@ const pageNumber = `сторінка ${page.currentPage}`;
 	}
 
 	.tea-block article { width: 100%; }
-
-	.category-btn>a {
-      color: light-dark (var(--foreground), var(--foreground-dark));
-      padding: .3rem .5rem;
-      display: block;
-    }
-
-	.categories-btn {
-		margin-top: 1rem;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-    }
-  
-    .category-btn {
-		margin: 0.25em;
-		border: dotted 1px #7c7c7c;
-		border-radius: .5em;
-		font-size: 1.1rem;
-		background-color: var(--button);
-    }
 
 	article {
 		container-type: inline-size;

@@ -20,7 +20,7 @@ image4: "/src/assets/teawares/1980s-jingdezhen-cup/slide4.jpg"
 image4alt: Вигляд зверху
 image5: "/src/assets/teawares/1980s-jingdezhen-cup/slide5.jpg"
 image5alt: Вигляд знизу
-category: ["cups"]
+category: ["teawares"]
 tags: ["Чашки"]
 ---
 
