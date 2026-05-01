@@ -24,7 +24,8 @@ image5alt: "Кодай і печатка"
 category: ["teawares"]
 tags: ["Чяван"]
 ---
-import Image1 from "/src/assets/teawares/seto-ware-chawan/slide6.jpg";
+import { Image } from "astro:assets";
+import Slide6 from "/src/assets/teawares/seto-ware-chawan/slide6.jpg";
 
 
 Чяван майстра Ю Іто, школа посуду Сето, печі Хачьодзі, Японія. Прообразом для нього стала чаша «Спокій на морі», яку колись робили на замовлення імператора Японії.
@@ -34,5 +35,5 @@ import Image1 from "/src/assets/teawares/seto-ware-chawan/slide6.jpg";
 Приблизні розміри: діяметр 12.5 см, виcота 7.5 см. Вага самої чаші 387 гр.
 
 <section style="display: flex; flex-wrap: wrap; justify-content: center; margin: 2rem 0 1rem;">
-    <img src={Image1.src} alt="Оригінальна печатка на серветці" width={320} height={320} />
+    <Image src={Slide6} alt="Оригінальна печатка на серветці" width={320} height={320} />
 </section>
