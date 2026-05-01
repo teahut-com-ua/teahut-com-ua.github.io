@@ -15,9 +15,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 
 const pageTitle = "Чайне начиння";
 const description = "Тут подано дещо з чайного начиння, яке ми можемо вам запропонувати";
-const allTeawares = await getCollection("teawares");
-const filteredTeawares = allTeawares.filter((teaware) => teaware.data.posted !== false);
-const categories = [...new Set(filteredTeawares.map((teaware) => teaware.data.category).flat())];
+
 const { page } = Astro.props;
 const pageNumber = `сторінка ${page.currentPage}`;
 ---
