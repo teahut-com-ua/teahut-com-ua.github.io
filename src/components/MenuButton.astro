@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import MobileMenu from "./MobileMenu.astro";
-import ThemePickerMobile from "./ThemePickerMobile.astro";
+import ThemePicker from "./ThemePicker.astro";
 ---
 
 <button popovertarget="nav-menu" popovertargetaction="show" class="menu-btn icon">
@@ -12,7 +12,7 @@ import ThemePickerMobile from "./ThemePickerMobile.astro";
         <Icon name="close-rounded" size={32} />
     </button>
     <nav class="mobile-menu">
-        <ThemePickerMobile/>
+        <ThemePicker />
         <MobileMenu/>
     </nav>
 </div>
