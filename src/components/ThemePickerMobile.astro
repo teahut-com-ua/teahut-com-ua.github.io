@@ -2,34 +2,34 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<form class="theme-picker" action="">
+<form class="theme-picker-mobile" action="">
     <fieldset>
         <legend class="visually-hidden"></legend>
-        <label class="icon-label" for="light-dark">
-            <Icon name="computer" size={30} />     
+        <label class="icon-label-mobile" for="light-dark">
+            <Icon name="smartphone" size={48} />      
             <input 
                 class="visually-hidden"
-                name="color-scheme" 
+                name="color-theme" 
                 type="radio" 
                 value="light dark"
                 id="light-dark"
             >
         </label>
-        <label class="icon-label sun" for="light">
+        <label class="icon-label-mobile sun" for="light">
             <Icon name="sun-filled" size={30} />
             <input 
                 class="visually-hidden"
-                name="color-scheme" 
+                name="color-theme" 
                 type="radio" 
                 value="light"
                 id="light"
             >
         </label>
-        <label class="icon-label moon" for="dark">
+        <label class="icon-label-mobile moon" for="dark">
             <Icon name="moon-filled" size={30} />
             <input 
                 class="visually-hidden"
-                name="color-scheme" 
+                name="color-theme" 
                 type="radio" 
                 value="dark"
                 id="dark"
@@ -39,42 +39,6 @@ import { Icon } from "astro-icon/components";
 </form>
 
 <style>
-    .theme-picker {
-        width: fit-content;
-        margin: 0 auto;
-    }
-
-    .theme-picker > fieldset {
-        border: 0;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        place-items: center;
-        border-radius: 100vw;
-        background-color: light-dark(var(--background), var(--foreground-dark));
-        color: light-dark(var(--foreground), var(--footer));
-
-        @media (min-width: 720px) {
-            gap: 0.3rem;
-        }
-    }
-
-    .icon-label {
-        display: flex;
-        text-align: center;
-        padding: 0.5rem;
-        
-        color: var(--foreground);
-        background-color: light-dark(var(--background), var(--foreground-dark));
-        border: 1px solid transparent;
-        border-radius: 100vw;
-    }
-
-    .icon-label:has(input[name="color-scheme"][type="radio"]:checked) {
-        border-color: var(--active);
-        color: var(--active);
-    }
-
     .visually-hidden {
         clip: rect(0 0 0 0);
         clip-path: inset(50%);
@@ -84,40 +48,49 @@ import { Icon } from "astro-icon/components";
         white-space: nowrap;
         width: 1px;
     }
-</style>
 
-<!-- <script is:inline>
-    document.addEventListener('astro:page-load', () => {
+    .theme-picker-mobile {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .theme-picker-mobile > fieldset {
+        border: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        place-items: center;
+        border-radius: 100vw;
+        background-color: light-dark(var(--background), var(--foreground-dark));
+        color: light-dark(var(--foreground), var(--footer));
+        border-radius: 100vw;
+
+        @media (min-width: 720px) {
+            gap: 0.3rem;
+        }
+    }
+
+    .icon-label-mobile {
+        display: flex;
+        text-align: center;
         
-        const colorThemes = document.querySelectorAll('input[name="color-scheme"]')
+    }
     
-        const storeTheme = function(theme) {
-            sessionStorage.setItem("theme", theme);
-        }
+    .sun,
+    .moon {
+        padding: 0.5rem;
+    }
     
-        colorThemes.forEach((themeOption) => {
-            themeOption.addEventListener("click", () => {
-                storeTheme(themeOption.id);
-            })
-        });
-    
-        const retrieveTheme = function() {
-            const activeTheme = sessionStorage.getItem("theme");
-            colorThemes.forEach((themeOption) => {
-                if (themeOption.value === activeTheme) {
-                themeOption.checked = true;
-                }
-            })
-        }
-  
-        document.onload = retrieveTheme();
-    });
-</script> -->
+    fieldset.icon-label-mobile:has(input[name="color-theme"][type="radio"]:checked) {
+        border: 1px solid var(--active);
+        color: var(--active);
+    }
+</style>
 
 <script is:inline>
     document.addEventListener('astro:page-load', () => {
 
-        const radioButtons = document.querySelectorAll('input[name="color-scheme"]');
+        const radioButtons = document.querySelectorAll('input[name="color-theme"]');
 
         // Set theme based on saved preference on load
         const currentTheme = sessionStorage.getItem('theme');

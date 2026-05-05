@@ -1,7 +1,7 @@
 ---
 import { Icon }from "astro-icon/components";
 import HeaderLink from './HeaderLink.astro';
-import ThemePicker from "./ThemePicker.astro";
+import ThemePickerMobile from "./ThemePickerMobile.astro";
 ---
 
 <nav class="mobile-menu-bar">
@@ -9,7 +9,7 @@ import ThemePicker from "./ThemePicker.astro";
 		<Icon class="icon" name="hut" size={36} />
 	</button>
     <div id="mobile-home-page" class="mobile-tooltip" popover style="position-anchor: --anchor-button;">
-        <ThemePicker />
+        <ThemePickerMobile />
         <ul class="mobile-menu-block hut">
 			<li class="headerlink">
 				<HeaderLink href="/">
@@ -46,7 +46,7 @@ import ThemePicker from "./ThemePicker.astro";
         <Icon class="icon" name="teapot-leaves" size={36} />
     </button>
     <div id="mobile-tea-page" class="mobile-tooltip" popover style="position-anchor: --anchor-button; text-align: center;">
-        <ThemePicker />
+        <ThemePickerMobile />
         <ul class="mobile-menu-block tea">
 			<li class="headerlink">
 				<HeaderLink href="/teas">
@@ -102,7 +102,7 @@ import ThemePicker from "./ThemePicker.astro";
 		<Icon class="icon" name="books" size={36} />
 	</button>
 	<div id="mobile-blog-page" class="mobile-tooltip" popover style="position-anchor: --anchor-button; text-align: end;">
-        <ThemePicker />
+        <ThemePickerMobile />
         <ul class="mobile-menu-block blog">
 			<li class="headerlink">
 				<HeaderLink href="/library">
@@ -212,7 +212,7 @@ import ThemePicker from "./ThemePicker.astro";
 		}
 
         [popover] {
-            translate: 0 360px;
+            translate: 0 600px;
             transition: translate 0.5s ease-out, display 0.5s ease-out allow-discrete;
 
             &:popover-open {
@@ -222,7 +222,7 @@ import ThemePicker from "./ThemePicker.astro";
 
         @starting-style {
             [popover]:popover-open {
-                translate: 0 360px;
+                translate: 0 600px;
             }
         }
 

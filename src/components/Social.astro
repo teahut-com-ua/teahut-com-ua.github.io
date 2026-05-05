@@ -57,12 +57,10 @@ import { Icon } from 'astro-icon/components';
     }
 
     .social li {
-        position: relative;
         flex-basis: 3.2rem;
     }
 
     .social a {
-        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -78,13 +76,7 @@ import { Icon } from 'astro-icon/components';
         transition: color 0.3s ease-in-out;
     }
 
-    .social a > .icon {
-        position: relative;
-        z-index: 1;
-    }
-
     .social a::after {
-        position: absolute;
         content: "";
         inset: 100% 0 0;
         background: var(--bg);
@@ -95,6 +87,7 @@ import { Icon } from 'astro-icon/components';
     
     @media (min-width: 48rem) {
         .social li {
+            position: relative;
             flex-basis: 3.4rem;
         }
         .social li::after {
@@ -122,9 +115,15 @@ import { Icon } from 'astro-icon/components';
         }
 
         .social a {
+            position: relative;
             color: var(--active);
             background: unset;
         }
+
+        .social a > .icon {
+        position: relative;
+        z-index: 1;
+    }
         
         .social a::after {
             position: absolute;
