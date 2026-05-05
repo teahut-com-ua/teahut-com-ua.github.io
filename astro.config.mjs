@@ -6,6 +6,8 @@ import icon from 'astro-icon';
 
 import sitemap from '@astrojs/sitemap';
 
+import pagefind from "astro-pagefind";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://teahut.com.ua',
@@ -20,5 +22,5 @@ export default defineConfig({
       },
     },
   },
-  integrations: [mdx(), icon(), sitemap()]
+  integrations: [mdx(), icon(), sitemap(), pagefind()]
 });
