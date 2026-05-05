@@ -1,0 +1,138 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<form class="theme-picker" action="">
+    <fieldset>
+        <legend class="visually-hidden"></legend>
+        <label class="icon-label" for="light-dark">
+            <svg class="smartphone" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                <g fill="none">
+                    <path fill="oklch(24.84% 0.039 95.36)" d="M31.853 35.342a2.62 2.62 0 0 1-2.619 2.618H18.762a2.62 2.62 0 0 1-2.618-2.618v-22.69a2.62 2.62 0 0 1 2.618-2.619h10.472a2.62 2.62 0 0 1 2.619 2.618z"/>
+                    <path fill="#f2e8bd" d="M30.98 15.27H17.017v17.454H30.98zm-10.037-1.745a.437.437 0 1 0 0-.874a.437.437 0 0 0 0 .874m6.547-.437a.437.437 0 0 1-.437.436h-4.364a.437.437 0 0 1 0-.873h4.364a.436.436 0 0 1 .436.437m-3.491 23.999a1.746 1.746 0 1 0 0-3.49a1.746 1.746 0 0 0 0 3.49"/>
+                </g>
+            </svg>
+            <svg class="computer" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                    <rect width="18.5" height="15.031" x="2.75" y="2.75" rx="3.5"/>
+                    <path d="M9.11 17.781v3.469m5.78-3.469v3.469m-8.382 0h10.984"/>
+                </g>
+            </svg>      
+            <input 
+                class="visually-hidden"
+                name="color-scheme" 
+                type="radio" 
+                value="light dark"
+                id="light-dark"
+            >
+        </label>
+        <label class="icon-label" for="light">
+            <Icon name="sun-filled" size={30} />
+            <input 
+                class="visually-hidden"
+                name="color-scheme" 
+                type="radio" 
+                value="light"
+                id="light"
+            >
+        </label>
+        <label class="icon-label" for="dark">
+            <Icon name="moon-filled" size={30} />
+            <input 
+                class="visually-hidden"
+                name="color-scheme" 
+                type="radio" 
+                value="dark"
+                id="dark"
+            >
+        </label>
+    </fieldset>
+</form>
+
+<style>
+    .theme-picker {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .theme-picker > fieldset {
+        border: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        place-items: center;
+        border-radius: 100vw;
+        background-color: light-dark(var(--background), var(--foreground-dark));
+        color: light-dark(var(--foreground), var(--footer));
+
+        @media (min-width: 720px) {
+            gap: 0.3rem;
+        }
+    }
+
+    svg.computer {
+        display: none;
+
+        @media (min-width: 720px) {
+            display: block;
+        }
+    }
+
+    svg.smartphone {
+
+        @media (min-width: 720px) {
+            display: none;
+        }
+    }
+
+    .icon-label {
+        display: flex;
+        text-align: center;
+    }
+
+    .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    .icon-label:has(input[type="radio"]:checked) {
+            color: var(--active);
+            background-color: var(--background);
+            padding: 0.5rem;
+            border: 1px solid var(--active);
+            border-radius: 100%;
+        }
+</style>
+
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
+        
+        const colorThemes = document.querySelectorAll('[name="color-scheme"]')
+    
+        const storeTheme = function(theme) {
+            sessionStorage.setItem("theme", theme);
+        }
+    
+        colorThemes.forEach((themeOption) => {
+            themeOption.addEventListener("click", () => {
+                storeTheme(themeOption.id);
+            })
+        });
+    
+        const retrieveTheme = function() {
+            const activeTheme = sessionStorage.getItem("theme");
+            colorThemes.forEach((themeOption) => {
+                if (themeOption.id === activeTheme) {
+                themeOption.checked = true;
+                }
+            })
+        }
+  
+        document.onload = retrieveTheme();
+    });
+</script>

@@ -1,6 +1,7 @@
 ---
 import Social from './Social.astro';
 import { Icon } from 'astro-icon/components';
+import ThemePicker from './ThemePicker.astro';
 ---
 
 <footer>
@@ -71,41 +72,7 @@ import { Icon } from 'astro-icon/components';
         <dl class="fourth-block">
             <dt><p class="column-header4">Кольорова схема:</p></dt>
             <dd class="form-container">
-                <form class="theme-picker" action="">
-                    <fieldset>
-                        <legend class="visually-hidden"></legend>
-                        <label class="icon-label" for="light-dark">
-                          <Icon name="computer" size={24} />
-                          <input 
-                              class="visually-hidden"
-                              name="color-scheme" 
-                              type="radio" 
-                              value="light dark"
-                              id="light-dark"
-                          >
-                      </label>
-                        <label class="icon-label" for="light">
-                            <Icon name="sun-filled" size={24} />
-                            <input 
-                                class="visually-hidden"
-                                name="color-scheme" 
-                                type="radio" 
-                                value="light"
-                                id="light"
-                            >
-                        </label>
-                        <label class="icon-label" for="dark">
-                            <Icon name="moon-filled" size={24} />
-                            <input 
-                                class="visually-hidden"
-                                name="color-scheme" 
-                                type="radio" 
-                                value="dark"
-                                id="dark"
-                                >
-                        </label>
-                    </fieldset>
-                </form>
+                <ThemePicker />
             </dd>
         </dl>
     </nav>
@@ -290,31 +257,3 @@ import { Icon } from 'astro-icon/components';
         }
     }        
 </style>
-
-<script is:inline>
-    document.addEventListener('astro:page-load', () => {
-        
-        const colorThemes = document.querySelectorAll('[name="color-scheme"]')
-    
-        const storeTheme = function(theme) {
-            sessionStorage.setItem("theme", theme);
-        }
-    
-        colorThemes.forEach((themeOption) => {
-            themeOption.addEventListener("click", () => {
-                storeTheme(themeOption.id);
-            })
-        });
-    
-        const retrieveTheme = function() {
-            const activeTheme = sessionStorage.getItem("theme");
-            colorThemes.forEach((themeOption) => {
-                if (themeOption.id === activeTheme) {
-                themeOption.checked = true;
-                }
-            })
-        }
-  
-        document.onload = retrieveTheme();
-    });
-</script>
