@@ -25,7 +25,7 @@ const pageTitle = "Пошук на сайті:"
 	 --pagefind-ui-result-title-text: var(--active);
 	 --pagefind-ui-result-text: light-dark(var(--foreground), var(--foreground-dark));
 	 --pagefind-ui-background: var(--button);
-	 --pagefind-input-background: var(--button);
+	 --pagefind-input-background: var(--button-noop);
 	 --pagefind-ui-border: var(--accent1);
 	 --pagefind-ui-tag: #0d0a01;
 	 --pagefind-ui-border-width: 2px;
@@ -61,11 +61,14 @@ const pageTitle = "Пошук на сайті:"
 	 }
 
 	#search .pagefind-ui__search-input, #search .pagefind-ui__search-clear {
-	 background-color: var(--pagefind-input-background);
-	 color: var(--pagefind-ui-text);
-	 }
+		background-color: var(--pagefind-input-background);
+	 	color: var(--pagefind-ui-text);
+	}
+
 	#search .pagefind-ui__search-clear {
-		padding: 0;
+		padding: 0 1rem;
+		background-color: oklch(49.923% 0.06347 108.515);
+		color: rgb(219, 217, 217);
 	}
 
 	#search .pagefind-ui__result-title, #search .pagefind-ui__result-link {
