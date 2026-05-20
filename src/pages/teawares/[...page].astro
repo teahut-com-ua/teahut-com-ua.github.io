@@ -147,31 +147,19 @@ const pageNumber = `сторінка ${page.currentPage}`;
 	}
 
 	article .categories::after {
-		content: attr(data-category);
+		/* content: attr(data-category); */
+		content: "чайне начиння";
 	}
 
 	article .container{
 		/* color code by category */
 		border-radius: 0.9rem;
-		--hue: 0;
-		border: 1px solid oklch(87% 0.1 var(--hue));
+		border: 1px solid oklch(96.319% 0.04951 151);
 	}
 
-	article:has([data-category="shengcha"]) .container { --hue: 112.44; }
-
-	article:has([data-category="heicha"]) .container { --hue: 93.5; }
-
-	article:has([data-category="hongcha"]) .container { --hue: 65; }
-
-	article:has([data-category="baicha&lucha"]) .container { --hue: 146.65; }
-
-	article:has([data-category="wulong&gaba"]) .container { --hue: 167.82; }
-
-	article:has([data-category="japanese"]) .container { --hue: 143.21; }
-
 	article .categories {
-		background: oklch(87% 0.09 var(--hue));
-		color: oklch(60% 0.104 var(--hue));
+		background: oklch(93.848% 0.08788 150.124);
+		color: oklch(60% 0.104 151);
 	}
 
     .pagination-block {
