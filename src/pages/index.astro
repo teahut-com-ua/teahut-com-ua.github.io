@@ -18,6 +18,12 @@ const newTeas = (await getCollection('teas'))
 	.sort(
 		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
+
+const newTeawares = (await getCollection('teawares'))
+	.filter((teaware) => teaware.data.posted !== false)
+	.sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
 <MainLayout>
@@ -66,6 +72,20 @@ const newTeas = (await getCollection('teas'))
 			}
 		</div>
 	</section>
+	<section class="teaware-section full-width">
+		<h2 class="last-line">Дещо з чайного начиння:</h2>
+		<div class="new-teaware">
+			{newTeawares.map((teaware) => 
+				<TeaCard 
+					image={teaware.data.image} 
+					url={`/teawares/${teaware.id}/`} 
+					title={teaware.data.title} 
+					subtitle={teaware.data.subtitle} 
+					category={teaware.data.category} 
+				/>)
+			}
+		</div>
+	</section>
 </MainLayout>
 
 <style>
@@ -75,7 +95,7 @@ const newTeas = (await getCollection('teas'))
 
 	.new-posts-header { margin-top: 1rem; }
 	
-	.new-posts, .tea-section { padding: 1rem; }
+	.new-posts, .tea-section, .teaware-section { padding: 1rem; }
 
 	.full-width {
 		background: var(--button);
@@ -90,7 +110,7 @@ const newTeas = (await getCollection('teas'))
 		margin-bottom: .5rem;
 	}
 
-	.new-tea {
+	.new-tea, .new-teaware {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 2em;
@@ -98,7 +118,7 @@ const newTeas = (await getCollection('teas'))
 	}
 
 	@media screen  and (min-width: 48rem){		
-		.new-tea {
+		.new-tea, .new-teaware {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: 1fr;

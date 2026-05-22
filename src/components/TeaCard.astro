@@ -52,6 +52,10 @@ const { image, category, title, subtitle, url } = Astro.props;
 			--hue: 153;
 		}
 
+		&:has([data-category="teawares"]) {
+			--hue: 120;
+		}
+
 		& img {
 			border-radius: .5rem .5rem 0 0;
 		}
