@@ -2,7 +2,6 @@
 import { AstroFont } from "astro-font";
 import { baseData } from '../data/siteData';
 import { ClientRouter } from "astro:transitions";
-import { GoogleAnalytics, SiteVerification } from '@digi4care/astro-google-analytics';
 
 type Props = {
   pageTitle?: string;
@@ -42,7 +41,13 @@ const { pageTitle = baseData.pageTitle, description = baseData.description, ogIm
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <title>{pageTitle}</title>
+  <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-LDBTKBMF02"></script>
+  <script type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LDBTKBMF02');
+  </script>
   <ClientRouter />
-  <SiteVerification id="GA_VERIFICATION_ID" />
-  <GoogleAnalytics id="G-LDBTKBMF02" />
 </head>
