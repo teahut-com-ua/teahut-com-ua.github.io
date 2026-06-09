@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import MobileNavigation from '../components/MobileNavigation.astro';
+import { GoogleAnalyticsNoscript } from '@digi4care/astro-google-analytics';
 
 const { pageTitle, description, ogImageUrl } = Astro.props;
 ---
@@ -17,6 +18,7 @@ const { pageTitle, description, ogImageUrl } = Astro.props;
 		</main>
 		<Footer />
 		<MobileNavigation />
+		<GoogleAnalyticsNoscript id="G-LDBTKBMF02" />
 	</body>
 </html>
 		

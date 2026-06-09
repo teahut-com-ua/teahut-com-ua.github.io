@@ -2,7 +2,7 @@
 import { AstroFont } from "astro-font";
 import { baseData } from '../data/siteData';
 import { ClientRouter } from "astro:transitions";
-import { GoogleAnalytics } from 'astro-google-analytics';
+import { GoogleAnalytics, SiteVerification } from '@digi4care/astro-google-analytics';
 
 type Props = {
   pageTitle?: string;
@@ -43,5 +43,6 @@ const { pageTitle = baseData.pageTitle, description = baseData.description, ogIm
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
   <title>{pageTitle}</title>
   <ClientRouter />
+  <SiteVerification id="GA_VERIFICATION_ID" />
   <GoogleAnalytics id="G-LDBTKBMF02" />
 </head>
