@@ -1,5 +1,5 @@
 ---
-posted: true
+posted: false
 title: Японські чашки
 subtitle: Порцеляна
 description: Набір порцелянових чашок, Японія; початок ХХ ст.
