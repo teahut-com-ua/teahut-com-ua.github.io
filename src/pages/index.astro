@@ -24,6 +24,15 @@ const newTeawares = (await getCollection('teawares'))
 	.sort(
 		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
+
+const colorRed = "hsl(13, 100%, 87%)";
+const colorOrange = "hsl(27, 98%, 84%)";
+const colorYellow = "hsl(46, 83%, 80%)";
+const colorGreen = "hsl(66, 45%, 79%)";
+const colorCyan = "hsl(158, 47%, 83%)";
+const colorBlue = "hsl(199, 42%, 84%)";
+const colorPurple = "hsl(274, 27%, 88%)";
+const colorMagenta = "hsl(345, 88%, 90%)";
 ---
 
 <MainLayout>
@@ -39,7 +48,32 @@ const newTeawares = (await getCollection('teawares'))
 	<p class="last-line">
 		Так само як і кожна чайна людина минулого й сьогодення, ми не прагнемо віднайти досконалість заради себе. Наша Традиція — це служіння людству через Чай. <span style="font-style: italic;">"Чай і Чань (Дзен)"</span>, казали давні, <span style="font-style: italic;">"мають один смак"</span>. Із глибоким усвідомленням наших зв'язків одне з одним проголошуємо:<br /> <span style="font-weight: 600;">«Най кожна чаша з любов'ю сприяє пробудженню і присутності, розкриттю гармонії і спокою Всесвіту в людській свідомості!»</span>
 	</p>
-	<section class="full-width">
+
+	
+	<section style="padding-top: 2rem;" class="full-width">
+		<div class="note-section">
+			<article class="sticky-note-wrapper" data-rotate="3">
+				<div class="sticky-note-content"  data-color={colorYellow}>
+					<h5>White Stork</h5>
+					<p>Quite a big bird! They don't have traditional voice boxes and so instead make sounds by chattering their bills together.</p>
+				</div>
+			</article>
+			
+			<article class="sticky-note-wrapper" data-rotate="-5">
+				<div class="sticky-note-content" data-color={colorRed}>
+					<h5>Western Cattle-Egret</h5>
+					<p>Opportunistic feeders that can be found following (or standing on) cattle and sheep. They know it’s snack time when a tractor disturbs the field.</p>
+				</div>
+			</article>
+			
+			<article class="sticky-note-wrapper" data-rotate="7">
+				<div class="sticky-note-content" data-color={colorBlue}>
+					<h5>Zitting Cisticola</h5>
+					<p>Super small, super cute! They have a very bouncy flight pattern and make a lil squeak with each flap.</p>
+				</div>
+			</article>
+		</div>
+
 		<h2 class="new-posts-header">Найновіші статті:</h2>
 		<div class="new-posts">
 			{newPosts.map((p) => 
@@ -89,6 +123,16 @@ const newTeawares = (await getCollection('teawares'))
 </MainLayout>
 
 <style>
+
+:root {
+  /* Flexoki Color Palette - 400 */
+  --color-dark-50: hsla(0, 0%, 13%, 0.50);
+  --color-dark-25: hsla(0, 0%, 13%, 0.25);
+
+  --step--1: clamp(0.8333rem, 0.8101rem + 0.1159vw, 0.9rem);
+  --texture-noise: url('/noise.png');
+}
+
 	h1, h2, h3 { text-align: center; }
 
 	p::first-letter { font-size: 1.5em; }
@@ -99,6 +143,14 @@ const newTeawares = (await getCollection('teawares'))
 
 	.full-width {
 		background: var(--button);
+	}
+
+	.note-section {
+		display: none;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: flex-start;
+		margin-bottom: 2rem;
 	}
 	
 	.new-posts {
@@ -116,6 +168,58 @@ const newTeawares = (await getCollection('teawares'))
 		gap: 2em;
 		place-content: start center;
 	}
+
+.sticky-note-wrapper {
+  --note-rotate: deg;
+  --note-color: hsl(61, 100%, 81%);
+  
+  position: relative;
+  transform: perspective(1px) rotate(attr(data-rotate deg));
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: var(--color-dark-25);
+    border-radius:0 0 100px/5px 0;
+    filter: blur(2px);
+  }
+
+  .sticky-note-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    
+    font-size: var(--step--1);
+    padding: 1em;
+    aspect-ratio: 1 / 1;
+    min-width: 280px;
+    width: min-content;
+    
+    color: var(--color-dark);
+    background-color: attr(data-color type(<color>));
+    background-image: var(--texture-noise),
+    	linear-gradient(165deg, transparent 84%, var(--color-dark-25) 100%);
+    
+    border-radius: 0 0 75%/10% 0; 
+
+    border-bottom: solid 2px var(--color-dark-50);
+    outline: solid 1px var(--color-dark-25);
+    outline-offset: -1px;
+    
+    box-shadow: 0px 5px 10px var(--color-dark-25);
+
+	& h5 {
+		color: var(--foreground);
+	}
+
+	& p {
+		color: var(--footer-light);
+	}
+  }
+}
+
 
 	@media screen  and (min-width: 48rem){		
 		.new-tea, .new-teaware {
