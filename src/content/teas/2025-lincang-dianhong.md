@@ -1,11 +1,11 @@
 ---
 posted: true
 title: Дяньхон із Мей Дзі Цін
-subtitle: Ліньцан, 2025 рік
+subtitle: округа Ліньцан, Юньнань; весна 2025 року
 description: Високогоряний Дяньхон із селища Мей Дзі Цін; 2025 рік.
 region: Ліньцан, Юньнань
 variety: вікові пуерні дерева
-yieldYear: 2025 рік
+yieldYear: весна 2025 року
 pubDate: 2025-12-15
 price: 4.24
 image: "/src/assets/teas/2025-lincang-dianhong/2025-lincang-dianhong.jpg"
