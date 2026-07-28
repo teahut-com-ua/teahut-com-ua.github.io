@@ -9,12 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.9",
-    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "^7.0.5",
     "@astrojs/partytown": "^2.1.7",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@digi4care/astro-google-analytics": "^2.0.1",
-    "astro": "^6.2.1",
+    "astro": "^7.1.5",
     "astro-font": "^0.1.81",
     "astro-google-analytics": "^1.0.3",
     "astro-icon": "^1.1.5",
