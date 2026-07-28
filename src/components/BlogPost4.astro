@@ -1,8 +1,7 @@
 ---
 import { formatDate } from "../utils/utils";
-import Button from "./Button.astro";
 
-const { url, featured, title, subtitle, description, author, postedDate } = Astro.props;
+const { url, featured, title, subtitle, description, postedDate } = Astro.props;
 const time = formatDate(postedDate);
 ---
 
