@@ -25,14 +25,6 @@ const newTeawares = (await getCollection('teawares'))
 		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
 
-const colorRed = "hsl(13, 100%, 87%)";
-const colorOrange = "hsl(27, 98%, 84%)";
-const colorYellow = "hsl(46, 83%, 80%)";
-const colorGreen = "hsl(66, 45%, 79%)";
-const colorCyan = "hsl(158, 47%, 83%)";
-const colorBlue = "hsl(199, 42%, 84%)";
-const colorPurple = "hsl(274, 27%, 88%)";
-const colorMagenta = "hsl(345, 88%, 90%)";
 ---
 
 <MainLayout>
