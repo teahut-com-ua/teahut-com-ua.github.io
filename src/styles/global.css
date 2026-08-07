@@ -287,28 +287,20 @@ button.close-button {
 	justify-self: end;
 }
 .modal {
-	/* display: none; */
 	inline-size: min(90vw, 540px);
     font-size: 1rem;
 	border: none;
 	border-radius: 1rem;
 	padding: 20px;
 	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-	transition: 
-        opacity 0.3s ease-in-out,
-        display 0.3s ease-in-out,
-        translate 0.3s ease-in-out,
-        overlay 0.3s ease-in-out;
-	opacity: 0;
 	translate: 0 20px;
+    transition: opacity, display, translate;
+    transition-behavior: allow-discrete;
+    transition-duration: 500ms;
+	opacity: 0;
 
 	&::backdrop {
-		background-color: rgba(0, 0, 0, 0.3);
 		backdrop-filter: blur(3px);
-        transition: 
-            background-color 0.3s ease-in-out,
-            display 0.3s ease-in-out,
-            overlay 0.3s ease-in-out;
 	}
 
     &[open] {
