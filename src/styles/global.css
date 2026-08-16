@@ -251,6 +251,16 @@ figure>img.align-center {
     margin: 1rem auto;
 }
 
+figure {
+	margin: 1rem auto 2rem;
+}
+
+figcaption {
+	font-size: 0.9rem;
+	text-align: center;
+	text-wrap: balance;
+}
+
 section.footnotes {
     font-size: 1rem;
     padding-left: 2rem;
