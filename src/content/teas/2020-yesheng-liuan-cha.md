@@ -6,7 +6,7 @@ description: Дикий Люань з гір неподалік селища Л�
 region: селище Люйсі, Аньхвей
 variety: несортоване листя з диких кущів
 yieldYear: квітень, 2020 рік
-pubDate: 2021-11-01
+pubDate: 2024-14-04
 price: 4.78
 image: "/src/assets/teas/2020-yesheng-liuan-cha/2020-yesheng-liuan-cha.jpg"
 imageAlt: Кошик Люаня 2020 року із селища Люйсі
