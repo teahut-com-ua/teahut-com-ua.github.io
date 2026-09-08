@@ -220,6 +220,12 @@ img {
 	}
 }
 
+.question {
+	margin: 1rem 0 1.5rem;
+	font-style: italic;
+	text-wrap: unset; 
+}
+
 .align-center,
 .float-left,
 .float-right {
