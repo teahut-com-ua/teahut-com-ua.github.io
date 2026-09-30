@@ -258,7 +258,7 @@ figure>img.align-center {
 }
 
 figure {
-	margin: 1rem auto 2rem;
+	margin: 1rem auto 0;
 }
 
 figcaption {
