@@ -7,7 +7,7 @@ region: Дзінґу, Юньнань
 variety: пуерні дерева
 yieldYear: 1980-і роки
 pubDate: 2026-09-30
-price: 7.65
+price: 7
 image: "/src/assets/teas/1980s-golden-buds-shou-brick/1980s-golden-buds-shou-brick.jpg"
 imageAlt: Женьшенева цеглинка 1990х гонконзької витримки
 image1: "/src/assets/teas/1980s-golden-buds-shou-brick/slide1.jpg"
