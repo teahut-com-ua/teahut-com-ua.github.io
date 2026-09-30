@@ -19,7 +19,7 @@ image3alt: Перша чашка
 image4: "/src/assets/teas/2003-custom-order-shou/slide4.jpg"
 image4alt: Десята чашка
 image5: "/src/assets/teas/2003-custom-order-shou/slide5.jpg"
-image5alt: Нейпяо
+image5alt: Спите листя
 category: ["heicha"]
 color: "oklch(27.034% 0.09235 26.637)"
 tags: ["Шу Пуери", "Витримані", "Чаї з дерев"]
