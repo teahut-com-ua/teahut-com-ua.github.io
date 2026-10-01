@@ -5,25 +5,25 @@ subtitle: цеглинка Шу пуера, витримана на Тайван
 description: Витриманий на Тайваню пресований Шу пуер 1990-х.
 region: Юньнань
 variety: пуерні дерева
-yieldYear: 1990-і роки
+yieldYear: 1990 роки
 pubDate: 2026-09-30
 price: 7
-image: "/src/assets/teas/1980s-golden-buds-shou-brick/1980s-golden-buds-shou-brick.jpg"
+image: "/src/assets/teas/1990s-golden-buds-shou-brick/1990s-golden-buds-shou-brick.jpg"
 imageAlt: Цеглинка ґонтіна з 1990-х тайванської витримки
-image1: "/src/assets/teas/1980s-golden-buds-shou-brick/slide1.jpg"
+image1: "/src/assets/teas/1990s-golden-buds-shou-brick/slide1.jpg"
 image1alt: "Цеглинка ґонтіна з 1990-х"
-image2: "/src/assets/teas/1980s-golden-buds-shou-brick/slide2.jpg"
+image2: "/src/assets/teas/1990s-golden-buds-shou-brick/slide2.jpg"
 image2alt: "Доволі багато золотавих бруньок"
-image3: "/src/assets/teas/1980s-golden-buds-shou-brick/slide3.jpg"
+image3: "/src/assets/teas/1990s-golden-buds-shou-brick/slide3.jpg"
 image3alt: Перша чашка
-image4: "/src/assets/teas/1980s-golden-buds-shou-brick/slide4.jpg"
+image4: "/src/assets/teas/1990s-golden-buds-shou-brick/slide4.jpg"
 image4alt: Десята чашка
-image5: "/src/assets/teas/1980s-golden-buds-shou-brick/slide5.jpg"
+image5: "/src/assets/teas/1990s-golden-buds-shou-brick/slide5.jpg"
 image5alt: Спите листя (чайне дно)
 category: ["heicha"]
 tags: ["Шу Пуери", "Хейча", "Витримані", "Чаї з дерев", "Ґонтіни"]
 ---
 
-«Золоті бруньки в білому папері», цеглинка Шу пуера, ґонтіна. За словами продавця вона з 1980-х, проте, на мою думку, більше схоже на кінець 90-х - початок 2000-х. А втім, хто зна... Найголовніше тут не дати, а те, яким є сам чай. Не роки ж ми п'ємо.
+«Золоті бруньки в білому папері», цеглинка Шу пуера, ґонтіна. За словами продавця вона з 1980-х, проте маю щодо цього певні сумніви. Більше схоже на кінець 90-х - початок 2000-х. А втім, хто зна... Найголовніше тут не дати, а те, яким є сам чай. Зрештою, не роки ж ми п'ємо.
 
 Чай має чудовий профіль тайванської сухої витримки з м'якими горіхово-деревними солодкуватими нотками ліків китайської медицини. Настій гладкий, оліїстий, м'яко оповиває горло й дуже добре вбирається тілом, особливо його впевнена янська Ці, яка збалансовує, заземлює і налаштовує вас на медитативне споглядання. Цей Шу швидше для релаксу й медитацій, ніж для задушевних бесід у компанії. З ним дійсно хочеться більше зосередитись на своїх відчуттях. Шкода, що подібних чаїв старої школи пуерів лишається все менше...
