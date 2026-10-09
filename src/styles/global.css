@@ -332,6 +332,12 @@ button.close-button {
     }
 }
 
+.article-footer {
+	font-size: 0.9rem;
+	font-style: italic;
+	margin-top: 3rem;
+}
+
 @media(min-width: 39.38rem) {
     h1 { font-size: 2.54em; }
 
